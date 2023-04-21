@@ -1,0 +1,10 @@
+<app-header (sideNavToggled)="sideNavStatus= $event;"></app-header>
+<main style="    margin-top: 56px;
+">
+  <app-sidenav style="position: fixed;"  class="black-border" [sideNavStatus]="sideNavStatus"  [ngClass]="{'app-side-nav-open':sideNavStatus}"></app-sidenav>
+  <div style="z-index: -2;" class="display-Area p-3" [ngClass]="{'display-Area-shrink':sideNavStatus}">
+   <router-outlet></router-outlet>
+  </div>
+
+
+</main>

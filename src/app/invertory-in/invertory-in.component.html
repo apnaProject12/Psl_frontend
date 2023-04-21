@@ -1,0 +1,92 @@
+<!-- 
+
+<div class="card card-user">
+    <div class="card-header"> 
+        <h5 class="card-title">Inventory In Form</h5>    
+    </div>
+
+ <div class="card-body" >
+  
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col">
+                <label for="name">from:</label>
+                <input type="text" id="name"  formControlName="from" class="form-control">
+            </div>
+            <div class="col">
+                <label for="name">Received by:</label>
+                <input type="text" id="name"  formControlName="recivedBy" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+               <label for="name">Received date:</label>
+               <input type="date" id="name" formControlName="recivedDate" class="form-control">
+            </div>
+            <div class="col">
+               <label for="name">totalQty:</label>
+               <input type="text" id="name"  formControlName="totalQty" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+               <label for="name">totalProduct by:</label>
+               <input type="text" id="name"  formControlName="totalProduct" class="form-control">
+            </div>
+      <div class="col">
+              <label for="name">totalPrice :</label>
+              <input type="text" id="name" formControlName="totalPrice" class="form-control">
+      </div>
+            <div class="col">
+               <label for="name">Approval:</label>
+               <input type="text" id="name" name="isApproved" formControlName="isApproved" class="form-control">
+           </div>
+      </div>
+
+      <br>
+
+      <table class="table table-bordered" formArrayName="stockInventoryItems">
+
+        <div class="container rows " style="display: flex;"> 
+            <div class="co" style="    width: 211px;
+            margin-left: 10px;
+            margin-top: 13px;">
+            <div class="card-title">Add Multiple Quantity:</div> 
+            </div>
+            <div class="co">
+            <button type="button"  (click)="addQuantity()" class="btn btn-primary" style=" background-color: blue;
+            width: 116px;
+            margin-top: 4px;">Add More</button>  
+            </div> 
+        </div>
+
+        <tr *ngFor="let quantity of quantities().controls; let i=index" [formGroupName]="i">
+         
+          <td>
+            product Name:
+              <input type="text" formControlName="productName" class="form-control">
+          </td>
+          <td>
+            product Qty:
+              <input type="text" formControlName="productQty" class="form-control">
+          </td>
+          <td>
+            price per item:
+              <input type="text" formControlName="price" class="form-control">
+          </td>
+          <td>
+            total Price:
+              <input type="text" formControlName="totalPrice" class="form-control">
+          </td>
+          <td>
+              <button (click)="removeQuantity(i)" style="background-color: red;"
+               class="btn btn-danger">Remove</button>
+          </td>
+        </tr>
+      </table>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+    <br/>
+  </div>
+</div>
+ -->

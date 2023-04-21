@@ -1,0 +1,18 @@
+#loginpage{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    /* background-image: url("https://www.shutterstock.com/image-photo/businessman-checking-inventory-stock-room-manufacturing-199541387"); */
+    background-image: url(https://st2.depositphotos.com/9999814/51068/i/450/depositphotos_510687156-stock-photo-warehouse-management-innovative-software-in.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+
+    align-items: center;
+}
+.content{
+    margin-left: 27px;
+    border: 3px solid #c7dad58c;
+    border-radius: 3px;
+}

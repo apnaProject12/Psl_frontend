@@ -1,0 +1,7 @@
+{
+    "/StockInInventory/**":{
+        "target":"http://localhost:1019",
+        "secure":false,
+        "changeOrigin":true
+    }
+}

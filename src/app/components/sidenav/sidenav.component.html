@@ -1,0 +1,37 @@
+
+<div class="side-nav-content">
+
+    <ul class="nav-list border-white" [ngClass]="{'nav-list-open':sideNavStatus}" >
+        <li class="nav-list-item border-white" routerLinkActive='active' *ngFor="let item of list ">
+            <!-- <i class="{{item.icon}}" routerLink="{{item.link}}" data-toogle="tooltip" title="home"></i> -->
+            <i class="{{item.icon}}"  routerLink="{{item.link}}" mat-raised-button #tooltip="matTooltip"
+            matTooltip="{{item.tooltip}}"
+            [matTooltipPosition]="'right'"
+            aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+            class="example-button"></i>
+
+            
+            <!-- <div class="example-container" cdkScrollable>
+                <button mat-raised-button #tooltip="matTooltip"
+                        matTooltip="Info about the action"
+                        [matTooltipPosition]="position.value!"
+                        matTooltipHideDelay="100000"
+                        aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+                        class="example-button">
+                  Action
+                </button>
+              </div> -->
+        
+
+            
+        <div routerLink="{{item.link}}" style="width: 230px
+        ;">
+            <span>
+                <a routerLink="{{item.link}}" >{{item.name}}</a>
+            </span>
+        </div>
+        </li>
+        
+    </ul>
+
+    </div>
