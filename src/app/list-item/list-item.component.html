@@ -1,224 +1,224 @@
-<div _ngcontent-eyi-c98="" class="card " >
-  <div _ngcontent-eyi-c98="" class="card-header">
-      <div _ngcontent-eyi-c98="" class="row">
-          <div _ngcontent-eyi-c98="" class="col-9">
-              <!-- <p _ngcontent-eyi-c98="" class="fs-5 fw-bolder mb-0" style="color: #001664;">User</p> -->
-              <div class="col-4">
-                  <input type="search" class="search" autocomplete="off" #box1 autocompleted  style="text-align: center;">
-                  <mat-icon class="search-icon" >search</mat-icon>
-              </div>
-          </div>
-          <div _ngcontent-eyi-c98="" class=" text-end"> <a _ngcontent-eyi-c98=""
-                  class="btn btn-outline-info btn-sm ng-star-inserted" tabindex="0" fdprocessedid="irqpcf" routerLink="/dashboard/regisrtation"><i
-                      _ngcontent-eyi-c98="" class="fa fa-plus"></i>&nbsp;Add Patient</a>
-                      
-                      <a _ngcontent-eyi-c98=""
-                  class="btn mx-2 btn-outline-info btn-sm ng-star-inserted" tabindex="0" fdprocessedid="irqpcf" href="http://localhost:8080/api/security/download/excel" download=""><i
-                      _ngcontent-eyi-c98="" class="fa fa-plus"></i>&nbsp;download allData</a>
-                      <!----></div>
-  
-  <div _ngcontent-eyi-c98="" class="card-body">
-      <form>
+<div class="container-fluid m-1 mt-2">
+    <div class="row">
+      <div class="col-12">
+<div _ngcontent-eyi-c98="" class="card w-100">
+    <div _ngcontent-eyi-c98="" class="card-header">
+        <div _ngcontent-eyi-c98="" class="row">
+            <div _ngcontent-eyi-c98="" class="col-10">
+                <div class="col-4">
+                    <input type="search" class="search" autocomplete="off" #box1 autocompleted (keyup)="globalSearch(box1.value) " style="text-align: center;">
+                    <mat-icon class="search-icon" >search</mat-icon>
+                </div>
+            </div>
+            <div _ngcontent-eyi-c98="" class=" text-end"> <a _ngcontent-eyi-c98=""
+                    class="btn btn-outline-info btn-sm ng-star-inserted" tabindex="0" fdprocessedid="irqpcf" routerLink="/dashboard/invertory-in"><i
+                        _ngcontent-eyi-c98="" class="fa fa-plus"></i>&nbsp;Add Product</a>
+                    
+                        <!----></div>
+    
+    <div _ngcontent-eyi-c98="" class="card-body">
+        <form>
 
-      <div _ngcontent-eyi-c98="" class="row">
+       
+        <div _ngcontent-eyi-c98="" class="row">
+            
+            
+            <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-3 col-lg-3 mt-2"><label _ngcontent-eyi-c98=""
+                    for="designation">From</label><input _ngcontent-eyi-c98="" type="text" 
+                    class="form-control ng-untouched ng-pristine ng-valid" placeholder="Enter Name" fdprocessedid="l9beoe" #box7></div>
+            <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-3 col-lg-3 mt-2"><label _ngcontent-eyi-c98=""
+                    for="">recivedBy</label><input _ngcontent-eyi-c98="" type="text" placeholder="Received By" #box6
+                    class="form-control ng-untouched ng-pristine ng-valid" fdprocessedid="l9beoe"></div>
+            <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-3 col-lg-3 mt-2"><label _ngcontent-eyi-c98=""
+                    for="designation">Recived Date</label><input _ngcontent-eyi-c98="" type="date" 
+                    class="form-control ng-untouched ng-pristine ng-valid" fdprocessedid="l9beoe" #box7></div>
 
-          <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-3 col-lg-3 mt-2"><label _ngcontent-eyi-c98="" for="">Name</label><input _ngcontent-eyi-c98="" type="text" placeholder="Full Name" #content
-                  class="form-control ng-untouched ng-pristine ng-valid" fdprocessedid="lb7nkh"></div>
+            <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-3 col-lg-3 mt-2"><label _ngcontent-eyi-c98=""
+                    for="designation">Order Date</label><input _ngcontent-eyi-c98="" type="date" #box8
+                    class="form-control ng-untouched ng-pristine ng-valid" fdprocessedid="l9beoe"></div>
+            <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-6 col-lg-3 mt-3"><button _ngcontent-eyi-c98=""  
+                    class="btn btn-outline-info btn-sm" tabindex="0" fdprocessedid="os78ce"><i _ngcontent-eyi-c98=""
+                        class="fa fa-search"></i>&nbsp;Search</button> &nbsp; <button _ngcontent-eyi-c98=""  type="reset"
+                    class="btn btn-outline-info btn-sm" tabindex="0" fdprocessedid="ywyqy9"><i _ngcontent-eyi-c98=""
+                        class="fa fa-refresh"></i>&nbsp;Reset</button></div>
+        </div>
+    </form>
+    </div>
+    <div _ngcontent-eyi-c98="" class="container-fluid ng-star-inserted">
+        <div _ngcontent-eyi-c98="" class="row">
+            <div _ngcontent-eyi-c98="" class="col-12">
+                <div _ngcontent-eyi-c98=""     style="color: rgb(10, 10, 9);" class="d-flex float-end mt-2 mb-2">
+                    <p _ngcontent-eyi-c98="" for="" class="w-auto mb-0 me-2 mt-2" style="white-space: nowrap;">Items Per
+                        page</p><select _ngcontent-eyi-c98=""  name="" #box
+                        class="form-select form-control-sm ng-untouched ng-pristine ng-valid"
+                        style="height: 38px; width: 20x;" fdprocessedid="01h7l" (click)="pagination(box.value)">
+                        <option _ngcontent-eyi-c98="" value="5" selected="">5</option>
+                        <option _ngcontent-eyi-c98="" value="10">10</option>
+                        <option _ngcontent-eyi-c98="" value="15">15</option>
+                        <option _ngcontent-eyi-c98="" value="20">20</option>
+                    </select>
+             
+                </div>
+            </div>
+        </div>
+    </div><!---->
 
-          <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-3 col-lg-3 mt-2"><label _ngcontent-eyi-c98=""
-                  for="">Email</label><input _ngcontent-eyi-c98="" type="email" placeholder="last name" #box2
-                  class="form-control ng-untouched ng-pristine ng-valid" fdprocessedid="1oizoq"></div>
-          <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-3 col-lg-3 mt-2"><label _ngcontent-eyi-c98=""
-                  for="">Phone no</label><input _ngcontent-eyi-c98="" type="text" placeholder="phone no" #box3
-                  class="form-control ng-untouched ng-pristine ng-valid" fdprocessedid="qwzx1"></div>
-          <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-3 col-lg-3 mt-2"><label _ngcontent-eyi-c98=""
-                  for="">City</label><input _ngcontent-eyi-c98="" type="text" placeholder="city name" #box4
-                  class="form-control ng-untouched ng-pristine ng-valid" fdprocessedid="l9beoe"></div>
-      </div>
-      <div _ngcontent-eyi-c98="" class="row">
-          <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-3 col-lg-3 mt-2"><label _ngcontent-eyi-c98=""
-                  for="">Purpose</label><select  class="form-control ng-untouched ng-pristine ng-valid" fdprocessedid="5a5z9d"  #box5>
-                      <option selected></option>
-                      <option value="Eye checkup"  >Eye checkup</option>
-                      <option value="Heart-problem"  >Heart-problem</option>
-                      <option value="frecture"  >frecture</option>
-                      <option value="General physicion"  >General physicion</option>
-                      <option value="Dental problem"  >Dental problem</option>
-          </select></div>
-
-          <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-3 col-lg-3 mt-2"><label _ngcontent-eyi-c98=""
-                  for="">Doctor Name</label><input _ngcontent-eyi-c98="" type="text" placeholder="Enter doctor name" #box6
-                  class="form-control ng-untouched ng-pristine ng-valid" fdprocessedid="l9beoe"></div>
-          <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-3 col-lg-3 mt-2"><label _ngcontent-eyi-c98=""
-                  for="designation">visiting date</label><input _ngcontent-eyi-c98="" type="date" 
-                  class="form-control ng-untouched ng-pristine ng-valid" fdprocessedid="l9beoe" #box7></div>
-
-          <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-3 col-lg-3 mt-2"><label _ngcontent-eyi-c98=""
-                  for="designation">appointment Date</label><input _ngcontent-eyi-c98="" type="date" #box8
-                  class="form-control ng-untouched ng-pristine ng-valid" fdprocessedid="l9beoe"></div>
-          <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-6 col-lg-3 mt-3"><button _ngcontent-eyi-c98="" 
-                  class="btn btn-outline-info btn-sm" tabindex="0" fdprocessedid="os78ce"><i _ngcontent-eyi-c98=""
-                      class="fa fa-search"></i>&nbsp;Search</button> &nbsp; <button _ngcontent-eyi-c98=""  type="reset"
-                  class="btn btn-outline-info btn-sm" tabindex="0" fdprocessedid="ywyqy9"><i _ngcontent-eyi-c98=""
-                      class="fa fa-refresh"></i>&nbsp;Reset</button></div>
-      </div>
-  </form>
-  </div>
-  <div _ngcontent-eyi-c98="" class="container-fluid ng-star-inserted">
-      <div _ngcontent-eyi-c98="" class="row">
-          <div _ngcontent-eyi-c98="" class="col-12">
-              <div _ngcontent-eyi-c98=""     style="color: antiquewhite;" class="d-flex float-end mt-2 mb-2">
-                  <p _ngcontent-eyi-c98="" for="" class="w-auto mb-0 me-2 mt-2" style="white-space: nowrap;">Items Per
-                      page</p><select _ngcontent-eyi-c98=""  name="" #box
-                      class="form-select form-control-sm ng-untouched ng-pristine ng-valid"
-                      style="height: 38px; width: 20x;" fdprocessedid="01h7l" >
-                      <option _ngcontent-eyi-c98="" value="5" selected="">5</option>
-                      <option _ngcontent-eyi-c98="" value="10">10</option>
-                      <option _ngcontent-eyi-c98="" value="15">15</option>
-                      <option _ngcontent-eyi-c98="" value="20">20</option>
-                  </select>
-           
-              </div>
-          </div>
-      </div>
-  </div><!---->
-
-  <div _ngcontent-eyi-c98=""  style=" color: aliceblue;" class="table-responsive card">
-      <table _ngcontent-eyi-c98="" class="table styled-table table-bordered table-sm mb-0">
-          <thead _ngcontent-eyi-c98=""
-              style="background-color: rgb(38, 186, 157); color: rgb(255, 255, 255); font-family: Arial;">
-              <tr _ngcontent-eyi-c98="">
-                  <th _ngcontent-eyi-c98="" scope="col">S.No</th>
-                  <th _ngcontent-eyi-c98="" style="width: 106px;" scope="col" class="ng-star-inserted">
-                      <div _ngcontent-eyi-c98="" class="row">
-                          <div _ngcontent-eyi-c98="" class="col-md-12"> from </div>
-                          <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
-                      </div>
-                  </th>
-                  <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
-                      <div _ngcontent-eyi-c98="" class="row">
-                          <div _ngcontent-eyi-c98="" class="col-md-12"> Recived By </div>
-                          <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
-                      </div>
-                  </th>
-                  <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
-                      <div _ngcontent-eyi-c98="" class="row">
-                          <div _ngcontent-eyi-c98="" class="col-md-12"> Recived Date </div>
-                          <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
-                      </div>
-                  </th>
-                  <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
-                      <div _ngcontent-eyi-c98="" class="row">
-                          <div _ngcontent-eyi-c98="" class="col-md-12">Total Qty </div>
-                          <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
-                      </div>
-                  </th>
-                  <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
-                      <div _ngcontent-eyi-c98="" class="row">
-                          <div _ngcontent-eyi-c98="" class="col-md-12">Total Product</div>
-                          <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
-                      </div>
-                  </th>
-                  <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
-                      <div _ngcontent-eyi-c98="" class="row">
-                          <div _ngcontent-eyi-c98="" class="col-md-12">Total Price</div>
-                          <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""
-                                  class="fas fa-caret-up"></i></div>
-                      </div>
-                  </th>
-                  <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
-                      <div _ngcontent-eyi-c98="" class="row">
-                          <div _ngcontent-eyi-c98="" class="col-md-12"> Approval </div>
-                          <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
-                      </div>
-                  </th>
-                  <!-- <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
-                      <div _ngcontent-eyi-c98="" class="row">
-                          <div _ngcontent-eyi-c98="" class="col-md-8"> State </div>
-                          <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
-                      </div>
-                  </th> -->
-                  <!-- <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
-                      <div _ngcontent-eyi-c98="" class="row">
-                          <div _ngcontent-eyi-c98="" class="col-md-8"> Designation </div>
-                          <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
-                      </div>
-                  </th> -->
-                  <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">Action</th><!---->
-              </tr>
-          </thead>
-          <tbody _ngcontent-hvr-c93>
-               <tr _ngcontent-hvr-c93="" class="ng-star-inserted" *ngFor="let user of stockin let i=index "> 
-                  <!-- <td _ngcontent-hvr-c93="">{{(pageSize*(pageNumber))+(i+1)}}</td> -->
-                 <td _ngcontent-hvr-c93="" ><a >{{user.id}}</a></td>
-                 <td _ngcontent-hvr-c93="" ><a >{{user.from}}</a></td>
-                  <td _ngcontent-hvr-c93="">{{user.recivedBy}}</td>
-                  <td _ngcontent-hvr-c93="">{{user.recivedDate}}</td>
-                  <td _ngcontent-hvr-c93="">{{user.totalQty}}</td>
-                  <td _ngcontent-hvr-c93="">{{user.totalProduct}}</td>
-                  <td _ngcontent-hvr-c93="">{{user.totalPrice}}</td>
-                  <td _ngcontent-hvr-c93="">{{user.isApproved}}</td>
+    <div _ngcontent-eyi-c98=""  style="color: rgb(14, 14, 14);" class="table-responsive card">
+        <table _ngcontent-eyi-c98="" class="table styled-table table-bordered table-sm mb-0">
+            <thead _ngcontent-eyi-c98=""
+                style="background-color: rgb(38, 186, 157); color: rgb(255, 255, 255); font-family: Arial;">
+                <tr _ngcontent-eyi-c98="">
+                    <th _ngcontent-eyi-c98="" scope="col">S.No</th>
+                    <th _ngcontent-eyi-c98="" style="width: 106px;" scope="col" class="ng-star-inserted">
+                        <div _ngcontent-eyi-c98="" class="row">
+                            <div _ngcontent-eyi-c98="" class="col-md-12"> from </div>
+                            <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
+                        </div>
+                    </th>
+                    <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
+                        <div _ngcontent-eyi-c98="" class="row">
+                            <div _ngcontent-eyi-c98="" class="col-md-12"> Recived By </div>
+                            <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
+                        </div>
+                    </th>
+                    <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
+                        <div _ngcontent-eyi-c98="" class="row">
+                            <div _ngcontent-eyi-c98="" class="col-md-12"> Recive Date </div>
+                            <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
+                        </div>
+                    </th>
+                    <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
+                        <div _ngcontent-eyi-c98="" class="row">
+                            <div _ngcontent-eyi-c98="" class="col-md-12">Total Quantity </div>
+                            <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
+                        </div>
+                    </th>
+                    <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
+                        <div _ngcontent-eyi-c98="" class="row">
+                            <div _ngcontent-eyi-c98="" class="col-md-12"> </div>
+                            <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98="">Total Product</i></div>
+                        </div>
+                    </th>
                   
+                    <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
+                        <div _ngcontent-eyi-c98="" class="row">
+                            <div _ngcontent-eyi-c98="" class="col-md-12">Total Price</div>
+                            <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
+                        </div>
+                    </th>
+                    <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
+                        <div _ngcontent-eyi-c98="" class="row">
+                            <div _ngcontent-eyi-c98="" class="col-md-12">Order By</div>
+                            <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
+                        </div>
+                    </th>
+              
+                    <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
+                        <div _ngcontent-eyi-c98="" class="row">
+                            <div _ngcontent-eyi-c98="" class="col-md-12"> Order Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+                            <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
+                        </div>
+                    </th>
+                    <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
+                        <div _ngcontent-eyi-c98="" class="row">
+                            <div _ngcontent-eyi-c98="" class="col-md-12"> Approval </div>
+                            <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
+                        </div>
+                    </th>
+                    <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
+                        <div _ngcontent-eyi-c98="" class="row">
+                            <div _ngcontent-eyi-c98="" class="col-md-12"> Action </div>
+                            <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
+                        </div>
+                    </th>
                   
-                  <!-- <td _ngcontent-hvr-c93="">
-                      <mat-icon style="height: 35px;
-                      width: 42px;" type="button" class="btn btn-danger" (click)="openModal(template,user.id)">delete</mat-icon> -->
+                   
+                </tr>
+            </thead>
+            <tbody _ngcontent-hvr-c93>
+                <tr _ngcontent-hvr-c93="" class="ng-star-inserted" *ngFor="let user of stockin let i=index ">
+                    <td _ngcontent-hvr-c93="">{{(pageSize*(pageNumber))+(i+1)}}</td>
+                    <td _ngcontent-hvr-c93="" ><a routerLink="" (click)="findproduct(user.id)">{{user.from}}</a></td>
+                    <td _ngcontent-hvr-c93="">{{user.recivedBy}}</td>
+                    <td _ngcontent-hvr-c93="">{{user.recivedDate}}</td>
+                    <td _ngcontent-hvr-c93="">{{user.totalQty}}</td>
+                    <td _ngcontent-hvr-c93="">{{user.totalProduct}}</td>
+                    <td _ngcontent-hvr-c93="">{{user.totalPrice}}</td>
+                    <td _ngcontent-hvr-c93="">{{user.orderBy}}</td>
+                    <td _ngcontent-hvr-c93="">{{user.orderDate}}</td>
+                    <td _ngcontent-hvr-c93="">
+                       <div *ngIf="user.isApproved else elseBlock">
+                        <button style="color: red;" _ngcontent-eyi-c98="" 
+                        class="btn btn-outline-info btn-sm" tabindex="0" fdprocessedid="ywyqy9"> <i style="color: green;" _ngcontent-eyi-c98=""
+                            class="fa-solid fa-circle-check"></i></button>
+                            </div>
+                       
+                        <ng-template #elseBlock>
+                            <button style="color: red;" _ngcontent-eyi-c98="" 
+                            class="btn btn-outline-info btn-sm" tabindex="0" fdprocessedid="ywyqy9"> <i style="color: red;" _ngcontent-eyi-c98=""
+                                class="fa-sharp fa-solid fa-circle-xmark"></i></button>
+                               
+                        </ng-template>
+                    
+                    </td>
+                
+                        <td>
+                        <div _ngcontent-eyi-c98="" class=""style="display: flex;"><button _ngcontent-eyi-c98=""   (click)="deleteData1(user.id)"
+                            class="btn btn-outline-info btn-sm" tabindex="0" fdprocessedid="os78ce"><i _ngcontent-eyi-c98=""
+                                class="fa-solid fa-trash"></i></button> &nbsp; <button _ngcontent-eyi-c98="" 
+                            class="btn btn-outline-info btn-sm" tabindex="0" fdprocessedid="ywyqy9" routerLink="update/{{user.id}}"><i _ngcontent-eyi-c98=""
+                                class="fa-solid fa-pen-to-square"></i></button></div>
+                            </td>
+                                
+                   </tr>
+            </tbody>
+            
+        </table>
+    </div>
+    <div _ngcontent-eyi-c98="" class="container-fluid mt-3 ng-star-inserted">
+        <div _ngcontent-eyi-c98="" class="row">
+            <div _ngcontent-eyi-c98="" style="color: rgb(14, 14, 14);" class="col-sm-12 col-md-4 col-lg-4">
+                <p _ngcontent-eyi-c98="" class="d-flex"> Page {{pageNumber+1}} of {{totalpage}}, {{totalElement}} Items </p>
+            </div>
+            <div _ngcontent-eyi-c98="" class="col-6 col-sm-6 col-md-4 col-lg-4 d-inline">
+                <div _ngcontent-eyi-c98="" class="text-center">
+                    <nav _ngcontent-eyi-c98="" aria-label="Page navigation example" style="margin-top: -12px;">
+                        <ul _ngcontent-eyi-c98="" class="pagination mb-0">
+                            
 
-<td>
-<mat-icon style="height: 35px;
-width: 60px;
-/* color: red; */
-background-color: red;
-color: white;" _ngcontent-jmq-c109=""  _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="os78ce" class="btn btn-outline-info btn-sm"  type="button" class="btn btn-danger" ><i _ngcontent-jmq-c109="" _ngcontent-eyi-c98="" class="fa fa-search"></i>&nbsp;delete</mat-icon>
+                            <li _ngcontent-eyi-c98="" class="page-item">
+                                <a _ngcontent-eyi-c98=""  aria-label="Next" type="" class="page-link"
+                                    (click)="nextprev('minus')"><span _ngcontent-eyi-c98="" aria-hidden="true"
+                                        class="buuuton" >«</span></a>
+                            </li>
+                            <li _ngcontent-eyi-c98="" class="page-item"><a _ngcontent-eyi-c98="" aria-label="Next"
+                                    type="" class="page-link" style="cursor: pointer; "(click)="nextprev('minus')"><span _ngcontent-eyi-c98=""
+                                        aria-hidden="true" class="buuuton" >‹</span></a></li>
 
-                      <!-- <button (click)="deleteData(user.id)" type="button" class="btn btn-danger">delete</button> -->
-
-                      <mat-icon type="button" style="height: 35px;
-                      width: 42px;"   class="btn mx-1 btn-primary">update</mat-icon></td>
-               </tr>
-          </tbody>
-          
-      </table>
-  </div>
-  <div _ngcontent-eyi-c98="" class="container-fluid mt-3 ng-star-inserted">
-      <div _ngcontent-eyi-c98="" class="row">
-          <div _ngcontent-eyi-c98="" style="color: antiquewhite;" class="col-sm-12 col-md-4 col-lg-4">
-              <p _ngcontent-eyi-c98="" class="d-flex"></p>
-          </div>
-          <div _ngcontent-eyi-c98="" class="col-6 col-sm-6 col-md-4 col-lg-4 d-inline">
-              <div _ngcontent-eyi-c98="" class="text-center">
-                  <nav _ngcontent-eyi-c98="" aria-label="Page navigation example" style="margin-top: -12px;">
-                      <ul _ngcontent-eyi-c98="" class="pagination mb-0">
-                          
-
-                          <li _ngcontent-eyi-c98="" class="page-item">
-                              <a _ngcontent-eyi-c98=""  aria-label="Next" type="" class="page-link"
-                                  ><span _ngcontent-eyi-c98="" aria-hidden="true"
-                                      class="buuuton" >«</span></a>
-                          </li>
-                          <li _ngcontent-eyi-c98="" class="page-item"><a _ngcontent-eyi-c98="" aria-label="Next"
-                                  type="" class="page-link" style="cursor: pointer; "><span _ngcontent-eyi-c98=""
-                                      aria-hidden="true" class="buuuton" >‹</span></a></li>
-
-                          <li _ngcontent-eyi-c98="" class="page-item">
-                              <div _ngcontent-eyi-c98="" aria-label="Next" type="" class="page-link"
-                                  style="cursor: pointer;" ><span _ngcontent-eyi-c98="" aria-hidden="true"
-                                      class="buuuton" >›</span></div>
-                          </li>
-                          <li _ngcontent-eyi-c98="" class="page-item"><a _ngcontent-eyi-c98="" aria-label="Next"
-                                  type="" class="page-link" style="cursor: pointer; " ><span _ngcontent-eyi-c98=""
-                                      aria-hidden="true" class="buuuton" >»</span></a></li>
-                      </ul>
-                  </nav>
-              </div>
-          </div>
-          <div _ngcontent-eyi-c98="" class="col-6 col-sm-6 col-md-4 col-lg-4">
-              <div _ngcontent-eyi-c98="" class="d-flex float-end"><input _ngcontent-eyi-c98="" type="text"
-                      class="form-control searchbox1 p-0 ps-1 fs-6 ng-untouched ng-pristine ng-valid"
-                      style="height: 27px; width: 2rem;"  fdprocessedid="ovzizs" ><span class="mx-1"
-                      _ngcontent-eyi-c98="" style="    font-size: 1.3rem;height: 27px;width: 38px;"><p style="    font-size: 22px;
-                      color: antiquewhite">/</p></span></div>
-          </div>
-      </div>
-  </div><!---->
+                            <li _ngcontent-eyi-c98="" class="page-item">
+                                <div _ngcontent-eyi-c98="" aria-label="Next" type="" class="page-link"
+                                    style="cursor: pointer;" (click)="nextprev('add')"><span _ngcontent-eyi-c98="" aria-hidden="true"
+                                        class="buuuton" >›</span></div>
+                            </li>
+                            <li _ngcontent-eyi-c98="" class="page-item"><a _ngcontent-eyi-c98="" aria-label="Next"
+                                    type="" class="page-link" style="cursor: pointer; " (click)="nextprev('add')"><span _ngcontent-eyi-c98=""
+                                        aria-hidden="true" class="buuuton" >»</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div _ngcontent-eyi-c98="" class="col-6 col-sm-6 col-md-4 col-lg-4">
+                <div _ngcontent-eyi-c98="" class="d-flex float-end"><input _ngcontent-eyi-c98="" type="text"
+                        class="form-control searchbox1 p-0 ps-1 fs-6 ng-untouched ng-pristine ng-valid"
+                        style="height: 27px; width: 2rem;"  fdprocessedid="ovzizs" #box11 (keyup)="pageWithData(box11.value)"><span class="mx-1"
+                        _ngcontent-eyi-c98="" style="    font-size: 1.3rem;height: 27px;width: 38px;"><p style="    font-size: 22px;
+                        color: antiquewhite">/{{totalpage}}</p></span></div>
+            </div>
+        </div>
+    </div>
 </div>
+        </div>
+    </div>
+</div>
+ 

@@ -1,1 +1,121 @@
-<p>product-list works!</p>
+<div _ngcontent-eyi-c98="" class="card p-3 m-3 shadow-lg p-3 mb-5 bg-light " >
+    
+
+    <div _ngcontent-eyi-c98="" class="card-header" style="display: flex;">
+        <div><i style="font-size: 1.15rem;" routerLink="/dashboard/list-item" class="fa-solid fa-arrow-left"></i></div>
+    <div><i style="font-size: 1.5rem;" routerLink="/dashboard/list-item" class="fa-solid fa-user mx-1"></i></div>
+   <div style="margin-right:2vw;
+   color: black;
+   font-size: 1.5rem;
+   text-transform: capitalize;
+   font-family: fantasy;
+   margin-left: 2vw;">{{stockin.from}} </div>
+            
+                
+              </div>
+    
+    <div _ngcontent-eyi-c98="" class="card-body">
+        <form>
+
+        <div _ngcontent-eyi-c98="" class="row">
+
+            <div _ngcontent-eyi-c98="" class="col-sm-15 col-md-5 col-lg-3 mt-2"><label _ngcontent-eyi-c98="" for="">from</label><input _ngcontent-eyi-c98="" type="text" placeholder="Full Name" #content value="{{stockin.from}}" disabled
+                    class="form-control ng-untouched ng-pristine ng-valid" fdprocessedid="lb7nkh"></div>
+
+            <div _ngcontent-eyi-c98="" class="col-sm-15 col-md-5 col-lg-3 mt-2"><label _ngcontent-eyi-c98=""
+                    for="">Received By</label><input _ngcontent-eyi-c98="" type="email" placeholder="last name" #box2 value="{{stockin.recivedBy}}" disabled
+                    class="form-control ng-untouched ng-pristine ng-valid" fdprocessedid="1oizoq"></div>
+            <div _ngcontent-eyi-c98="" class="col-sm-15 col-md-5 col-lg-3 mt-2"><label _ngcontent-eyi-c98=""
+                    for="">Received Date</label><input _ngcontent-eyi-c98="" type="text" placeholder="phone no" value="{{stockin.recivedDate}}" disabled
+                    class="form-control ng-untouched ng-pristine ng-valid" fdprocessedid="qwzx1"></div>
+            <div _ngcontent-eyi-c98="" class="col-sm-15 col-md-5 col-lg-3 mt-2"><label _ngcontent-eyi-c98=""
+                    for="">Total Quantity</label><input _ngcontent-eyi-c98="" type="number" placeholder="city name" value="{{stockin.totalQty}}" disabled
+                    class="form-control ng-untouched ng-pristine ng-valid" fdprocessedid="l9beoe"></div>
+        </div>
+        <div _ngcontent-eyi-c98="" class="row">
+            
+
+            <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-3 col-lg-3 mt-2"><label _ngcontent-eyi-c98=""
+                    for="">Total Product</label><input _ngcontent-eyi-c98="" type="number" placeholder="Enter doctor name" value="{{stockin.totalProduct}}" disabled
+                    class="form-control ng-untouched ng-pristine ng-valid" fdprocessedid="l9beoe"></div>
+            <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-3 col-lg-3 mt-2"><label _ngcontent-eyi-c98=""
+                    for="">Total Price</label><input _ngcontent-eyi-c98="" type="number" placeholder="Enter doctor name" value="{{stockin.totalPrice}}" disabled
+                    class="form-control ng-untouched ng-pristine ng-valid" fdprocessedid="l9beoe"></div>
+            <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-3 col-lg-3 mt-2"><label _ngcontent-eyi-c98=""
+                    for="designation">Order By</label><input _ngcontent-eyi-c98="" type="text" 
+                    class="form-control ng-untouched ng-pristine ng-valid" fdprocessedid="l9beoe" value="{{stockin.orderBy}}" disabled></div>
+
+            <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-3 col-lg-3 mt-2"><label _ngcontent-eyi-c98=""
+                    for="designation">Order Date</label><input _ngcontent-eyi-c98="" type="text" value="{{stockin.recivedDate}}" disabled
+                    class="form-control ng-untouched ng-pristine ng-valid" fdprocessedid="l9beoe"></div>
+        </div>
+    </form>
+    </div>
+    <div _ngcontent-eyi-c98="" class="container-fluid ng-star-inserted">
+        <div _ngcontent-eyi-c98="" class="row">
+            <div _ngcontent-eyi-c98="" class="col-12">
+                <h4>Product List :-</h4>
+            </div>
+        </div>
+    </div><!---->
+
+    <div _ngcontent-eyi-c98=""  style="color: aliceblue;" class="table-responsive card">
+        <table _ngcontent-eyi-c98="" class="table styled-table table-bordered table-sm mb-0">
+            <thead _ngcontent-eyi-c98=""
+                style="background-color: rgb(38, 186, 157); color: rgb(255, 255, 255); font-family: Arial;">
+                <tr _ngcontent-eyi-c98="">
+                    
+                   
+                    <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
+                        <div _ngcontent-eyi-c98="" class="row">
+                            <div _ngcontent-eyi-c98="" class="col-md-12"> Product Id </div>
+                            <div _ngcontent-eyi-c98="" class="col sm-6"><i _ngcontent-eyi-c98=""></i></div>
+                        </div>
+                    </th>
+                    <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
+                        <div _ngcontent-eyi-c98="" class="row">
+                            <div _ngcontent-eyi-c98="" class="col-md-12"> Product Name </div>
+                            <div _ngcontent-eyi-c98="" class="col sm-6"><i _ngcontent-eyi-c98=""></i></div>
+                        </div>
+                    </th>
+                    <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
+                        <div _ngcontent-eyi-c98="" class="row">
+                            <div _ngcontent-eyi-c98="" class="col-md-12">Product Quantity</div>
+                            <div _ngcontent-eyi-c98="" class="col sm-6"><i _ngcontent-eyi-c98=""></i></div>
+                        </div>
+                    </th>
+                    <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
+                        <div _ngcontent-eyi-c98="" class="row">
+                            <div _ngcontent-eyi-c98="" class="col-md-12"> Price </div>
+                            <div _ngcontent-eyi-c98="" class="col sm-6"><i _ngcontent-eyi-c98=""></i></div>
+                        </div>
+                    </th>
+                    <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
+                        <div _ngcontent-eyi-c98="" class="row">
+                            <div _ngcontent-eyi-c98="" class="col-md-12"> Total Price</div>
+                            <div _ngcontent-eyi-c98="" class="col sm-6"><i _ngcontent-eyi-c98=""></i></div>
+                        </div>
+                    </th>
+                   
+                    
+                   
+                </tr>
+            </thead>
+            <tbody _ngcontent-hvr-c93>
+               <tr _ngcontent-hvr-c93="" class="ng-star-inserted" *ngFor="let user of stockdata let i=index "> 
+                    <td _ngcontent-hvr-c93="">{{(user.productId)}}</td>
+                    <td _ngcontent-hvr-c93="">{{(user.productName)}}</td>
+                    <td _ngcontent-hvr-c93="">{{(user.productQty)}}</td>
+                    <td _ngcontent-hvr-c93="">{{(user.price)}}</td>
+                    <td _ngcontent-hvr-c93="">{{(user.totalPrice)}}</td>
+                   
+                  
+                
+                   </tr> 
+            </tbody>
+            
+        </table>
+    </div>
+    
+</div>
+ 

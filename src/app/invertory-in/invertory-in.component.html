@@ -1,92 +1,228 @@
-<!-- 
 
-<div class="card card-user">
-    <div class="card-header"> 
-        <h5 class="card-title">Inventory In Form</h5>    
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="card card-user shadow-lg p-3 mb-5 bg-light bb w-100">
+        <div class="card-header" > 
+          <div class="row">
+            <div class="col">
+            <h2 class="card-title">Inventory In Form</h2>    
+        </div>
+        <div>
+          <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">modal</button> -->
+        </div>
+        <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end mx-3"><button   type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0"  data-toggle="modal" data-target="#exampleModalCenter" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Product Name</button></div>
+
+        <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end "><button  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1"_ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa fa-plus" aria-hidden="true"></i>&nbsp;From</button></div>
+
+        <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end  mx-3"><button  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa fa-plus" aria-hidden="true"></i>&nbsp;Received By</button></div>
+      </div>
     </div>
-
- <div class="card-body" >
-  
-    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
-        <div class="row">
-            <div class="col">
-                <label for="name">from:</label>
-                <input type="text" id="name"  formControlName="from" class="form-control">
+      
+      <div class="card-body" id="form">
+        <!-- <h1> Dynamically Add New Input Fields in Angular </h1> -->
+        <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col">
+                    <label for="name">From:</label>
+                    <!-- <input type="text" id="name"  formControlName="from" class="form-control"> -->
+                    <select id="name"  formControlName="from" class="form-control">
+                      <option value="" selected disabled> --choose From--</option>
+                      <option value="{{logisticsdata.from}}" *ngFor="let logisticsdata of logistics">{{logisticsdata.from}}</option>
+                    </select>
+                    <!-- <div class="col">
+                        <select name="From" class="form-control">
+                            <option >--From--</option>
+                            <option *ngFor="let logi of stockin">
+                                {{logi.from}}
+                            </option>
+                        </select>
+                    </div> -->
+                </div>
+                <div class="col">
+                    <label for="name">Received by:</label>
+                    <!-- <input type="text" id="name"  formControlName="recivedBy" class="form-control"> -->
+                    <select id="name"  formControlName="recivedBy" class="form-control">
+                      <option selected value="" disabled> --choose Received By--</option>
+                      <option value="{{logisticsdata.recivedBy}}" *ngFor="let logisticsdata of Receiver">{{logisticsdata.receiver}}</option>
+                    </select>
+                </div>
             </div>
-            <div class="col">
-                <label for="name">Received by:</label>
-                <input type="text" id="name"  formControlName="recivedBy" class="form-control">
+            <div class="row">
+                <div class="col">
+                   <label for="name">Received date:</label>
+                   <input type="date" id="name" formControlName="recivedDate" class="form-control">
+                </div>
+                <div class="col">
+                   <label for="name">totalQty:</label>
+                   <input type="text" id="name"  formControlName="totalQty" class="form-control">
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col">
-               <label for="name">Received date:</label>
-               <input type="date" id="name" formControlName="recivedDate" class="form-control">
+            <div class="row">
+                <div class="col">
+                   <label for="name">Order By:</label>
+                   <!-- <input type="text" id="name" formControlName="recivedDate" class="form-control"> -->
+                   <select  id="name" formControlName="orderBy" class="form-control">
+                    <option value="" disabled selected>--choose OrderBy--</option>
+                    <option value="Harish">Harish Sir</option>
+                    <option value="Ankit">Ankit Sir</option>
+                  </select>
+                </div>
+                <div class="col">
+                   <label for="name">Order Date:</label>
+                   <input type="date" id="name"  formControlName="orderDate" class="form-control">
+                </div>
             </div>
-            <div class="col">
-               <label for="name">totalQty:</label>
-               <input type="text" id="name"  formControlName="totalQty" class="form-control">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-               <label for="name">totalProduct by:</label>
-               <input type="text" id="name"  formControlName="totalProduct" class="form-control">
-            </div>
-      <div class="col">
-              <label for="name">totalPrice :</label>
-              <input type="text" id="name" formControlName="totalPrice" class="form-control">
+            <div class="row">
+                <div class="col">
+                   <label for="name">totalProduct by:</label>
+                   <input type="text" id="name"  formControlName="totalProduct" class="form-control">
+                </div>
+          <div class="col">
+                  <label for="name">totalPrice :</label>
+                  <input type="text" id="name" formControlName="totalPrice" class="form-control">
+          </div>
+                
+          </div>
+      
+          <br>
+      
+          <table class="table table-bordered" formArrayName="stockInventoryItems">
+      
+           
+            <tr >
+             
+              <td>
+                product Name:
+                  <select  id="" formControlName="productName" class="form-control">
+                    <option value=""  selected disabled>--choose product--</option>
+                    <option value="{{product.productList}}" *ngFor="let product of products">{{product.productList}}</option>
+                  </select>
+              </td>
+              <td>
+                product Qty:
+                  <input type="text" formControlName="productQty" class="form-control">
+              </td>
+              <td>
+                price per item:
+                  <input type="text" formControlName="price" class="form-control">
+              </td>
+              <td colspan="2">
+                total Price:
+                  <input type="text" formControlName="totalPrice" class="form-control">
+              </td>
+             
+            </tr>
+            <div class=" rows" style="display: flex;"> 
+              <div class="co" >
+              <div class="card-title">Add Multiple Item:-</div> 
+              </div>
+            
+              <div style=" margin-top: 15px;" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end"><a _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" routerlink="/dashboard/invertory-in" class="btn btn-outline-info btn-sm ng-star-inserted" ng-reflect-router-link="/dashboard/invertory-in" (click)="addQuantity()"><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Item</a></div>
+          </div>
+      
+            <tr *ngFor="let quantity of quantities().controls; let i=index" [formGroupName]="i">
+             
+              <td>
+                product Name:
+                  <!-- <input type="text" formControlName="productName" class="form-control"> -->
+                  <select name="" id="" formControlName="productName" class="form-control">
+                    <option value="" selected disabled> --choose product--</option>
+                    <option value="{{product.productList}}" *ngFor="let product of products">{{product.productList}}</option>
+                  </select>
+              </td>
+              <td>
+                product Qty:
+                  <input type="text" formControlName="productQty" class="form-control">
+              </td>
+              <td>
+                price per item:
+                  <input type="text" formControlName="price" class="form-control">
+              </td>
+              <td>
+                total Price:
+                  <input type="text" formControlName="totalPrice" class="form-control">
+              </td>
+              <td>
+                <div style=" margin-top: 23px;" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end" (click)="removeQuantity(i)"><a _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf"  class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa-solid fa-trash" aria-hidden="true"></i>&nbsp;Remove</a></div>  
+              </td>
+            </tr>
+          </table>
+          <!-- <button type="submit" class="btn btn-success">Submit</button> -->
+          <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end"><button type="submit" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa  fa-paper-plane" aria-hidden="true"></i>&nbsp;Submit</button></div>
+        </form>
+        <br/>
+        <!-- {{userData | json}} -->
       </div>
-            <div class="col">
-               <label for="name">Approval:</label>
-               <input type="text" id="name" name="isApproved" formControlName="isApproved" class="form-control">
-           </div>
       </div>
+    </div>
+  </div>
 
-      <br>
+   
 
-      <table class="table table-bordered" formArrayName="stockInventoryItems">
-
-        <div class="container rows " style="display: flex;"> 
-            <div class="co" style="    width: 211px;
-            margin-left: 10px;
-            margin-top: 13px;">
-            <div class="card-title">Add Multiple Quantity:</div> 
-            </div>
-            <div class="co">
-            <button type="button"  (click)="addQuantity()" class="btn btn-primary" style=" background-color: blue;
-            width: 116px;
-            margin-top: 4px;">Add More</button>  
-            </div> 
-        </div>
-
-        <tr *ngFor="let quantity of quantities().controls; let i=index" [formGroupName]="i">
-         
-          <td>
-            product Name:
-              <input type="text" formControlName="productName" class="form-control">
-          </td>
-          <td>
-            product Qty:
-              <input type="text" formControlName="productQty" class="form-control">
-          </td>
-          <td>
-            price per item:
-              <input type="text" formControlName="price" class="form-control">
-          </td>
-          <td>
-            total Price:
-              <input type="text" formControlName="totalPrice" class="form-control">
-          </td>
-          <td>
-              <button (click)="removeQuantity(i)" style="background-color: red;"
-               class="btn btn-danger">Remove</button>
-          </td>
-        </tr>
-      </table>
-      <button type="submit" class="btn btn-success">Submit</button>
-    </form>
-    <br/>
+</div>
+  <!-- modal start-->
+<!-- Modal -->
+<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end"><button type="button" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted" data-bs-dismiss="modal" ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa-solid fa-xmark" aria-hidden="true"></i>&nbsp;</button></div>
+      </div>
+      <div class="modal-body">
+       <div>
+        <input class="modal-input" type="text" placeholder="Entee Product Name">
+       </div>
+      </div>
+      <div class="modal-footer">
+        <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end"><button type="button" data-bs-dismiss="modal" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa fa-window-close" aria-hidden="true"></i>&nbsp;Close</button></div>
+        <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end"><button type="submit" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa  fa-save" aria-hidden="true"></i>&nbsp;Save</button></div>     
+      </div>
+    </div>
   </div>
 </div>
- -->
+
+<div class="modal fade " id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end"><button type="button" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted" data-bs-dismiss="modal" ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa-solid fa-xmark" aria-hidden="true"></i>&nbsp;</button></div>
+      </div>
+      <div class="modal-body">
+       <div>
+        <input class="modal-input" type="text" placeholder="Entee Product Name">
+       </div>
+      </div>
+      <div class="modal-footer">
+        <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end"><button type="button" data-bs-dismiss="modal" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa fa-window-close" aria-hidden="true"></i>&nbsp;Close</button></div>
+        <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end"><button type="submit" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa  fa-save" aria-hidden="true"></i>&nbsp;Save</button></div>     
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade " id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end"><button type="button" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted" data-bs-dismiss="modal" ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa-solid fa-xmark" aria-hidden="true"></i>&nbsp;</button></div>
+      </div>
+      <div class="modal-body">
+       <div>
+        <input class="modal-input" type="text" placeholder="Entee Product Name">
+       </div>
+      </div>
+      <div class="modal-footer">
+        <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end"><button type="button" data-bs-dismiss="modal" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa fa-window-close" aria-hidden="true"></i>&nbsp;Close</button></div>
+        <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end"><button type="submit" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa  fa-save" aria-hidden="true"></i>&nbsp;Save</button></div>     
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- modal end -->
+
+

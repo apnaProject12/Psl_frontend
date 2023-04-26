@@ -9,6 +9,7 @@ export class HeaderComponent {
   @Output() sideNavToggled =new EventEmitter<boolean>
   menustatus:boolean=false;
   sidenavtoggle(){
+    localStorage.setItem('toogle',String(this.menustatus))
     this.menustatus=!this.menustatus;
     this.sideNavToggled.emit(this.menustatus);
   }

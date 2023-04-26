@@ -15,12 +15,12 @@ app-sidenav{
  .display-Area{
   position: absolute;
   left: 60px;
-  width: calc(100%-60px);
+  width: calc(100% - 60px);
 }
  .display-Area-shrink{
   position: absolute;
   left: 250px;
-  width: calc(100%-250px);
+  width: calc(100% - 250px);
 }
 .app-side-nav-open{
   width: 250px;

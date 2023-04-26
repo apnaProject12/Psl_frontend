@@ -26,7 +26,9 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import{ HttpClientModule}from '@angular/common/http';
 import {MatTooltipModule} from '@angular/material/tooltip';
-
+// import { FormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalModule } from 'ngx-bootstrap/modal';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +59,10 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatSidenavModule,
     MatToolbarModule,
     HttpClientModule,
-    MatTooltipModule
+    MatTooltipModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ModalModule
     
   ],
   providers: [],

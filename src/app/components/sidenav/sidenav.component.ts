@@ -28,7 +28,7 @@ list=[
   number: '3',
   link:'invertory-in',
   name:'Add-invertory',
-  icon:'fa-solid fa-registered',
+  icon:'fa-solid fa-bank',
   tooltip:"Add-invertory"
   },
   {
@@ -39,6 +39,14 @@ list=[
   icon:'fa-solid fa-circle-info',
   tooltip:"about"
   },
+  // {
+  // number: '54',
+  // name:'product-list',
+  // link:'product-list',
+
+  // icon:'fa-solid fa-list',
+  // tooltip:"product-list"
+  // },
 
 ]
 
