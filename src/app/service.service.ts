@@ -35,4 +35,7 @@ export class ServiceService {
   receiverfindAll(){
     return this.router.get(`/StockInInventory/receiver/findAll`)
   }
+  approved(id:any){
+    return this.router.get(`/StockInInventory/getProduct/approval?id=${id}&approval=true`)
+  }
 }

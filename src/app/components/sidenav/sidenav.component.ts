@@ -20,24 +20,24 @@ list=[
   {
   number: '2',
   link:'list-item',
-  name:'item-list',
-  icon:'fa-solid fa-list',
-  tooltip:"item-list"
+  name:'Inventory-In',
+  icon:'fa-solid fa-warehouse',
+  tooltip:"Inventory-In"
   },
   {
   number: '3',
-  link:'invertory-in',
-  name:'Add-invertory',
-  icon:'fa-solid fa-bank',
-  tooltip:"Add-invertory"
+  link:'Invertory-out',
+  name:'Invertory-out',
+  icon:'fa-solid fa-truck-moving',
+  tooltip:"Invertory-out"
   },
   {
   number: '4',
-  name:'about',
-  link:'about',
+  name:'Invertory',
+  link:'Invertory',
 
-  icon:'fa-solid fa-circle-info',
-  tooltip:"about"
+  icon:'fa-solid fa-bank',
+  tooltip:"Invertory"
   },
   // {
   // number: '54',

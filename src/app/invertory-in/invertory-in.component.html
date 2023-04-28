@@ -9,13 +9,9 @@
             <h2 class="card-title">Inventory In Form</h2>    
         </div>
         <div>
-          <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">modal</button> -->
         </div>
-        <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end mx-3"><button   type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0"  data-toggle="modal" data-target="#exampleModalCenter" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Product Name</button></div>
 
-        <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end "><button  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1"_ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa fa-plus" aria-hidden="true"></i>&nbsp;From</button></div>
-
-        <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end  mx-3"><button  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa fa-plus" aria-hidden="true"></i>&nbsp;Received By</button></div>
+        <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end  mx-3"><button  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Item Name</button></div>
       </div>
     </div>
       
@@ -24,95 +20,69 @@
         <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class="col">
-                    <label for="name">From:</label>
-                    <!-- <input type="text" id="name"  formControlName="from" class="form-control"> -->
-                    <select id="name"  formControlName="from" class="form-control">
+                    <label for="name"><small class="req">*</small>From:</label>
+                    <select class="selectpicker form-control" data-live-search="true" id="name"  formControlName="from" >
                       <option value="" selected disabled> --choose From--</option>
-                      <option value="{{logisticsdata.from}}" *ngFor="let logisticsdata of logistics">{{logisticsdata.from}}</option>
+                      <option value="{{logisticsdata.from}}" *ngFor="let logisticsdata of logistics">{{logisticsdata.from}}  </option>
                     </select>
-                    <!-- <div class="col">
-                        <select name="From" class="form-control">
-                            <option >--From--</option>
-                            <option *ngFor="let logi of stockin">
-                                {{logi.from}}
-                            </option>
-                        </select>
-                    </div> -->
+                    <div>
+                      <small class="input" style="color: red;" *ngIf="From.errors?.['required'] && (From.touched || From.dirty)">From field is required</small>
+                    </div>
+
                 </div>
                 <div class="col">
-                    <label for="name">Received by:</label>
-                    <!-- <input type="text" id="name"  formControlName="recivedBy" class="form-control"> -->
-                    <select id="name"  formControlName="recivedBy" class="form-control">
+                    <label for="name"><small class="req">*</small>Received by:</label>
+                    <select id="name"  formControlName="recivedBy" class="form-control" required>
                       <option selected value="" disabled> --choose Received By--</option>
-                      <option value="{{logisticsdata.recivedBy}}" *ngFor="let logisticsdata of Receiver">{{logisticsdata.receiver}}</option>
+                      <option value="{{logisticsdata.receiver}}" *ngFor="let logisticsdata of Receiver">{{logisticsdata.receiver}}</option>
                     </select>
+                    <div>
+                      <small class="input" style="color: red;" *ngIf="RecivedBy.errors?.['required'] && (RecivedBy.touched || RecivedBy.dirty)">Received by field is required</small>
+                    </div>
                 </div>
+                <div class="col">
+                  <label for="name"><small class="req">*</small>Received date:</label>
+                  <input type="date" id="name" formControlName="recivedDate" class="form-control" required>
+                  <div>
+                    <small class="input" style="color: red;" *ngIf="RecivedDate.errors?.['required'] && (RecivedDate.touched || RecivedDate.dirty)">Receiving Date is required</small>
+                  </div>
+               </div>
+              
             </div>
             <div class="row">
+               
                 <div class="col">
-                   <label for="name">Received date:</label>
-                   <input type="date" id="name" formControlName="recivedDate" class="form-control">
+                   <label for="name"><small class="req">*</small>total Quantity:</label>
+                   <input type="number" id="name"  formControlName="totalQty" class="form-control" required>
+                  <div>
+                    <small class="input" style="color: red;" *ngIf="TotalQty.errors?.['required'] && (TotalQty.touched || TotalQty.dirty)">Total Quantity required is Required</small>
+                  </div>
+                  <div>
+                    <small class="input" style="color: red;" *ngIf="TotalQty.errors?.['min'] && (TotalQty.touched || TotalQty.dirty)">Total Quantity Should be greater than</small>
+                  </div>
                 </div>
                 <div class="col">
-                   <label for="name">totalQty:</label>
-                   <input type="text" id="name"  formControlName="totalQty" class="form-control">
-                </div>
+                  <label for="name"><small class="req">*</small>total Product:</label>
+                  <input type="number" id="name"  formControlName="totalProduct" class="form-control">
+                  <div>
+                    <small class="input" style="color: red;" *ngIf="TotalProduct.errors?.['required'] && (TotalProduct.touched || TotalProduct.dirty)">Total Product required is Required</small>
+                  </div>
+                  <div>
+                    <small class="input" style="color: red;" *ngIf="TotalProduct.errors?.['min'] && (TotalProduct.touched || TotalProduct.dirty)">Total product should be greater than 0 </small>
+                  </div>
+               </div>
+         <div class="col">
+                 <label for="name"><small class="req">*</small>totalPrice :</label>
+                 <input type="number" id="name" formControlName="totalPrice" class="form-control"> <div>
+                  <small class="input" style="color: red;" *ngIf="TotalPrice.errors?.['required'] && (TotalPrice.touched || TotalPrice.dirty)">Total Price required is Required</small>
+                </div> 
+         </div>
+               
             </div>
-            <div class="row">
-                <div class="col">
-                   <label for="name">Order By:</label>
-                   <!-- <input type="text" id="name" formControlName="recivedDate" class="form-control"> -->
-                   <select  id="name" formControlName="orderBy" class="form-control">
-                    <option value="" disabled selected>--choose OrderBy--</option>
-                    <option value="Harish">Harish Sir</option>
-                    <option value="Ankit">Ankit Sir</option>
-                  </select>
-                </div>
-                <div class="col">
-                   <label for="name">Order Date:</label>
-                   <input type="date" id="name"  formControlName="orderDate" class="form-control">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                   <label for="name">totalProduct by:</label>
-                   <input type="text" id="name"  formControlName="totalProduct" class="form-control">
-                </div>
-          <div class="col">
-                  <label for="name">totalPrice :</label>
-                  <input type="text" id="name" formControlName="totalPrice" class="form-control">
-          </div>
-                
-          </div>
-      
+           
           <br>
       
           <table class="table table-bordered" formArrayName="stockInventoryItems">
-      
-           
-            <tr >
-             
-              <td>
-                product Name:
-                  <select  id="" formControlName="productName" class="form-control">
-                    <option value=""  selected disabled>--choose product--</option>
-                    <option value="{{product.productList}}" *ngFor="let product of products">{{product.productList}}</option>
-                  </select>
-              </td>
-              <td>
-                product Qty:
-                  <input type="text" formControlName="productQty" class="form-control">
-              </td>
-              <td>
-                price per item:
-                  <input type="text" formControlName="price" class="form-control">
-              </td>
-              <td colspan="2">
-                total Price:
-                  <input type="text" formControlName="totalPrice" class="form-control">
-              </td>
-             
-            </tr>
             <div class=" rows" style="display: flex;"> 
               <div class="co" >
               <div class="card-title">Add Multiple Item:-</div> 
@@ -130,18 +100,24 @@
                     <option value="" selected disabled> --choose product--</option>
                     <option value="{{product.productList}}" *ngFor="let product of products">{{product.productList}}</option>
                   </select>
+
               </td>
               <td>
-                product Qty:
-                  <input type="text" formControlName="productQty" class="form-control">
+                Total Product:
+                  <input type="number" formControlName="productQty" class="form-control">
+                  
               </td>
               <td>
-                price per item:
-                  <input type="text" formControlName="price" class="form-control">
+                Price Per Item:
+                  <input type="number" formControlName="price" class="form-control">
+
+                 
+
               </td>
               <td>
-                total Price:
-                  <input type="text" formControlName="totalPrice" class="form-control">
+                Total Price:
+                  <input type="number" formControlName="totalPrice" 
+                  class="form-control" >
               </td>
               <td>
                 <div style=" margin-top: 23px;" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end" (click)="removeQuantity(i)"><a _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf"  class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa-solid fa-trash" aria-hidden="true"></i>&nbsp;Remove</a></div>  
@@ -149,7 +125,13 @@
             </tr>
           </table>
           <!-- <button type="submit" class="btn btn-success">Submit</button> -->
-          <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end"><button type="submit" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa  fa-paper-plane" aria-hidden="true"></i>&nbsp;Submit</button></div>
+          <div style="display: flex;">
+          <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end"><button type="{{value}}" [disabled]="productForm.invalid" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa  fa-paper-plane" aria-hidden="true"></i>&nbsp;Submit</button></div>
+
+          <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end mx-3"><button type="reset" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa fa-refresh" aria-hidden="true"></i>&nbsp;Reset</button></div>
+
+          <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end"><button type="button" routerLink="/dashboard/list-item" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back</button></div>
+        </div>
         </form>
         <br/>
         <!-- {{userData | json}} -->
@@ -163,7 +145,7 @@
 </div>
   <!-- modal start-->
 <!-- Modal -->
-<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -201,7 +183,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 
 <div class="modal fade " id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -14,14 +14,13 @@
     border-radius: 30px;
 }
 input{
-    margin-bottom: 17px;
+    margin-bottom: 3px;
 }
-select{
-    margin-bottom: 17px;
-}
+
 label{
     font-size: 1.02rem;
     text-transform: capitalize;
+    margin-top: 13px;
 }
 td{
     height: 15px;
@@ -47,4 +46,8 @@ td{
     border-radius: 13px;
     box-shadow: 1px 2px #66adb6ab;
     text-align: margin-2;
+}
+.req{
+    color: red;
+    font-size: 15px;
 }

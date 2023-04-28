@@ -29,6 +29,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 // import { FormsModule }   from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { InvertoryOutComponent } from './components/invertory-out/invertory-out.component';
+import { InvertoryComponent } from './components/invertory/invertory.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +43,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     ProductListComponent,
     InvertoryInComponent,
     AboutComponent,
-    HomeComponent
+    HomeComponent,
+    InvertoryOutComponent,
+    InvertoryComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +66,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     MatTooltipModule,
     FormsModule,
     ReactiveFormsModule,
-    ModalModule
+    ModalModule,
+    MatSnackBarModule
     
   ],
   providers: [],

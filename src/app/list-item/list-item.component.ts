@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ServiceService } from '../service.service';
 import { Router } from '@angular/router';
+import{MatSnackBar,MatSnackBarHorizontalPosition,MatSnackBarVerticalPosition,MatSnackBarRef}from '@angular/material/snack-bar'
 
 @Component({
   selector: 'app-list-item',
@@ -8,8 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./list-item.component.css']
 })
 export class ListItemComponent  {
-  constructor(private service:ServiceService,private router :Router){}
-  pageSize:number=5;
+  constructor(private service:ServiceService,private router :Router,
+    private snackBar:MatSnackBar){}
+  pageSize:number=10;
   pageNumber:number=0;
   totalElement:any;
   totalpage:any
@@ -18,17 +20,62 @@ export class ListItemComponent  {
   sordDir:string='asc';
   stockin:any
   condition:string='true';
+
+  logistics:any;
+  Receiver:any;
+
+  horizontalPosition: MatSnackBarHorizontalPosition = 'right';
+  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
+  durationInSeconds = 5;
+  message:string="";
+  role_Admin=false;
+ 
+  notification(){
+   this.snackBar.open(this.message,'close', {
+     horizontalPosition: this.horizontalPosition,
+     verticalPosition: this.verticalPosition,
+     duration: this.durationInSeconds * 1000,
+   });
+  }
+
+approval_id:any
+  apporovedHere(id:any){
+this.approval_id=id;
+  }
+  approval(){
+    this.service.approved(this.approval_id).subscribe((data:any)=>{
+this.message=data.message;
+    })
+    this.ngOnInit();
+    this.notification();
+  }
+
   
   ngOnInit(): void {
-   
-    
-    this.service.getAllData(this.pageNumber,this.pageSize,this.fieldname,this.sordDir).subscribe((data:any)=>{
-      this.stockin=data.content;
-      this.totalpage=data.totalPages;
-      this.totalElement=data.totalElements;
+    if (localStorage.getItem("role")==='admin') {
+      this.role_Admin=true;
+    } else {
+      this.role_Admin=false;
+    }
+    this.service.receiverfindAll().subscribe((data:any)=>{
+      this.Receiver=data;
     })
+    this.service.logisticsdata().subscribe((data1:any)=>{
+      this.logistics=data1;
+})
+   this.getAllData();
+    
+    
   
   }
+ getAllData(){
+  this.service.getAllData(this.pageNumber,this.pageSize,this.fieldname,this.sordDir).subscribe((data:any)=>{
+    this.stockin=data.content;
+    this.totalpage=data.totalPages;
+    this.totalElement=data.totalElements;
+  })
+ }
+
   pagination(value:any){
   console.log("hiii");
   
@@ -116,12 +163,17 @@ findproduct(id:any){
     this.ngOnInit();
   }
   }
+  id:any;
+  delete(data:any){
+this.id=data;
+  }
   
   value:any
-  deleteData1(id:any){
-this.service.deleteData(id).subscribe((data:any)=>{
+  deleteData1(){
+this.service.deleteData(this.id).subscribe((data:any)=>{
   this.value=data;
   this.ngOnInit();
+  this.notification();
 })
   }
   

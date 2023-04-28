@@ -5,7 +5,7 @@ app-sidenav{
   /* height: calc(100vh-4rem); */
   height: 100vh;
   box-shadow: 0px 0px 10px black;
-  background-color: black;
+  background: #243e31d4;
   border-top: 1px solid white;
   overflow: hidden;
   white-space: nowrap;

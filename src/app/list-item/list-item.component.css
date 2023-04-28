@@ -41,4 +41,7 @@ label{
     font-size: 1.02rem;
     color: rgb(13, 13, 13);
 }
+th{
+    text-transform: capitalize;
+}
 

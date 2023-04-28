@@ -9,6 +9,8 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { InvertoryInComponent } from './invertory-in/invertory-in.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
+import { InvertoryOutComponent } from './components/invertory-out/invertory-out.component';
+import { InvertoryComponent } from './components/invertory/invertory.component';
 
 const routes: Routes = [
   {
@@ -38,6 +40,11 @@ const routes: Routes = [
   },
   {
     path:'product-list/:id',component: ProductListComponent
+  },{
+    path:'Invertory-out',component:InvertoryOutComponent
+  }
+  ,{
+    path:'Invertory',component:InvertoryComponent
   }
     ]
   }

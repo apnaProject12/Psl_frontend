@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
 // import {NgModel, Validators} from '@angular/forms';
-import {FormControl, FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import {FormControl, FormArray, FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { ServiceService } from '../service.service';
 import { Router } from '@angular/router';
-
+import{MatSnackBar,MatSnackBarHorizontalPosition,MatSnackBarVerticalPosition,MatSnackBarRef}from '@angular/material/snack-bar'
 
 @Component({
   selector: 'app-invertory-in',
@@ -13,31 +13,91 @@ import { Router } from '@angular/router';
 export class InvertoryInComponent {
   @Input() sideNavStatus:boolean=false;
   name = 'Angular';
+  value:string="submit"
   productForm: FormGroup;
+  
+  from = new FormControl('', [
+    Validators.required,
+  ]);
+  recivedBy = new FormControl('', [
+    Validators.required,
+  ]);
+  recivedDate = new FormControl('', [
+    Validators.required,
+  ]);
+  totalQty = new FormControl('', [
+    Validators.required,
+  ]);
+  totalProduct = new FormControl('', [
+    Validators.required,Validators.min(1)
+  ]);
+  totalPrice = new FormControl('', [
+    Validators.required,Validators.min(1)
+  ]);
+  
+
+
+  get From(): FormControl{
+    return this.from as FormControl;
+  }
+  get RecivedBy(): FormControl{
+    return this.recivedBy as FormControl;
+  }
+  get RecivedDate(): FormControl{
+    return this.recivedDate as FormControl;
+  }
+  get TotalQty(): FormControl{
+    return this.totalQty as FormControl;
+  }
+  get TotalProduct(): FormControl{
+    return this.totalProduct as FormControl;
+  }
+  get TotalPrice(): FormControl{
+    return this.totalPrice as FormControl;
+  }
+
+
+  
+
+
 
   constructor(private fb:FormBuilder,
     private stockService:ServiceService,
-    private router:Router ) 
+    private router:Router,
+    private snackBar:MatSnackBar ) 
     
     {
     this.productForm = this.fb.group({
-      from:'',
-      recivedBy:'',
-      recivedDate:'',
-      totalQty:'',
-      totalProduct:'',
-      totalPrice:'',
+      from:this.from,
+      recivedBy:this.recivedBy,
+      recivedDate:this.recivedDate,
+      totalQty:this.totalQty,
+      totalProduct:this.totalProduct,
+      totalPrice:this.totalPrice,
       isApproved:false,
-      orderBy:'',
-      orderDate:'',
       stockInventoryItems: this.fb.array([]) ,
     });
+
+  
     
   }
   products:any;
   logistics:any;
   Receiver:any;
+
+  horizontalPosition: MatSnackBarHorizontalPosition = 'right';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+  durationInSeconds = 5;
+ 
+  notification(){
+   this.snackBar.open("data inserted successfully",'close', {
+     horizontalPosition: this.horizontalPosition,
+     verticalPosition: this.verticalPosition,
+     duration: this.durationInSeconds * 1000,
+   });
+  }
   ngOnInit(): void {
+    // this.addQuantity();
     this.stockService.logisticsdata().subscribe((data1:any)=>{
           this.logistics=data1;
     })
@@ -65,15 +125,22 @@ export class InvertoryInComponent {
   quantities() : FormArray {
     return this.productForm.get("stockInventoryItems") as FormArray
   }
+  
   newQuantity(): FormGroup {
     return this.fb.group({
-      productName: '',
-      productQty: '',
-      price: '',
+      productName:'',
+      productQty:'',
+      price:'',
       totalPrice: '',
     })
   }
+  name2:string="nitish";
+  product:Number=3;
+
+  
+ 
   addQuantity() {
+    
     console.log(this.logistics);
     console.log(this.products);
     
@@ -85,13 +152,17 @@ export class InvertoryInComponent {
   }
      userData:any;
   onSubmit() {
+    this.value="submit"
     console.log(this.productForm.value);
     this.userData=this.productForm.value;
     this.stockService.postAllData(this.productForm.value).subscribe((data:any)=>{
       this.userData=data;
     })
-     this.router.navigate(['inventoryin']);
-   
+    if(this.userData !=null){
+      this.notification();
+    }
+    //  this.router.navigate(['inventoryin']);
+   this.value="reset"
   }
 
   getAllStockes(){
