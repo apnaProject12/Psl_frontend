@@ -142,15 +142,24 @@ export class InvertoryInComponent {
   product:Number=3;
   message:any
 
-  
+  productNumber=0
+  productvalue(id:any){
+this.productNumber=id;
+
+  }
  
   addQuantity() {
+    let Array=  this.productForm.get("stockInventoryItems") as FormArray;   
+    let  Arraylength=Array.controls.length;
+     if (Arraylength<this.productNumber) {
+      
+       this.quantities().push(this.newQuantity());
+     } else {
+      this.message="product data enough !!";
+      this.notification();
+      
+     }
     
-    console.log(this.logistics);
-    console.log(this.products);
-    
-    
-    this.quantities().push(this.newQuantity());
   }
   removeQuantity(i:number) {
     this.quantities().removeAt(i);
@@ -158,34 +167,40 @@ export class InvertoryInComponent {
      userData:any;
   onSubmit() {
 
-  let Array=  this.productForm.get("stockInventoryItems") as FormArray;
-  this.arrayLength=Array.controls.length;
-  console.log(this.arrayLength);
-  
-
+  let Array=  this.productForm.get("stockInventoryItems") as FormArray;   
+let  Arraylength=Array.controls.length;
+  console.log(` Array length :${Arraylength}`);
   let product= this.productForm.value.totalProduct;
-  console.log(product);
+  console.log(` product :${product}`);
   
     
     this.value="submit"
     console.log(this.productForm.value);
     this.userData=this.productForm.value;
-    if (product==this.arrayLength) {
+    if (product==Arraylength) {
 
       this.stockService.postAllData(this.productForm.value).subscribe((data:any)=>{
         this.userData=data;
       })
-      if(this.userData !=null){
+      if(this.userData.id !=null){
         this.message="data inserted successfully"
         this.notification();
+        this.value="reset"
+      }
+      else{
+        this.message="something went wrong";
+        this.notification()
+
       }
       
-    } else {
-      this.message="Add product";
+    } else if(product>Arraylength){
+      this.message="Please add product !!";
       this.notification();
       
+    }else{
+      this.message="please remove product !!";
+      this.notification();
     }
-   this.value="reset"
   }
 
   getAllStockes(){

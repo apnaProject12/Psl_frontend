@@ -44,14 +44,20 @@ a{
 .nav-list-open .nav-list-item:hover{
     background-color: rgba(250, 235, 215, 0.564);
     border-radius: 10px;
+    
+}
+.nav-list-open matTooltip{
+    display: none;
+}
+.icon-active .active{
+background-color: blue;
 }
 
-.nav-list-open .active{
+
+.active{
     background-color: rgba(250, 235, 215, 0.564);
     width: 230px;
     border-radius: 10px;
 }
-.tooltip{
-    color: red;
-}
+
 

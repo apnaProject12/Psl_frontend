@@ -33,7 +33,7 @@ export class ServiceService {
     return this.router.post(`/StockInInventory/add/inventory`,data)
   }
   deleteData(id:any){
-    return this.router.delete(`http://localhost:1019/StockInInventory/${id}`)
+    return this.router.delete(`/StockInInventory/${id}`)
   }
   receiverfindAll(){
     return this.router.get(`/StockInInventory/receiver/findAll`)

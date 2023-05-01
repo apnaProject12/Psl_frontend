@@ -63,7 +63,7 @@
                 </div>
                 <div class="col">
                   <label for="name"><small class="req">*</small>total Product:</label>
-                  <input type="number" id="name"  formControlName="totalProduct" class="form-control">
+                  <input type="number" id="name"  formControlName="totalProduct" #box (keyup)="productvalue(box.value)" class="form-control">
                   <div>
                     <small class="input" style="color: red;" *ngIf="TotalProduct.errors?.['required'] && (TotalProduct.touched || TotalProduct.dirty)">Total Product required is Required</small>
                   </div>
