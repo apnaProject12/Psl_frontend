@@ -21,7 +21,7 @@ export class ServiceService {
     return this.router.get(`/StockInInventory/${id}`);
   }
   product(){
-    return this.router.get(`/StockInInventory/product-list/gell`)
+    return this.router.get(`/StockInInventory/findAllInventory`)
   }
   logisticsdata(){
     return this.router.get(`/StockInInventory/logistics/gell`)

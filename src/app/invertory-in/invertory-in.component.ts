@@ -90,7 +90,7 @@ export class InvertoryInComponent {
   durationInSeconds = 5;
  
   notification(){
-   this.snackBar.open("data inserted successfully",'close', {
+   this.snackBar.open(this.message,'close', {
      horizontalPosition: this.horizontalPosition,
      verticalPosition: this.verticalPosition,
      duration: this.durationInSeconds * 1000,
@@ -121,9 +121,14 @@ export class InvertoryInComponent {
       
     // }
     // throw new Error('Method not implemented.');
+  
   }
+  arrayLength:Number=0;
   quantities() : FormArray {
-    return this.productForm.get("stockInventoryItems") as FormArray
+    const myFormArray= this.productForm.get("stockInventoryItems") as FormArray
+    this.arrayLength=myFormArray.controls.length;
+    return myFormArray;
+
   }
   
   newQuantity(): FormGroup {
@@ -136,6 +141,7 @@ export class InvertoryInComponent {
   }
   name2:string="nitish";
   product:Number=3;
+  message:any
 
   
  
@@ -152,16 +158,28 @@ export class InvertoryInComponent {
   }
      userData:any;
   onSubmit() {
+  let product=  this.productForm.value.totalProduct;
+  console.log(product);
+  
+    
     this.value="submit"
     console.log(this.productForm.value);
     this.userData=this.productForm.value;
-    this.stockService.postAllData(this.productForm.value).subscribe((data:any)=>{
-      this.userData=data;
-    })
-    if(this.userData !=null){
+    if (product==this.arrayLength) {
+
+      this.stockService.postAllData(this.productForm.value).subscribe((data:any)=>{
+        this.userData=data;
+      })
+      if(this.userData !=null){
+        this.message="data inserted successfully"
+        this.notification();
+      }
+      
+    } else {
+      this.message="Add product";
       this.notification();
+      
     }
-    //  this.router.navigate(['inventoryin']);
    this.value="reset"
   }
 
