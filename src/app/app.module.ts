@@ -31,6 +31,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { InvertoryOutComponent } from './components/invertory-out/invertory-out.component';
 import { InvertoryComponent } from './components/invertory/invertory.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +70,8 @@ import { InvertoryComponent } from './components/invertory/invertory.component';
     FormsModule,
     ReactiveFormsModule,
     ModalModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    NgSelectModule
     
   ],
   providers: [],

@@ -21,10 +21,10 @@
             <div class="row">
                 <div class="col">
                     <label for="name"><small class="req">*</small>From:</label>
-                    <select class="selectpicker form-control" data-live-search="true" id="name"  formControlName="from" >
-                      <option value="" selected disabled> --choose From--</option>
-                      <option value="{{logisticsdata.from}}" *ngFor="let logisticsdata of logistics">{{logisticsdata.from}}  </option>
-                    </select>
+                    <ng-select class="selectpicker " data-live-search="true" id="name"  formControlName="from" >
+                      
+                      <ng-option value="{{logisticsdata.from}}" *ngFor="let logisticsdata of logistics">{{logisticsdata.from}}  </ng-option>
+                    </ng-select>
                     <div>
                       <small class="input" style="color: red;" *ngIf="From.errors?.['required'] && (From.touched || From.dirty)">From field is required</small>
                     </div>
@@ -32,10 +32,10 @@
                 </div>
                 <div class="col">
                     <label for="name"><small class="req">*</small>Received by:</label>
-                    <select id="name"  formControlName="recivedBy" class="form-control" required>
-                      <option selected value="" disabled> --choose Received By--</option>
-                      <option value="{{logisticsdata.receiver}}" *ngFor="let logisticsdata of Receiver">{{logisticsdata.receiver}}</option>
-                    </select>
+                    <ng-select id="name"  formControlName="recivedBy"  required>
+                      
+                      <ng-option value="{{logisticsdata.receiver}}" *ngFor="let logisticsdata of Receiver">{{logisticsdata.receiver}}</ng-option>
+                    </ng-select>
                     <div>
                       <small class="input" style="color: red;" *ngIf="RecivedBy.errors?.['required'] && (RecivedBy.touched || RecivedBy.dirty)">Received by field is required</small>
                     </div>
@@ -96,10 +96,10 @@
               <td>
                 product Name:
                   <!-- <input type="text" formControlName="productName" class="form-control"> -->
-                  <select name="" id="" formControlName="productName" class="form-control">
-                    <option value="" selected disabled> --choose product--</option>
-                    <option value="{{product.productName}}" *ngFor="let product of products">{{product.productName}}</option>
-                  </select>
+                  <ng-select name="" id="" formControlName="productName" >
+                    
+                    <ng-option value="{{product.productName}}" *ngFor="let product of products">{{product.productName}}</ng-option>
+                  </ng-select>
 
               </td>
               <td>
