@@ -125,9 +125,8 @@ export class InvertoryInComponent {
   }
   arrayLength:Number=0;
   quantities() : FormArray {
-    const myFormArray= this.productForm.get("stockInventoryItems") as FormArray
-    this.arrayLength=myFormArray.controls.length;
-    return myFormArray;
+  return  this.productForm.get("stockInventoryItems") as FormArray
+    
 
   }
   
@@ -158,7 +157,13 @@ export class InvertoryInComponent {
   }
      userData:any;
   onSubmit() {
-  let product=  this.productForm.value.totalProduct;
+
+  let Array=  this.productForm.get("stockInventoryItems") as FormArray;
+  this.arrayLength=Array.controls.length;
+  console.log(this.arrayLength);
+  
+
+  let product= this.productForm.value.totalProduct;
   console.log(product);
   
     

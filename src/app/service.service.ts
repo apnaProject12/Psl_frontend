@@ -12,6 +12,8 @@ export class ServiceService {
   constructor(private router:HttpClient) { }
 
   getAllData(pageNo:any,pageSize:any,field:any,sordDir:any){
+    console.log("NITISH");
+    
    return this.router.get(`/StockInInventory/inventory/item?pageNo=${pageNo}&pageSize=${pageSize}&field=${field}&sortDir=${sordDir}`);
   }
   postdata(data:any){
@@ -22,12 +24,13 @@ export class ServiceService {
   }
   product(){
     return this.router.get(`/StockInInventory/findAllInventory`)
+   
   }
   logisticsdata(){
     return this.router.get(`/StockInInventory/logistics/gell`)
   }
   postAllData(data:any){
-    return this.router.post(`http://localhost:1019/StockInInventory/add/inventory`,data)
+    return this.router.post(`/StockInInventory/add/inventory`,data)
   }
   deleteData(id:any){
     return this.router.delete(`http://localhost:1019/StockInInventory/${id}`)
