@@ -1,107 +1,3 @@
-<!-- <div class="container-fluid m-1 mt-2">
-  <div class="row">
-    <div class="col-12">
-      <div _ngcontent-eyi-c98="" class="card w-100">
-        <div _ngcontent-eyi-c98="" class="card-header">
-          <div _ngcontent-eyi-c98="" class="row">
-            <div _ngcontent-eyi-c98="" class="col-10">
-              <div class="col-4">
-                <input
-                  type="search"
-                  class="search"
-                  autocomplete="off"
-                  #box1
-                  autocompleted
-                  style="text-align: center"
-                />
-                <mat-icon class="search-icon">search</mat-icon>
-              </div>
-            </div>
-            <div _ngcontent-eyi-c98="" class="text-end">
-              <a
-                _ngcontent-eyi-c98=""
-                class="btn btn-outline-info btn-sm ng-star-inserted"
-                tabindex="0"
-                fdprocessedid="irqpcf"
-                ><i _ngcontent-eyi-c98="" class="fa fa-plus"></i>&nbsp;Add
-                Product</a
-              >
-            </div>
-
-            <div _ngcontent-eyi-c98="" class="card-body"></div>
-
-            <div
-              _ngcontent-eyi-c98=""
-              style="color: rgb(14, 14, 14)"
-              class="table-responsive card"
-            >
-              <table
-                _ngcontent-eyi-c98=""
-                class="table styled-table table-bordered table-sm mb-0"
-              >
-                <thead
-                  _ngcontent-eyi-c98=""
-                  style="
-                    background-color: rgb(38, 186, 157);
-                    color: rgb(255, 255, 255);
-                    font-family: Arial;
-                  "
-                >
-                  <tr _ngcontent-eyi-c98="">
-                    <th _ngcontent-eyi-c98="" scope="col">S.No</th>
-                    <th
-                      _ngcontent-eyi-c98=""
-                      style="width: 106px"
-                      scope="col"
-                      class="ng-star-inserted"
-                    >
-                      <div _ngcontent-eyi-c98="" class="row">
-                        <div _ngcontent-eyi-c98="" class="col-md-12">
-                          Product name
-                        </div>
-                        <div _ngcontent-eyi-c98="" class="col sm-2">
-                          <i _ngcontent-eyi-c98=""></i>
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      _ngcontent-eyi-c98=""
-                      scope="col"
-                      class="ng-star-inserted"
-                    >
-                      <div _ngcontent-eyi-c98="" class="row">
-                        <div _ngcontent-eyi-c98="" class="col-md-12">
-                          Product Quantity
-                        </div>
-                        <div _ngcontent-eyi-c98="" class="col sm-2">
-                          <i _ngcontent-eyi-c98=""></i>
-                        </div>
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody _ngcontent-hvr-c93>
-                  <tr
-                    _ngcontent-hvr-c93=""
-                    class="ng-star-inserted"
-                    *ngFor="let user of productList; let i = index"
-                  >
-                    <td _ngcontent-hvr-c93="">{{ user.id }}</td>
-                    <td _ngcontent-hvr-c93="">{{ user.productName }}</td>
-                    <td _ngcontent-hvr-c93="">{{ user.productQty }}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<!-- Dummy table -->
-
 <div class="container-fluid">
   <div class="row">
     <div class="col-12">
@@ -109,25 +5,63 @@
         <div class="card-header">
           <div class="row">
             <div class="col">
-              <h2 class="card-title">Inventory</h2>
+              <div style="display: flex; justify-content: space-between">
+                <div>
+                  <h2 class="card-title">Inventory</h2>
+                </div>
+                <div
+                  _ngcontent-sca-c12=""
+                  _ngcontent-eyi-c98=""
+                  class="text-end mx-3"
+                >
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal2"
+                    _ngcontent-sca-c12=""
+                    _ngcontent-eyi-c98=""
+                    tabindex="0"
+                    fdprocessedid="irqpcf"
+                    class="btn btn-outline-info btn-sm ng-star-inserted"
+                  >
+                    <i
+                      _ngcontent-sca-c12=""
+                      _ngcontent-eyi-c98=""
+                      class="fa fa-plus"
+                      aria-hidden="true"
+                    >
+                    </i
+                    >&nbsp; Add Product Name
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <div class="card-body">
           <div class="row">
             <div _ngcontent-eyi-c98="" class="col-4">
-              <label _ngcontent-eyi-c98="" for="designation">Product Name : </label
-              ><input
-                _ngcontent-eyi-c98=""
-                type="text"
-                #box8
-                class="form-control ng-untouched ng-pristine ng-valid"
-                fdprocessedid="l9beoe"
-              />
+              <label _ngcontent-eyi-c98="" for="designation"
+                >Product Name :
+              </label>
+              
+              <ng-select
+                class="selectpicker"
+                data-live-search="true"
+                id="name"
+                formControlName="from"
+              >
+                <ng-option value="" *ngFor="let product of productList"
+                  >{{ product.productName }}
+                </ng-option>
+              </ng-select>
             </div>
             <div _ngcontent-eyi-c98="" class="col-4">
-              <label _ngcontent-eyi-c98="" for="designation">Product Quentity : </label
-              ><input
+              <label _ngcontent-eyi-c98="" for="designation"
+                >Product Quentity :
+              </label>
+              <input
                 _ngcontent-eyi-c98=""
                 type="number"
                 #box8
@@ -238,5 +172,67 @@
   </div>
 </div>
 
-<!-- </div>
-</div> -->
+
+<!-- Modal  -->
+
+<div
+  class="modal fade"
+  id="exampleModal2"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-body">
+        <div class="form-outline">
+          <label class="form-label" for="formControlDefault">Add Product</label>
+          <input type="text" id="formControlDefault" class="form-control" />
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end">
+          <button
+            type="button"
+            data-bs-dismiss="modal"
+            _ngcontent-sca-c12=""
+            _ngcontent-eyi-c98=""
+            tabindex="0"
+            fdprocessedid="irqpcf"
+            class="btn btn-outline-info btn-sm ng-star-inserted"
+          >
+            <i
+              _ngcontent-sca-c12=""
+              _ngcontent-eyi-c98=""
+              class="fa fa-window-close"
+              aria-hidden="true"
+            ></i
+            >&nbsp;Close
+          </button>
+        </div>
+
+        <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end">
+          <button
+            type="submit"
+            _ngcontent-sca-c12=""
+            _ngcontent-eyi-c98=""
+            tabindex="0"
+            fdprocessedid="irqpcf"
+            class="btn btn-outline-info btn-sm ng-star-inserted"
+          >
+            <i
+              _ngcontent-sca-c12=""
+              _ngcontent-eyi-c98=""
+              class="fa fa-save"
+              aria-hidden="true"
+            ></i
+            >&nbsp;Save
+          </button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
