@@ -1,106 +1,238 @@
 <div class="container-fluid m-1 mt-2">
-    <div class="row">
-      <div class="col-12">
-<div _ngcontent-eyi-c98="" class="card w-100">
-    <div _ngcontent-eyi-c98="" class="card-header">
-        <div _ngcontent-eyi-c98="" class="row">
+  <div class="row">
+    <div class="col-12">
+      <div _ngcontent-eyi-c98="" class="card w-100">
+        <div _ngcontent-eyi-c98="" class="card-header">
+          <div _ngcontent-eyi-c98="" class="row">
             <div _ngcontent-eyi-c98="" class="col-10">
-                <div class="col-4">
-                    <input type="search" class="search" autocomplete="off" #box1 autocompleted (keyup)="globalSearch(box1.value) " style="text-align: center;">
-                    <mat-icon class="search-icon" >search</mat-icon>
-                </div>
+              <div class="col-4">
+                <input
+                  type="search"
+                  class="search"
+                  autocomplete="off"
+                  #box1
+                  autocompleted
+                  (keyup)="globalSearch(box1.value)"
+                  style="text-align: center"
+                />
+                <mat-icon class="search-icon">search</mat-icon>
+              </div>
             </div>
-            <div _ngcontent-eyi-c98="" class=" text-end"> <a _ngcontent-eyi-c98=""
-                    class="btn btn-outline-info btn-sm ng-star-inserted" tabindex="0" fdprocessedid="irqpcf" routerLink="/dashboard/invertory-in"><i
-                        _ngcontent-eyi-c98="" class="fa fa-plus"></i>&nbsp;Add Inventory</a>
-                    
-                        <!----></div>
-    
-    <div _ngcontent-eyi-c98="" class="card-body">
-        <form>
+            <div _ngcontent-eyi-c98="" class="text-end">
+              <a
+                _ngcontent-eyi-c98=""
+                class="btn btn-outline-info btn-sm ng-star-inserted"
+                tabindex="0"
+                fdprocessedid="irqpcf"
+                routerLink="/dashboard/invertory-in"
+                ><i _ngcontent-eyi-c98="" class="fa fa-plus"></i>&nbsp;Add
+                Inventory</a
+              >
 
-       
-        <div _ngcontent-eyi-c98="" class="row">
-            
-            
-            <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-3 col-lg-3 mt-2"><label _ngcontent-eyi-c98=""
-                    for="designation">From</label>
+              <!---->
+            </div>
 
-                    <select class="selectpicker form-control" data-live-search="true" id="name" >
-                      <option value="" selected disabled> --choose From--</option>
-                      <option value="{{logisticsdata.from}}" *ngFor="let logisticsdata of logistics">{{logisticsdata.from}}  </option>
+            <div _ngcontent-eyi-c98="" class="card-body">
+              <form>
+                <div _ngcontent-eyi-c98="" class="row">
+                  <div
+                    _ngcontent-eyi-c98=""
+                    class="col-sm-12 col-md-3 col-lg-3 mt-2"
+                  >
+                    <label _ngcontent-eyi-c98="" for="designation">From</label>
+
+                    <select
+                      class="selectpicker form-control"
+                      data-live-search="true"
+                      id="name"
+                    >
+                      <option value="" selected disabled>
+                        --choose From--
+                      </option>
+                      <option
+                        value="{{ logisticsdata.from }}"
+                        *ngFor="let logisticsdata of logistics"
+                      >
+                        {{ logisticsdata.from }}
+                      </option>
                     </select>
-                
-                
-                </div>
-            <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-3 col-lg-3 mt-2"><label _ngcontent-eyi-c98=""
-                    for="">recivedBy</label>
-                    
-                    <select id="name"   class="form-control" required>
-                        <option selected value="" disabled> --choose Received By--</option>
-                        <option value="{{logisticsdata.receiver}}" *ngFor="let logisticsdata of Receiver">{{logisticsdata.receiver}}</option>
-                      </select>
-                
-                </div>
-            <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-3 col-lg-3 mt-2"><label _ngcontent-eyi-c98=""
-                    for="designation">Recived Date</label><input _ngcontent-eyi-c98="" type="date" 
-                    class="form-control ng-untouched ng-pristine ng-valid" fdprocessedid="l9beoe" #box7></div>
+                  </div>
+                  <div
+                    _ngcontent-eyi-c98=""
+                    class="col-sm-12 col-md-3 col-lg-3 mt-2"
+                  >
+                    <label _ngcontent-eyi-c98="" for="">recivedBy</label>
 
-            <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-3 col-lg-3 mt-2"><label _ngcontent-eyi-c98=""
-                    for="designation">Order Date</label><input _ngcontent-eyi-c98="" type="date" #box8
-                    class="form-control ng-untouched ng-pristine ng-valid" fdprocessedid="l9beoe"></div>
-            <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-6 col-lg-3 mt-3"><button _ngcontent-eyi-c98=""  
-                    class="btn btn-outline-info btn-sm" tabindex="0" fdprocessedid="os78ce"><i _ngcontent-eyi-c98=""
-                        class="fa fa-search"></i>&nbsp;Search</button> &nbsp; <button _ngcontent-eyi-c98=""  type="reset"
-                    class="btn btn-outline-info btn-sm" tabindex="0" fdprocessedid="ywyqy9"><i _ngcontent-eyi-c98=""
-                        class="fa fa-refresh"></i>&nbsp;Reset</button></div>
-        </div>
-    </form>
-    </div>
-   
+                    <select id="name" class="form-control" required>
+                      <option selected value="" disabled>
+                        --choose Received By--
+                      </option>
+                      <option
+                        value="{{ logisticsdata.receiver }}"
+                        *ngFor="let logisticsdata of Receiver"
+                      >
+                        {{ logisticsdata.receiver }}
+                      </option>
+                    </select>
+                  </div>
+                  <div
+                    _ngcontent-eyi-c98=""
+                    class="col-sm-12 col-md-3 col-lg-3 mt-2"
+                  >
+                    <label _ngcontent-eyi-c98="" for="designation"
+                      >Recived Date</label
+                    ><input
+                      _ngcontent-eyi-c98=""
+                      type="date"
+                      class="form-control ng-untouched ng-pristine ng-valid"
+                      fdprocessedid="l9beoe"
+                      #box7
+                    />
+                  </div>
 
-    <div _ngcontent-eyi-c98=""  style="color: rgb(14, 14, 14);" class="table-responsive card">
-        <table _ngcontent-eyi-c98="" class="table styled-table table-bordered table-sm mb-0">
-            <thead _ngcontent-eyi-c98=""
-                style="background-color: rgb(38, 186, 157); color: rgb(255, 255, 255); font-family: Arial;">
-                <tr _ngcontent-eyi-c98="">
+                  <div
+                    _ngcontent-eyi-c98=""
+                    class="col-sm-12 col-md-3 col-lg-3 mt-2"
+                  >
+                    <label _ngcontent-eyi-c98="" for="designation"
+                      >Order Date</label
+                    ><input
+                      _ngcontent-eyi-c98=""
+                      type="date"
+                      #box8
+                      class="form-control ng-untouched ng-pristine ng-valid"
+                      fdprocessedid="l9beoe"
+                    />
+                  </div>
+                  <div
+                    _ngcontent-eyi-c98=""
+                    class="col-sm-12 col-md-6 col-lg-3 mt-3"
+                  >
+                    <button
+                      _ngcontent-eyi-c98=""
+                      class="btn btn-outline-info btn-sm"
+                      tabindex="0"
+                      fdprocessedid="os78ce"
+                    >
+                      <i _ngcontent-eyi-c98="" class="fa fa-search"></i
+                      >&nbsp;Search
+                    </button>
+                    &nbsp;
+                    <button
+                      _ngcontent-eyi-c98=""
+                      type="reset"
+                      class="btn btn-outline-info btn-sm"
+                      tabindex="0"
+                      fdprocessedid="ywyqy9"
+                    >
+                      <i _ngcontent-eyi-c98="" class="fa fa-refresh"></i
+                      >&nbsp;Reset
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div
+              _ngcontent-eyi-c98=""
+              style="color: rgb(14, 14, 14)"
+              class="table-responsive card"
+            >
+              <table
+                _ngcontent-eyi-c98=""
+                class="table styled-table table-bordered table-sm mb-0"
+              >
+                <thead
+                  _ngcontent-eyi-c98=""
+                  style="
+                    background-color: rgb(38, 186, 157);
+                    color: rgb(255, 255, 255);
+                    font-family: Arial;
+                  "
+                >
+                  <tr _ngcontent-eyi-c98="">
                     <th _ngcontent-eyi-c98="" scope="col">S.No</th>
-                    <th _ngcontent-eyi-c98="" style="width: 106px;" scope="col" class="ng-star-inserted">
-                        <div _ngcontent-eyi-c98="" class="row">
-                            <div _ngcontent-eyi-c98="" class="col-md-12"> from </div>
-                            <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
+                    <th
+                      _ngcontent-eyi-c98=""
+                      style="width: 106px"
+                      scope="col"
+                      class="ng-star-inserted"
+                    >
+                      <div _ngcontent-eyi-c98="" class="row">
+                        <div _ngcontent-eyi-c98="" class="col-md-12">from</div>
+                        <div _ngcontent-eyi-c98="" class="col sm-2">
+                          <i _ngcontent-eyi-c98=""></i>
                         </div>
+                      </div>
                     </th>
-                    <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
-                        <div _ngcontent-eyi-c98="" class="row">
-                            <div _ngcontent-eyi-c98="" class="col-md-12"> Recived By </div>
-                            <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
+                    <th
+                      _ngcontent-eyi-c98=""
+                      scope="col"
+                      class="ng-star-inserted"
+                    >
+                      <div _ngcontent-eyi-c98="" class="row">
+                        <div _ngcontent-eyi-c98="" class="col-md-12">
+                          Recived By
                         </div>
+                        <div _ngcontent-eyi-c98="" class="col sm-2">
+                          <i _ngcontent-eyi-c98=""></i>
+                        </div>
+                      </div>
                     </th>
-                    <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
-                        <div _ngcontent-eyi-c98="" class="row">
-                            <div _ngcontent-eyi-c98="" class="col-md-12"> Recive Date </div>
-                            <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
+                    <th
+                      _ngcontent-eyi-c98=""
+                      scope="col"
+                      class="ng-star-inserted"
+                    >
+                      <div _ngcontent-eyi-c98="" class="row">
+                        <div _ngcontent-eyi-c98="" class="col-md-12">
+                          Recive Date
                         </div>
+                        <div _ngcontent-eyi-c98="" class="col sm-2">
+                          <i _ngcontent-eyi-c98=""></i>
+                        </div>
+                      </div>
                     </th>
-                    <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
-                        <div _ngcontent-eyi-c98="" class="row">
-                            <div _ngcontent-eyi-c98="" class="col-md-12">Total Quantity </div>
-                            <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
+                    <th
+                      _ngcontent-eyi-c98=""
+                      scope="col"
+                      class="ng-star-inserted"
+                    >
+                      <div _ngcontent-eyi-c98="" class="row">
+                        <div _ngcontent-eyi-c98="" class="col-md-12">
+                          Total Quantity
                         </div>
+                        <div _ngcontent-eyi-c98="" class="col sm-2">
+                          <i _ngcontent-eyi-c98=""></i>
+                        </div>
+                      </div>
                     </th>
-                    <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
-                        <div _ngcontent-eyi-c98="" class="row">
-                            <div _ngcontent-eyi-c98="" class="col-md-12"> </div>
-                            <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98="">Total Product</i></div>
+                    <th
+                      _ngcontent-eyi-c98=""
+                      scope="col"
+                      class="ng-star-inserted"
+                    >
+                      <div _ngcontent-eyi-c98="" class="row">
+                        <div _ngcontent-eyi-c98="" class="col-md-12"></div>
+                        <div _ngcontent-eyi-c98="" class="col sm-2">
+                          <i _ngcontent-eyi-c98="">Total Product</i>
                         </div>
+                      </div>
                     </th>
-                  
-                    <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
-                        <div _ngcontent-eyi-c98="" class="row">
-                            <div _ngcontent-eyi-c98="" class="col-md-12">Total Price</div>
-                            <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
+
+                    <th
+                      _ngcontent-eyi-c98=""
+                      scope="col"
+                      class="ng-star-inserted"
+                    >
+                      <div _ngcontent-eyi-c98="" class="row">
+                        <div _ngcontent-eyi-c98="" class="col-md-12">
+                          Total Price
                         </div>
+                        <div _ngcontent-eyi-c98="" class="col sm-2">
+                          <i _ngcontent-eyi-c98=""></i>
+                        </div>
+                      </div>
                     </th>
                     <!-- <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
                         <div _ngcontent-eyi-c98="" class="row">
@@ -108,7 +240,7 @@
                             <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
                         </div>
                     </th> -->
-              
+
                     <!-- <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
                         <div _ngcontent-eyi-c98="" class="row">
                             <div _ngcontent-eyi-c98="" class="col-md-12"> Order Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -116,163 +248,402 @@
                             <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
                         </div>
                     </th> -->
-                    <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
-                        <div _ngcontent-eyi-c98="" class="row">
-                            <div _ngcontent-eyi-c98="" class="col-md-12" > Approval </div>
-                            <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
+                    <th
+                      _ngcontent-eyi-c98=""
+                      scope="col"
+                      class="ng-star-inserted"
+                    >
+                      <div _ngcontent-eyi-c98="" class="row">
+                        <div _ngcontent-eyi-c98="" class="col-md-12">
+                          Approval
                         </div>
-                    </th>
-                    <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
-                        <div _ngcontent-eyi-c98="" class="row">
-                            <div _ngcontent-eyi-c98="" class="col-md-12"> Action </div>
-                            <div _ngcontent-eyi-c98="" class="col sm-2"><i _ngcontent-eyi-c98=""></i></div>
+                        <div _ngcontent-eyi-c98="" class="col sm-2">
+                          <i _ngcontent-eyi-c98=""></i>
                         </div>
+                      </div>
                     </th>
-                  
-                   
-                </tr>
-            </thead>
-            <tbody _ngcontent-hvr-c93>
-                <tr _ngcontent-hvr-c93="" class="ng-star-inserted" *ngFor="let user of stockin let i=index ">
-                    <td _ngcontent-hvr-c93="">{{(pageSize*(pageNumber))+(i+1)}}</td>
-                    <td _ngcontent-hvr-c93="" ><a routerLink="" (click)="findproduct(user.id)">{{user.from}}</a></td>
-                    <td _ngcontent-hvr-c93="">{{user.recivedBy}}</td>
-                    <td _ngcontent-hvr-c93="">{{user.recivedDate}}</td>
-                    <td _ngcontent-hvr-c93="">{{user.totalQty}}</td>
-                    <td _ngcontent-hvr-c93="">{{user.totalProduct}}</td>
-                    <td _ngcontent-hvr-c93=""><i class="fa-solid fa-indian-rupee-sign"></i> {{user.totalPrice}}</td>
+                    <th
+                      _ngcontent-eyi-c98=""
+                      scope="col"
+                      class="ng-star-inserted"
+                    >
+                      <div _ngcontent-eyi-c98="" class="row">
+                        <div _ngcontent-eyi-c98="" class="col-md-12">
+                          Action
+                        </div>
+                        <div _ngcontent-eyi-c98="" class="col sm-2">
+                          <i _ngcontent-eyi-c98=""></i>
+                        </div>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody _ngcontent-hvr-c93>
+                  <tr
+                    _ngcontent-hvr-c93=""
+                    class="ng-star-inserted"
+                    *ngFor="let user of stockin; let i = index"
+                  >
+                    <td _ngcontent-hvr-c93="">
+                      {{ pageSize * pageNumber + (i + 1) }}
+                    </td>
+                    <td _ngcontent-hvr-c93="">
+                      <a routerLink="" (click)="findproduct(user.id)">{{
+                        user.from
+                      }}</a>
+                    </td>
+                    <td _ngcontent-hvr-c93="">{{ user.recivedBy }}</td>
+                    <td _ngcontent-hvr-c93="">{{ user.recivedDate }}</td>
+                    <td _ngcontent-hvr-c93="">{{ user.totalQty }}</td>
+                    <td _ngcontent-hvr-c93="">{{ user.totalProduct }}</td>
+                    <td _ngcontent-hvr-c93="">
+                      <i class="fa-solid fa-indian-rupee-sign"></i>
+                      {{ user.totalPrice }}
+                    </td>
                     <!-- <td _ngcontent-hvr-c93="">{{user.orderBy}}</td>
                     <td _ngcontent-hvr-c93="">{{user.orderDate}}</td> -->
                     <td _ngcontent-hvr-c93="">
-                       <div *ngIf="user.isApproved else elseBlock">
-                        <button style="color: red;" _ngcontent-eyi-c98="" 
-                        class="btn btn-outline-info btn-sm" tabindex="0" fdprocessedid="ywyqy9" disabled> <i style="color: green;" _ngcontent-eyi-c98=""
-                            class="fa-solid fa-circle-check"></i></button>
-                            </div>
-                       
-                        <ng-template #elseBlock>
-                           <div *ngIf="role_Admin else otherBlock">
-                         
-                            <button style="color: red;" _ngcontent-eyi-c98="" (click)="apporovedHere(user.id) "  data-bs-toggle="modal" data-bs-target="#exampleModal3"
-                            class="btn btn-outline-info btn-sm" tabindex="0" fdprocessedid="ywyqy9"> <i style="color: red;" _ngcontent-eyi-c98=""
-                                class="fa-sharp fa-solid fa-circle-xmark"></i></button>
+                      <div *ngIf="user.isApproved; else elseBlock">
+                        <button
+                          style="color: red"
+                          _ngcontent-eyi-c98=""
+                          class="btn btn-outline-info btn-sm"
+                          tabindex="0"
+                          fdprocessedid="ywyqy9"
+                          disabled
+                        >
+                          <i
+                            style="color: green"
+                            _ngcontent-eyi-c98=""
+                            class="fa-solid fa-circle-check"
+                          ></i>
+                        </button>
+                      </div>
 
-                           </div>
-                           <ng-template #otherBlock>
-
-                            <button style="color: red;" _ngcontent-eyi-c98="" 
-                            class="btn btn-outline-info btn-sm" tabindex="0" fdprocessedid="ywyqy9" disabled> <i style="color: red;" _ngcontent-eyi-c98=""
-                                class="fa-sharp fa-solid fa-circle-xmark"></i></button>
-                          
-                           </ng-template>
-
-                               
+                      <ng-template #elseBlock>
+                        <div *ngIf="role_Admin; else otherBlock">
+                          <button
+                            style="color: red"
+                            _ngcontent-eyi-c98=""
+                            (click)="apporovedHere(user.id)"
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModal3"
+                            class="btn btn-outline-info btn-sm"
+                            tabindex="0"
+                            fdprocessedid="ywyqy9"
+                          >
+                            <i
+                              style="color: red"
+                              _ngcontent-eyi-c98=""
+                              class="fa-sharp fa-solid fa-circle-xmark"
+                            ></i>
+                          </button>
+                        </div>
+                        <ng-template #otherBlock>
+                          <button
+                            style="color: red"
+                            _ngcontent-eyi-c98=""
+                            class="btn btn-outline-info btn-sm"
+                            tabindex="0"
+                            fdprocessedid="ywyqy9"
+                            disabled
+                          >
+                            <i
+                              style="color: red"
+                              _ngcontent-eyi-c98=""
+                              class="fa-sharp fa-solid fa-circle-xmark"
+                            ></i>
+                          </button>
                         </ng-template>
-                    
+                      </ng-template>
                     </td>
                     <td>
-                    <div _ngcontent-eyi-c98="" class=""style="display: flex; ">
-                    
-
-                        <button _ngcontent-eyi-c98=""   type="button" class="btn btn-primary "  (click)="delete(user.id)"   data-bs-toggle="modal" data-bs-target="#exampleModal2"
-                        class="btn btn-outline-info btn-sm" tabindex="0" fdprocessedid="os78ce"><i _ngcontent-eyi-c98=""
-                            class="fa-solid fa-trash"></i></button></div>
-                        </td>
-                
-                                
-                   </tr>
-            </tbody>
-            
-        </table>
-    </div>
-    <div _ngcontent-eyi-c98="" class="container-fluid mt-3 ng-star-inserted">
-        <div _ngcontent-eyi-c98="" class="row">
-            <div _ngcontent-eyi-c98="" style="color: rgb(14, 14, 14);" class="col-sm-12 col-md-4 col-lg-4">
-                <p _ngcontent-eyi-c98="" class="d-flex"> Page {{pageNumber+1}} of {{totalpage}}, {{totalElement}} Items </p>
+                      <div _ngcontent-eyi-c98="" class="" style="display: flex">
+                        <button
+                          _ngcontent-eyi-c98=""
+                          type="button"
+                          class="btn btn-primary"
+                          (click)="delete(user.id)"
+                          data-bs-toggle="modal"
+                          data-bs-target="#exampleModal2"
+                          class="btn btn-outline-info btn-sm"
+                          tabindex="0"
+                          fdprocessedid="os78ce"
+                        >
+                          <i
+                            _ngcontent-eyi-c98=""
+                            class="fa-solid fa-trash"
+                          ></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <div _ngcontent-eyi-c98="" class="col-6 col-sm-6 col-md-4 col-lg-4 d-inline">
-                <div _ngcontent-eyi-c98="" class="text-center">
-                    <nav _ngcontent-eyi-c98="" aria-label="Page navigation example" style="margin-top: -12px;">
-                        <ul _ngcontent-eyi-c98="" class="pagination mb-0">
-                            
-
-                            <li _ngcontent-eyi-c98="" class="page-item">
-                                <a _ngcontent-eyi-c98=""  aria-label="Next" type="" class="page-link"
-                                    (click)="nextprev('minus')"><span _ngcontent-eyi-c98="" aria-hidden="true"
-                                        class="buuuton" >«</span></a>
-                            </li>
-                            <li _ngcontent-eyi-c98="" class="page-item"><a _ngcontent-eyi-c98="" aria-label="Next"
-                                    type="" class="page-link" style="cursor: pointer; "(click)="nextprev('minus')"><span _ngcontent-eyi-c98=""
-                                        aria-hidden="true" class="buuuton" >‹</span></a></li>
-
-                            <li _ngcontent-eyi-c98="" class="page-item">
-                                <div _ngcontent-eyi-c98="" aria-label="Next" type="" class="page-link"
-                                    style="cursor: pointer;" (click)="nextprev('add')"><span _ngcontent-eyi-c98="" aria-hidden="true"
-                                        class="buuuton" >›</span></div>
-                            </li>
-                            <li _ngcontent-eyi-c98="" class="page-item"><a _ngcontent-eyi-c98="" aria-label="Next"
-                                    type="" class="page-link" style="cursor: pointer; " (click)="nextprev('add')"><span _ngcontent-eyi-c98=""
-                                        aria-hidden="true" class="buuuton" >»</span></a></li>
-                        </ul>
-                    </nav>
+            <div
+              _ngcontent-eyi-c98=""
+              class="container-fluid mt-3 ng-star-inserted"
+            >
+              <div _ngcontent-eyi-c98="" class="row">
+                <div
+                  _ngcontent-eyi-c98=""
+                  style="color: rgb(14, 14, 14)"
+                  class="col-sm-12 col-md-4 col-lg-4"
+                >
+                  <p _ngcontent-eyi-c98="" class="d-flex">
+                    Page {{ pageNumber + 1 }} of {{ totalpage }},
+                    {{ totalElement }} Items
+                  </p>
                 </div>
-            </div>
-            <div _ngcontent-eyi-c98="" class="col-6 col-sm-6 col-md-4 col-lg-4">
-                <div _ngcontent-eyi-c98="" class="d-flex float-end"><input _ngcontent-eyi-c98="" type="text"
-                        class="form-control searchbox1 p-0 ps-1 fs-6 ng-untouched ng-pristine ng-valid"
-                        style="height: 27px; width: 2rem;"  fdprocessedid="ovzizs" #box11 (keyup)="pageWithData(box11.value)"><span class="mx-1"
-                        _ngcontent-eyi-c98="" style="    font-size: 1.3rem;height: 27px;width: 38px;"><p style="    font-size: 22px;
-                        color: antiquewhite">/{{totalpage}}</p></span></div>
-            </div>
-        </div>
-    </div>
-</div>
-        </div>
-    </div>
-</div>
+                <div
+                  _ngcontent-eyi-c98=""
+                  class="col-6 col-sm-6 col-md-4 col-lg-4 d-inline"
+                >
+                  <div _ngcontent-eyi-c98="" class="text-center">
+                    <nav
+                      _ngcontent-eyi-c98=""
+                      aria-label="Page navigation example"
+                      style="margin-top: -12px"
+                    >
+                      <ul _ngcontent-eyi-c98="" class="pagination mb-0">
+                        <li _ngcontent-eyi-c98="" class="page-item">
+                          <a
+                            _ngcontent-eyi-c98=""
+                            aria-label="Next"
+                            type=""
+                            class="page-link"
+                            (click)="nextprev('minus')"
+                            ><span
+                              _ngcontent-eyi-c98=""
+                              aria-hidden="true"
+                              class="buuuton"
+                              >«</span
+                            ></a
+                          >
+                        </li>
+                        <li _ngcontent-eyi-c98="" class="page-item">
+                          <a
+                            _ngcontent-eyi-c98=""
+                            aria-label="Next"
+                            type=""
+                            class="page-link"
+                            style="cursor: pointer"
+                            (click)="nextprev('minus')"
+                            ><span
+                              _ngcontent-eyi-c98=""
+                              aria-hidden="true"
+                              class="buuuton"
+                              >‹</span
+                            ></a
+                          >
+                        </li>
 
-<!------------------------ modal -------------------------->
-
-<div class="modal fade " id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-body">
-         <div>
-          <p style="    font-size: 19px;
-          font-family: inherit;
-          margin-left: 20px;
-          text-shadow: 1px 1px #d4ababb5;">Do you want to Delete ?</p>
-         </div>
+                        <li _ngcontent-eyi-c98="" class="page-item">
+                          <div
+                            _ngcontent-eyi-c98=""
+                            aria-label="Next"
+                            type=""
+                            class="page-link"
+                            style="cursor: pointer"
+                            (click)="nextprev('add')"
+                          >
+                            <span
+                              _ngcontent-eyi-c98=""
+                              aria-hidden="true"
+                              class="buuuton"
+                              >›</span
+                            >
+                          </div>
+                        </li>
+                        <li _ngcontent-eyi-c98="" class="page-item">
+                          <a
+                            _ngcontent-eyi-c98=""
+                            aria-label="Next"
+                            type=""
+                            class="page-link"
+                            style="cursor: pointer"
+                            (click)="nextprev('add')"
+                            ><span
+                              _ngcontent-eyi-c98=""
+                              aria-hidden="true"
+                              class="buuuton"
+                              >»</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+                <div
+                  _ngcontent-eyi-c98=""
+                  class="col-6 col-sm-6 col-md-4 col-lg-4"
+                >
+                  <div _ngcontent-eyi-c98="" class="d-flex float-end">
+                    <input
+                      _ngcontent-eyi-c98=""
+                      type="text"
+                      class="form-control searchbox1 p-0 ps-1 fs-6 ng-untouched ng-pristine ng-valid"
+                      style="height: 27px; width: 2rem"
+                      fdprocessedid="ovzizs"
+                      #box11
+                      (keyup)="pageWithData(box11.value)"
+                    /><span
+                      class="mx-1"
+                      _ngcontent-eyi-c98=""
+                      style="font-size: 1.3rem; height: 27px; width: 38px"
+                      ><p style="font-size: 22px; color: antiquewhite">
+                        /{{ totalpage }}
+                      </p></span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="modal-footer">
-          <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end"><button type="button" data-bs-dismiss="modal" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" (click)="deleteData1()"   fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa-solid fa-trash-can" aria-hidden="true"></i>&nbsp;Delete</button></div>
-          <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end"><button type="button" data-bs-dismiss="modal" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa-solid fa-xmark" aria-hidden="true"></i>&nbsp;Cancle</button></div>
-               
-         </div>
+      </div>
+    </div>
+
+    <!------------------------ modal -------------------------->
+
+    <div
+      class="modal fade"
+      id="exampleModal2"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div>
+              <p
+                style="
+                  font-size: 19px;
+                  font-family: inherit;
+                  margin-left: 20px;
+                  text-shadow: 1px 1px #d4ababb5;
+                "
+              >
+                Do you want to Delete ?
+              </p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end">
+              <button
+                type="button"
+                data-bs-dismiss="modal"
+                _ngcontent-sca-c12=""
+                _ngcontent-eyi-c98=""
+                tabindex="0"
+                (click)="deleteData1()"
+                fdprocessedid="irqpcf"
+                class="btn btn-outline-info btn-sm ng-star-inserted"
+              >
+                <i
+                  _ngcontent-sca-c12=""
+                  _ngcontent-eyi-c98=""
+                  class="fa-solid fa-trash-can"
+                  aria-hidden="true"
+                ></i
+                >&nbsp;Delete
+              </button>
+            </div>
+            <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end">
+              <button
+                type="button"
+                data-bs-dismiss="modal"
+                _ngcontent-sca-c12=""
+                _ngcontent-eyi-c98=""
+                tabindex="0"
+                fdprocessedid="irqpcf"
+                class="btn btn-outline-info btn-sm ng-star-inserted"
+              >
+                <i
+                  _ngcontent-sca-c12=""
+                  _ngcontent-eyi-c98=""
+                  class="fa-solid fa-xmark"
+                  aria-hidden="true"
+                ></i
+                >&nbsp;Cancle
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!------------------------ modal -------------------------->
+
+    <div
+      class="modal fade"
+      id="exampleModal3"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div>
+              <p
+                style="
+                  font-size: 19px;
+                  font-family: inherit;
+                  margin-left: 20px;
+                  text-shadow: 1px 1px #d4ababb5;
+                "
+              >
+                Do you want to Approve ?
+              </p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end">
+              <button
+                type="button"
+                data-bs-dismiss="modal"
+                _ngcontent-sca-c12=""
+                _ngcontent-eyi-c98=""
+                tabindex="0"
+                (click)="approval()"
+                fdprocessedid="irqpcf"
+                class="btn btn-outline-info btn-sm ng-star-inserted"
+              >
+                <i
+                  _ngcontent-sca-c12=""
+                  _ngcontent-eyi-c98=""
+                  class="fa-solid fa-thumbs-up"
+                  aria-hidden="true"
+                ></i
+                >&nbsp;Approve
+              </button>
+            </div>
+            <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end">
+              <button
+                type="button"
+                data-bs-dismiss="modal"
+                _ngcontent-sca-c12=""
+                _ngcontent-eyi-c98=""
+                tabindex="0"
+                fdprocessedid="irqpcf"
+                class="btn btn-outline-info btn-sm ng-star-inserted"
+              >
+                <i
+                  _ngcontent-sca-c12=""
+                  _ngcontent-eyi-c98=""
+                  class="fa-solid fa-xmark"
+                  aria-hidden="true"
+                ></i
+                >&nbsp;Cancle
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
- 
-<!------------------------ modal -------------------------->
-
-<div class="modal fade " id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-body">
-         <div>
-          <p style="    font-size: 19px;
-          font-family: inherit;
-          margin-left: 20px;
-          text-shadow: 1px 1px #d4ababb5;">Do you want to Approve ?</p>
-         </div>
-        </div>
-        <div class="modal-footer">
-          <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end"><button type="button" data-bs-dismiss="modal" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" (click)="approval()"   fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa-solid fa-thumbs-up" aria-hidden="true"></i>&nbsp;Approve</button></div>
-          <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end"><button type="button" data-bs-dismiss="modal" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa-solid fa-xmark" aria-hidden="true"></i>&nbsp;Cancle</button></div>
-
-               
-         </div>
-      </div>
-    </div>
-  </div>
- 
+</div>

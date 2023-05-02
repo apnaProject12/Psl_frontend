@@ -26,3 +26,17 @@ p{
     z-index: 1;
   
 }
+.vv{
+    display: flex;
+    justify-content: space-between;
+}
+@media (max-width:600px){
+    p{
+        font-family: inherit;
+        color: aliceblue;
+        font-size: 12px;
+        text-transform: capitalize;
+        text-shadow: 1px 1px red;
+    }
+
+}
