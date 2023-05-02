@@ -32,6 +32,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { InvertoryOutComponent } from './components/invertory-out/invertory-out.component';
 import { InvertoryComponent } from './components/invertory/invertory.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { InvertoryOutFormComponent } from './components/invertory-out-form/invertory-out-form.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     AboutComponent,
     HomeComponent,
     InvertoryOutComponent,
-    InvertoryComponent
+    InvertoryComponent,
+    InvertoryOutFormComponent
   ],
   imports: [
     BrowserModule,

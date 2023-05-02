@@ -1,188 +1,83 @@
-<div class="container-fluid">
+<div class="container-fluid mt-3">
   <div class="row">
     <div class="col-12">
       <div class="card card-user shadow-lg p-3 mb-5 bg-light bb w-100">
         <div class="card-header">
           <div class="row">
             <div class="col">
-              <h2 class="card-title">Inventory In Form</h2>
+              <h2 class="card-title">Inventory Out Form</h2>
             </div>
-            <div></div>
-
-            <div
-              _ngcontent-sca-c12=""
-              _ngcontent-eyi-c98=""
-              class="text-end mx-3"
-            >
-              <button
-                type="button"
-                class="btn btn-primary"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal2"
-                _ngcontent-sca-c12=""
-                _ngcontent-eyi-c98=""
-                tabindex="0"
-                fdprocessedid="irqpcf"
-                class="btn btn-outline-info btn-sm ng-star-inserted"
-              >
-                <i
-                  _ngcontent-sca-c12=""
-                  _ngcontent-eyi-c98=""
-                  class="fa fa-plus"
-                  aria-hidden="true"
-                ></i
-                >&nbsp;Add Item Name
-              </button>
+            <div>
             </div>
           </div>
         </div>
 
         <div class="card-body" id="form">
-          <!-- <h1> Dynamically Add New Input Fields in Angular </h1> -->
+          
           <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
             <div class="row">
               <div class="col">
-                <label for="name"><small class="req">*</small>From:</label>
+                <label for="name">From:</label>
                 <ng-select
                   class="selectpicker"
                   data-live-search="true"
                   id="name"
-                  formControlName="from"
-                >
-                  <ng-option
-                    value="{{ logisticsdata.from }}"
-                    *ngFor="let logisticsdata of logistics"
-                    >{{ logisticsdata.from }}
+                  formControlName="from">
+                  <ng-option>
+                    dfghjk
                   </ng-option>
                 </ng-select>
-                <div>
-                  <small
-                    class="input"
-                    style="color: red"
-                    *ngIf="From.errors?.['required'] && (From.touched || From.dirty)"
-                    >From field is required</small
-                  >
-                </div>
+                
               </div>
               <div class="col">
                 <label for="name"
-                  ><small class="req">*</small>Received by:</label
+                  >Received by:</label
                 >
                 <ng-select id="name" formControlName="recivedBy" required>
-                  <ng-option
-                    value="{{ logisticsdata.receiver }}"
-                    *ngFor="let logisticsdata of Receiver"
-                    >{{ logisticsdata.receiver }}</ng-option
-                  >
+                  <ng-option>
+                    cvbnm,
+                    </ng-option>
                 </ng-select>
-                <div>
-                  <small
-                    class="input"
-                    style="color: red"
-                    *ngIf="RecivedBy.errors?.['required'] && (RecivedBy.touched || RecivedBy.dirty)"
-                    >Received by field is required</small
-                  >
-                </div>
+                
               </div>
               <div class="col">
                 <label for="name"
-                  ><small class="req">*</small>Received date:</label
+                  >Date:</label
                 >
                 <input
                   type="date"
+                  [value]="TodayDate"
                   id="name"
                   formControlName="recivedDate"
                   class="form-control"
                   required
                 />
-                <div>
-                  <small
-                    class="input"
-                    style="color: red"
-                    *ngIf="RecivedDate.errors?.['required'] && (RecivedDate.touched || RecivedDate.dirty)"
-                    >Receiving Date is required</small
-                  >
-                </div>
+                
               </div>
-            </div>
-            <div class="row">
               <div class="col">
                 <label for="name"
-                  ><small class="req">*</small>total Quantity:</label
+                  >Total Quantity:</label
                 >
                 <input
                   type="number"
                   id="name"
                   formControlName="totalQty"
                   class="form-control"
-                  required
-                />
-                <div>
-                  <small
-                    class="input"
-                    style="color: red"
-                    *ngIf="TotalQty.errors?.['required'] && (TotalQty.touched || TotalQty.dirty)"
-                    >Total Quantity required is Required</small
-                  >
-                </div>
-                <div>
-                  <small
-                    class="input"
-                    style="color: red"
-                    *ngIf="TotalQty.errors?.['min'] && (TotalQty.touched || TotalQty.dirty)"
-                    >Total Quantity Should be greater than</small
-                  >
-                </div>
+                  required/>
               </div>
               <div class="col">
                 <label for="name"
-                  ><small class="req">*</small>total Product:</label
+                  >Total Product:</label
                 >
                 <input
                   type="number"
                   id="name"
                   formControlName="totalProduct"
                   #box
-                  (keyup)="productvalue(box.value)"
-                  class="form-control"
-                />
-                <div>
-                  <small
-                    class="input"
-                    style="color: red"
-                    *ngIf="TotalProduct.errors?.['required'] && (TotalProduct.touched || TotalProduct.dirty)"
-                    >Total Product required is Required</small
-                  >
-                </div>
-                <div>
-                  <small
-                    class="input"
-                    style="color: red"
-                    *ngIf="TotalProduct.errors?.['min'] && (TotalProduct.touched || TotalProduct.dirty)"
-                    >Total product should be greater than 0
-                  </small>
-                </div>
-              </div>
-              <div class="col">
-                <label for="name"
-                  ><small class="req">*</small>totalPrice :</label
-                >
-                <input
-                  type="number"
-                  id="name"
-                  formControlName="totalPrice"
-                  class="form-control"
-                />
-                <div>
-                  <small
-                    class="input"
-                    style="color: red"
-                    *ngIf="TotalPrice.errors?.['required'] && (TotalPrice.touched || TotalPrice.dirty)"
-                    >Total Price required is Required</small
-                  >
-                </div>
+                  class="form-control"/>
               </div>
             </div>
+            
 
             <br />
 
@@ -229,11 +124,9 @@
                   product Name:
                   <!-- <input type="text" formControlName="productName" class="form-control"> -->
                   <ng-select name="" id="" formControlName="productName">
-                    <ng-option
-                      value="{{ product.productName }}"
-                      *ngFor="let product of products"
-                      >{{ product.productName }}</ng-option
-                    >
+                    <ng-option>
+                      dfghjk
+                      </ng-option>
                   </ng-select>
                 </td>
                 <td>
@@ -244,16 +137,9 @@
                     class="form-control"
                   />
                 </td>
+                
                 <td>
-                  Price Per Item:
-                  <input
-                    type="number"
-                    formControlName="price"
-                    class="form-control"
-                  />
-                </td>
-                <td>
-                  Total Price:
+                  Total Qty :
                   <input
                     type="number"
                     formControlName="totalPrice"
@@ -290,7 +176,7 @@
             <div style="display: flex">
               <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end">
                 <button
-                  type="{{ value }}"
+                  
                   [disabled]="productForm.invalid"
                   _ngcontent-sca-c12=""
                   _ngcontent-eyi-c98=""
@@ -484,3 +370,6 @@
   </div>
 </div>
 <!-- modal end -->
+
+
+     

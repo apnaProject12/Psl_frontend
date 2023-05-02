@@ -1,3 +1,190 @@
-<p>invertory-out works!</p>
+<div class="container-fluid mt-3">
+  <div class="row">
+    <div class="card card-user shadow-lg p-3 mb-5 bg-light bb w-100">
+      <div class="card-header">
+        <div class="row">
+          <div class="col">
+            <div style="display: flex; justify-content: space-between">
+              <div>
+                <h2 class="card-title">Inventory Out</h2>
+              </div>
+              <div
+                _ngcontent-sca-c12=""
+                _ngcontent-eyi-c98=""
+                class="text-end mx-3"
+              >
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal2"
+                  _ngcontent-sca-c12=""
+                  _ngcontent-eyi-c98=""
+                  tabindex="0"
+                  fdprocessedid="irqpcf"
+                  class="btn btn-outline-info btn-sm ng-star-inserted"
+                  routerLink="/dashboard/invertory-out-form"
+                >
+                  <i
+                    _ngcontent-sca-c12=""
+                    _ngcontent-eyi-c98=""
+                    class="fa fa-plus"
+                    aria-hidden="true"
+                  >
+                  </i
+                  >&nbsp; Assign Device
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div _ngcontent-eyi-c98="" class="col-4">
+            <label _ngcontent-eyi-c98="" for="designation">Recived By : </label>
 
-<!-- <h1 style="font-size: 400px; margin-top: 250px; margin-left: 400px;">🖕🏿</h1> -->
+            <ng-select
+              class="selectpicker"
+              data-live-search="true"
+              id="name"
+              formControlName="from"
+            >
+              <ng-option value="">efgh </ng-option>
+            </ng-select>
+          </div>
+          <div _ngcontent-eyi-c98="" class="col-4">
+            <label _ngcontent-eyi-c98="" for="designation">Date : </label>
+            <input
+              _ngcontent-eyi-c98=""
+              type="date"
+              #box8
+              class="form-control ng-untouched ng-pristine ng-valid"
+              fdprocessedid="l9beoe"
+            />
+          </div>
+          <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-6 col-lg-3 mt-4">
+            <button
+              _ngcontent-eyi-c98=""
+              class="btn btn-outline-info btn-sm"
+              tabindex="0"
+              fdprocessedid="os78ce"
+            >
+              <i _ngcontent-eyi-c98="" class="fa fa-search"></i>&nbsp;Search
+            </button>
+            &nbsp;
+            <button
+              _ngcontent-eyi-c98=""
+              type="reset"
+              class="btn btn-outline-info btn-sm"
+              tabindex="0"
+              fdprocessedid="ywyqy9"
+            >
+              <i _ngcontent-eyi-c98="" class="fa fa-refresh"></i>&nbsp;Reset
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div style="color: rgb(14, 14, 14)" class="table-responsive card">
+          <table
+            _ngcontent-eyi-c98=""
+            class="table styled-table table-bordered table-sm mb-0"
+          >
+            <thead
+              _ngcontent-eyi-c98=""
+              style="
+                background-color: rgb(38, 186, 157);
+                color: rgb(255, 255, 255);
+                font-family: Arial;
+              "
+            >
+              <tr _ngcontent-eyi-c98="">
+                <th
+                  _ngcontent-eyi-c98=""
+                  style="width: 106px"
+                  scope="col"
+                  class="ng-star-inserted"
+                >
+                  <div _ngcontent-eyi-c98="" class="row">
+                    <div _ngcontent-eyi-c98="" class="col-md-12">
+                      Serial Number :
+                    </div>
+                    <div _ngcontent-eyi-c98="" class="col sm-2">
+                      <i _ngcontent-eyi-c98=""></i>
+                    </div>
+                  </div>
+                </th>
+                <th
+                  _ngcontent-eyi-c98=""
+                  style="width: 106px"
+                  scope="col"
+                  class="ng-star-inserted"
+                >
+                  <div _ngcontent-eyi-c98="" class="row">
+                    <div _ngcontent-eyi-c98="" class="col-md-12">From</div>
+                    <div _ngcontent-eyi-c98="" class="col sm-2">
+                      <i _ngcontent-eyi-c98=""></i>
+                    </div>
+                  </div>
+                </th>
+                <th
+                  _ngcontent-eyi-c98=""
+                  style="width: 106px"
+                  scope="col"
+                  class="ng-star-inserted"
+                >
+                  <div _ngcontent-eyi-c98="" class="row">
+                    <div _ngcontent-eyi-c98="" class="col-md-12">
+                      Recived By :
+                    </div>
+                    <div _ngcontent-eyi-c98="" class="col sm-2">
+                      <i _ngcontent-eyi-c98=""></i>
+                    </div>
+                  </div>
+                </th>
+                <th
+                  _ngcontent-eyi-c98=""
+                  style="width: 106px"
+                  scope="col"
+                  class="ng-star-inserted"
+                >
+                  <div _ngcontent-eyi-c98="" class="row">
+                    <div _ngcontent-eyi-c98="" class="col-md-12">
+                      Quentity :
+                    </div>
+                    <div _ngcontent-eyi-c98="" class="col sm-2">
+                      <i _ngcontent-eyi-c98=""></i>
+                    </div>
+                  </div>
+                </th>
+                <th
+                  _ngcontent-eyi-c98=""
+                  style="width: 106px"
+                  scope="col"
+                  class="ng-star-inserted"
+                >
+                  <div _ngcontent-eyi-c98="" class="row">
+                    <div _ngcontent-eyi-c98="" class="col-md-12">Date :</div>
+                    <div _ngcontent-eyi-c98="" class="col sm-2">
+                      <i _ngcontent-eyi-c98=""></i>
+                    </div>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody _ngcontent-hvr-c93>
+              <tr _ngcontent-hvr-c93="" class="ng-star-inserted">
+                <td _ngcontent-hvr-c93="">1</td>
+                <td _ngcontent-hvr-c93="">Abishek</td>
+                <td _ngcontent-hvr-c93="">Deepak</td>
+                <td _ngcontent-hvr-c93="">3</td>
+                <td _ngcontent-hvr-c93="">02-05-2023</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
