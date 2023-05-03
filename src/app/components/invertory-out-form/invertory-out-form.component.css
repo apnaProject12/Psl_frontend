@@ -1,0 +1,53 @@
+/* card{
+    position: sticky;
+    position: fixed;
+} */
+.form-width{
+    width: 80vw;
+}
+
+.bb{
+    /* position: sticky;
+    position: fixed ; */
+
+    margin: 7px;
+    border-radius: 30px;
+}
+input{
+    margin-bottom: 3px;
+}
+
+label{
+    font-size: 1.02rem;
+    text-transform: capitalize;
+    margin-top: 13px;
+}
+td{
+    height: 15px;
+    text-transform: capitalize;
+    font-size: 1rem;
+}
+.co{
+    width: 167px;
+    margin-left: 14px;
+    margin-top: 19px;
+    font-size: 18px;
+}
+.card-title{
+    font-family: ui-serif;
+    font-weight: bold;
+    text-shadow: 1px 1px #8f4848ab;
+}
+.modal-input{
+    width: 371px;
+    margin-left: 28px;
+    height: 39px;
+    border: 1px solid #9b9bbbbd;
+    border-radius: 13px;
+    box-shadow: 1px 2px #66adb6ab;
+    text-align: margin-2;
+}
+.req{
+    color: red;
+    font-size: 15px;
+}
