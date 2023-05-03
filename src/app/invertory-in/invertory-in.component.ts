@@ -165,7 +165,7 @@ export class InvertoryInComponent {
         .subscribe((data: any) => {
           this.userData = data;
         });
-      if (this.userData.id != null) {
+      if (this.userData != null) {
         this.message = 'data inserted successfully';
         this.notification();
         this.value = 'reset';

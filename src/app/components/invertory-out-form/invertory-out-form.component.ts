@@ -22,13 +22,11 @@ export class InvertoryOutFormComponent {
   ) {
     this.productForm = this.fb.group({
       from: "",
-      recivedBy: "",
-      recivedDate: "",
-      totalQty: "",
-      totalProduct: "",
-      totalPrice: "",
-      isApproved: "",
-      stockInventoryItems: this.fb.array([]),
+      receivedBy: "",
+      receivedDate: "",
+      totalItem: 0,
+      totalqty: "",
+      inventoryOutItem: this.fb.array([]),
     });
   }
 
@@ -46,14 +44,13 @@ export class InvertoryOutFormComponent {
 
 
   quantities(): FormArray {
-    return this.productForm.get("stockInventoryItems") as FormArray;
+    return this.productForm.get("inventoryOutItem") as FormArray;
   }
   newQuantity(): FormGroup {
     return this.fb.group({
       productName: "",
-      productQty: "",
-      price: "",
-      totalPrice: "",
+      totalQty: 0,
+     
     });
   }
   addQuantity() {
@@ -64,17 +61,12 @@ export class InvertoryOutFormComponent {
     this.quantities().removeAt(i);
   }
   userData: any;
+  message:any;
   onSubmit() {
     console.log(this.productForm.value);
-    // this.userData = this.productForm.value;
-    // this.stockService
-    //   .postdata(this.productForm.value)
-    //   .subscribe((data: any) => {
-    //     this.userData = data;
-    //     console.log(this.userData);
-
-    //     this.router.navigate(["inventoryin"]);
-    //   });
+    // this.stockService.addInventoryOut(this.productForm.value).subscribe((data:any)=>{
+    //   this.message=data;
+    // })
   }
 
   getAllStockes() {
@@ -85,9 +77,7 @@ export class InvertoryOutFormComponent {
   allproductList: Array<any> = [];
 
   getAllProductListData() {
-    // this.stockService.getAllProductList().subscribe((data) => {
-    //   this.allproductList = data;
-    // });
+    
   }
 
 }

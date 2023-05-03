@@ -18,12 +18,12 @@
             <div class="row">
               <div class="col">
                 <label for="name">From:</label>
-                <ng-select
+                <ng-select 
                   class="selectpicker"
                   data-live-search="true"
                   id="name"
                   formControlName="from">
-                  <ng-option>
+                  <ng-option value="dfghjk">
                     dfghjk
                   </ng-option>
                 </ng-select>
@@ -33,8 +33,8 @@
                 <label for="name"
                   >Received by:</label
                 >
-                <ng-select id="name" formControlName="recivedBy" required>
-                  <ng-option>
+                <ng-select id="name" formControlName="receivedBy" required>
+                  <ng-option value="cvbnm,">
                     cvbnm,
                     </ng-option>
                 </ng-select>
@@ -48,7 +48,7 @@
                   type="date"
                   [value]="TodayDate"
                   id="name"
-                  formControlName="recivedDate"
+                  formControlName="receivedDate"
                   class="form-control"
                   required
                 />
@@ -61,7 +61,7 @@
                 <input
                   type="number"
                   id="name"
-                  formControlName="totalQty"
+                  formControlName="totalqty"
                   class="form-control"
                   required/>
               </div>
@@ -72,7 +72,7 @@
                 <input
                   type="number"
                   id="name"
-                  formControlName="totalProduct"
+                  formControlName="totalItem"
                   #box
                   class="form-control"/>
               </div>
@@ -83,7 +83,7 @@
 
             <table
               class="table table-bordered"
-              formArrayName="stockInventoryItems"
+              formArrayName="inventoryOutItem"
             >
               <div class="rows" style="display: flex">
                 <div class="co">
@@ -124,7 +124,7 @@
                   product Name:
                   <!-- <input type="text" formControlName="productName" class="form-control"> -->
                   <ng-select name="" id="" formControlName="productName">
-                    <ng-option>
+                    <ng-option value="qfghjk">
                       dfghjk
                       </ng-option>
                   </ng-select>
@@ -133,7 +133,6 @@
                   Total Product:
                   <input
                     type="number"
-                    formControlName="productQty"
                     class="form-control"
                   />
                 </td>
@@ -142,7 +141,7 @@
                   Total Qty :
                   <input
                     type="number"
-                    formControlName="totalPrice"
+                    formControlName="totalQty"
                     class="form-control"
                   />
                 </td>

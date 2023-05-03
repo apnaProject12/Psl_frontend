@@ -41,4 +41,8 @@ export class ServiceService {
   approved(id:any){
     return this.router.get(`/StockInInventory/getProduct/approval?id=${id}&approval=true`)
   }
+
+  addInventoryOut(data:any){
+    return this.router.post(`/StockInInventory/InventoryOut/addData`,data);
+  }
 }
