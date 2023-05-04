@@ -70,7 +70,7 @@ const routes: Routes = [
         component:InvertoryOutFormComponent
       },
       {
-        path:'inventory-out-item',
+        path:'inventory-out-item/:id',
         component:InventoryOutItemComponent
       }
     ],

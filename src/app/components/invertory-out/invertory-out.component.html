@@ -174,12 +174,12 @@
               </tr>
             </thead>
             <tbody _ngcontent-hvr-c93>
-              <tr _ngcontent-hvr-c93="" class="ng-star-inserted">
-                <td _ngcontent-hvr-c93="">1</td>
-                <td _ngcontent-hvr-c93="" ><a routerLink="" (click)="findinventoryitem()" >Abishek</a></td>
-                <td _ngcontent-hvr-c93="">Deepak</td>
-                <td _ngcontent-hvr-c93="">3</td>
-                <td _ngcontent-hvr-c93="">02-05-2023</td>
+              <tr _ngcontent-hvr-c93="" class="ng-star-inserted" *ngFor="let out of inventoryOut; let i = index">
+                <td _ngcontent-hvr-c93="">{{out.id}}</td>
+                <td _ngcontent-hvr-c93="" ><a routerLink="" (click)="findinventoryitem(out.id)" >{{out.from}}</a></td>
+                <td _ngcontent-hvr-c93="">{{out.receivedBy}}</td>
+                <td _ngcontent-hvr-c93="">{{out.totalItem}}</td>
+                <td _ngcontent-hvr-c93="">{{out.receivedDate}}</td>
               </tr>
             </tbody>
           </table>

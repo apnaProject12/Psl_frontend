@@ -12,9 +12,20 @@ export class InvertoryOutComponent implements OnInit {
 
   inventoryOut: any;
 
-  ngOnInit(): void {}
-
-  findinventoryitem(){
-    this.router.navigate(['/dashboard/inventory-out-item']);
+  ngOnInit(): void {
+  this.service.getInventoryOutData().subscribe((data:any)=>{
+    this.inventoryOut=data;
+  })
   }
+
+  findinventoryitem(id:any){
+    console.log(id);
+    
+    this.router.navigate(['/dashboard/inventory-out-item',id]);
+  }
+
+  getAllInventoryOutItem(){
+
+  }
+
 }
