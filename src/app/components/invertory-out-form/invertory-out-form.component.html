@@ -118,8 +118,8 @@
 
               <tr  *ngFor="let quantity of quantities.controls; let i = index"
                 [formGroupName]="i">
-                <td>
-                  Product Name:
+                <td >
+                  Product Name
                   <ng-select name="" id="mySelect" formControlName="productName"
                    (change)="productNamevalue($event)">
                     <ng-option value="{{data.productName}}" *ngFor="let data of pList" >
@@ -128,7 +128,7 @@
                   </ng-select>
                 </td>
                 <td>
-                  Total Product:
+                  Available Product
                   <input formControlName="totalProduct" 
                     type="text" 
                     class="form-control"
@@ -136,7 +136,7 @@
                 </td>
                 
                 <td>
-                  Total Qty :
+                  Required
                   <input
                     type="number"
                     formControlName="totalQty"
@@ -217,7 +217,7 @@
               <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end">
                 <button
                   type="button"
-                  routerLink="/dashboard/list-item"
+                  routerLink="/dashboard/Invertory-out"
                   _ngcontent-sca-c12=""
                   _ngcontent-eyi-c98=""
                   tabindex="0"

@@ -33,6 +33,7 @@ import { InvertoryOutComponent } from './components/invertory-out/invertory-out.
 import { InvertoryComponent } from './components/invertory/invertory.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { InvertoryOutFormComponent } from './components/invertory-out-form/invertory-out-form.component';
+import { InventoryOutItemComponent } from './components/inventory-out-item/inventory-out-item.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { InvertoryOutFormComponent } from './components/invertory-out-form/inver
     HomeComponent,
     InvertoryOutComponent,
     InvertoryComponent,
-    InvertoryOutFormComponent
+    InvertoryOutFormComponent,
+    InventoryOutItemComponent
   ],
   imports: [
     BrowserModule,

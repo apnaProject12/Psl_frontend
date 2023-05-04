@@ -1,0 +1,22 @@
+td{
+    color:black
+}
+h4{
+    font-size: 1.2rem;
+    margin-bottom: 0px;
+    font-weight: bold;
+    text-shadow: 1px 1px #d5c1c1;
+}
+.form-data{
+    display: flex;
+    /* align-items: end; */
+    border-bottom: .5 px solid black;
+    justify-content: space-between;
+    font-size: 15px;
+    margin-bottom: 2px;
+    /* border: 1px solid; */
+    border-bottom: 0.5px solid #837c7cc9;
+    font-family: serif;
+    font-size: 19px;
+    text-shadow: 0.5px 0.5px #a1464675;
+}
