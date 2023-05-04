@@ -23,8 +23,8 @@
                   data-live-search="true"
                   id="name"
                   formControlName="from">
-                  <ng-option value="dfghjk">
-                    dfghjk
+                  <ng-option value="{{data.from}}" *ngFor="let data of logistic">
+                   {{data.from}}
                   </ng-option>
                 </ng-select>
                 
@@ -34,8 +34,8 @@
                   >Received by:</label
                 >
                 <ng-select id="name" formControlName="receivedBy" required>
-                  <ng-option value="cvbnm,">
-                    cvbnm,
+                  <ng-option  value="{{data.from}}" *ngFor="let data of logistic">
+                    {{data.from}}
                     </ng-option>
                 </ng-select>
                 
@@ -87,14 +87,14 @@
             >
               <div class="rows" style="display: flex">
                 <div class="co">
-                  <div class="card-title">Add Item:-</div>
+                  <div class="card-title">Add Multiple Item:-</div>
                 </div>
 
                 <div
-                  style="margin-top: 15px"
+                
                   _ngcontent-sca-c12=""
                   _ngcontent-eyi-c98=""
-                  class="text-end"
+                  class="text-end mt-2"
                 >
                   <a
                     _ngcontent-sca-c12=""
@@ -116,23 +116,21 @@
                 </div>
               </div>
 
-              <tr
-                *ngFor="let quantity of quantities().controls; let i = index"
-                [formGroupName]="i"
-              >
+              <tr  *ngFor="let quantity of quantities.controls; let i = index"
+                [formGroupName]="i">
                 <td>
-                  product Name:
-                  <!-- <input type="text" formControlName="productName" class="form-control"> -->
-                  <ng-select name="" id="" formControlName="productName">
-                    <ng-option value="qfghjk">
-                      dfghjk
+                  Product Name:
+                  <ng-select name="" id="mySelect" formControlName="productName"
+                   (change)="productNamevalue($event)">
+                    <ng-option value="{{data.productName}}" *ngFor="let data of pList" >
+                        {{data.productName}} 
                       </ng-option>
                   </ng-select>
                 </td>
                 <td>
                   Total Product:
-                  <input
-                    type="number"
+                  <input formControlName="totalProduct" 
+                    type="text" 
                     class="form-control"
                   />
                 </td>
@@ -176,7 +174,7 @@
               <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end">
                 <button
                   
-                  [disabled]="productForm.invalid"
+                 
                   _ngcontent-sca-c12=""
                   _ngcontent-eyi-c98=""
                   tabindex="0"
