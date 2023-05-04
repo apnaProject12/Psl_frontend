@@ -54,8 +54,6 @@ export class InvertoryOutFormComponent {
   }
 
 
-  // stockin?: Stockin[];
-  // listin?: List[];
   logistic: any;
   pList: any;
   ngOnInit(): void {
@@ -89,7 +87,7 @@ export class InvertoryOutFormComponent {
       this.fb.group({
         productName: [''],
         totalProduct:[''],
-        totalQty: [''],
+        totalQty: ['']
       })
     );
   }

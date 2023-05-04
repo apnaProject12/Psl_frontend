@@ -45,4 +45,16 @@ export class ServiceService {
   addInventoryOut(data:any){
     return this.router.post(`/StockInInventory/InventoryOut/addData`,data);
   }
+  getInventoryOutData(){
+    return this.router.get(`/StockInInventory/invertoryOut/findAll`)
+  }
+
+  // findById(id:any){
+  //   return this.router.get(`/StockInInventory/${id}`);
+  // }
+
+  getInventoryFindById(id:any){
+    return this.router.get(`/StockInInventory/invertoryOut/findByFrom/${id}`);
+  }
+  
 }
