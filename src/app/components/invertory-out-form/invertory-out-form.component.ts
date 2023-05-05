@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServiceService } from 'src/app/service.service';
 import {
@@ -18,21 +18,41 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class InvertoryOutFormComponent {
 
   name = "Angular";
-  productForm: FormGroup;
+  inventoryOutForm: FormGroup;
 
-  TodayDate = "2023-05-02";
+  from = new FormControl('', [Validators.required]);
+  recivedBy = new FormControl('', [Validators.required]);
+  recivedDate = new FormControl('', [Validators.required]);
+  totalQty = new FormControl('', [Validators.required]);
+  totalProduct = new FormControl('', [Validators.required, Validators.min(1)]);
+
+  get From(): FormControl {
+    return this.from as FormControl;
+  }
+  get RecivedBy(): FormControl {
+    return this.recivedBy as FormControl;
+  }
+  get RecivedDate(): FormControl {
+    return this.recivedDate as FormControl;
+  }
+  get TotalQty(): FormControl {
+    return this.totalQty as FormControl;
+  }
+  get TotalProduct(): FormControl {
+    return this.totalProduct as FormControl;
+  }
 
   constructor(
     private fb: FormBuilder,
     private stockService: ServiceService,
     private router: Router, private snackBar: MatSnackBar
   ) {
-    this.productForm = this.fb.group({
-      from: "",
-      receivedBy: "",
-      receivedDate: "",
-      totalItem: Number,
-      totalqty: "",
+    this.inventoryOutForm = this.fb.group({
+      from: this.from,
+      receivedBy: this.recivedBy,
+      receivedDate: this.recivedDate,
+      totalItem: this.totalProduct,
+      totalqty: this.totalQty,
       inventoryOutItem: this.fb.array([]),
     });
   }
@@ -79,7 +99,7 @@ export class InvertoryOutFormComponent {
 
 
   get quantities() {
-    return this.productForm.get("inventoryOutItem") as FormArray;
+    return this.inventoryOutForm.get("inventoryOutItem") as FormArray;
   }
  
   addQuantity() {
@@ -102,9 +122,9 @@ export class InvertoryOutFormComponent {
       f.removeControl(f.get('totalProduct'));
     })
     
-    console.log(this.productForm);
+    console.log(this.inventoryOutForm);
      
-    this.stockService.addInventoryOut(this.productForm.value).subscribe(
+    this.stockService.addInventoryOut(this.inventoryOutForm.value).subscribe(
       (response: any) => this.message = response.message,
       (error: HttpErrorResponse) => {
         if (error.status === 400) {

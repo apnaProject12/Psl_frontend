@@ -14,10 +14,10 @@
 
         <div class="card-body" id="form">
           
-          <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+          <form [formGroup]="inventoryOutForm" (ngSubmit)="onSubmit()">
             <div class="row">
               <div class="col">
-                <label for="name">From:</label>
+                <label for="name"><small class="req">*</small>From:</label>
                 <ng-select 
                   class="selectpicker"
                   data-live-search="true"
@@ -27,36 +27,56 @@
                    {{data.from}}
                   </ng-option>
                 </ng-select>
-                
+                <div>
+                  <small
+                    class="input"
+                    style="color: red"
+                    *ngIf="From.errors?.['required'] && (From.touched || From.dirty)"
+                    >From field is required</small
+                  >
+                </div>
               </div>
               <div class="col">
                 <label for="name"
-                  >Received by:</label
+                  ><small class="req">*</small>Received by:</label
                 >
                 <ng-select id="name" formControlName="receivedBy" required>
                   <ng-option  value="{{data.from}}" *ngFor="let data of logistic">
                     {{data.from}}
                     </ng-option>
                 </ng-select>
-                
+                <div>
+                  <small
+                    class="input"
+                    style="color: red"
+                    *ngIf="RecivedBy.errors?.['required'] && (RecivedBy.touched || RecivedBy.dirty)"
+                    >Recived By field is required</small
+                  >
+                </div>
               </div>
               <div class="col">
                 <label for="name"
-                  >Date:</label
+                  ><small class="req">*</small>Date:</label
                 >
                 <input
                   type="date"
-                  [value]="TodayDate"
                   id="name"
                   formControlName="receivedDate"
                   class="form-control"
                   required
                 />
-                
+                <div>
+                  <small
+                    class="input"
+                    style="color: red"
+                    *ngIf="RecivedDate.errors?.['required'] && (RecivedDate.touched || RecivedDate.dirty)"
+                    >Date field is required</small
+                  >
+                </div>
               </div>
               <div class="col">
                 <label for="name"
-                  >Total Quantity:</label
+                  ><small class="req">*</small>Total Quantity:</label
                 >
                 <input
                   type="number"
@@ -64,10 +84,18 @@
                   formControlName="totalqty"
                   class="form-control"
                   required/>
+                  <div>
+                    <small
+                      class="input"
+                      style="color: red"
+                      *ngIf="TotalQty.errors?.['required'] && (TotalQty.touched || TotalQty.dirty)"
+                      >Quantity field is required</small
+                    >
+                  </div>
               </div>
               <div class="col">
                 <label for="name"
-                  >Total Product:</label
+                  ><small class="req">*</small>Total Product:</label
                 >
                 <input
                   type="number"
@@ -75,6 +103,14 @@
                   formControlName="totalItem"
                   #box
                   class="form-control"/>
+                  <div>
+                    <small
+                      class="input"
+                      style="color: red"
+                      *ngIf="TotalProduct.errors?.['required'] && (TotalProduct.touched || TotalProduct.dirty)"
+                      >Product field is required</small
+                    >
+                  </div>
               </div>
             </div>
             
