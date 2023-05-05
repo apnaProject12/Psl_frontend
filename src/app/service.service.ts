@@ -33,7 +33,7 @@ export class ServiceService {
     return this.router.post(`/StockInInventory/add/inventory`,data)
   }
   deleteData(id:any){
-    return this.router.delete(`/StockInInventory/${id}`)
+    return this.router.delete(`/StockInInventory/StockIn/deleteData/${id}`)
   }
   receiverfindAll(){
     return this.router.get(`/StockInInventory/receiver/findAll`)
@@ -59,5 +59,10 @@ export class ServiceService {
   getInventoryOutItem(id:any){
     return this.router.get(`/StockInInventory/invertoryOut/findByFrom/${id}`);
   }
+
+  getInventoryOutById(id:any){
+    return this.router.get(`/StockInInventory/inventoryOut/findAlldata/${id}`);
+  }
+  
   
 }

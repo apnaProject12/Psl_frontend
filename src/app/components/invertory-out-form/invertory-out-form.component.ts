@@ -19,6 +19,7 @@ export class InvertoryOutFormComponent {
 
   name = "Angular";
   inventoryOutForm: FormGroup;
+  
 
   from = new FormControl('', [Validators.required]);
   recivedBy = new FormControl('', [Validators.required]);

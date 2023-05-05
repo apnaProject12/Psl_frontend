@@ -27,8 +27,7 @@
                         margin-left: 2vw;
                       "
                     >
-                    Abishek
-                      <!-- {{ stockin.from }} -->
+                  {{item.from}}
                     </div>
                   </div>
                   <div _ngcontent-fcb-c11="" class="card-body">
@@ -42,8 +41,7 @@
                               </td>
                               <td _ngcontent-fcb-c11="" class="wrappable">
                                 <small _ngcontent-fcb-c11="">
-                                  Abishek
-                                  <!-- {{ stockin.from }} -->
+                                  {{item.from}}
                                 </small>
                               </td>
                             </tr>
@@ -53,7 +51,7 @@
                               </td>
                               <td _ngcontent-fcb-c11="" class="wrappable">
                                 <small _ngcontent-fcb-c11="">
-                                  sunny
+                                  {{item.receivedBy}}
                                   <!-- {{ stockin.recivedBy }} -->
                                 </small>
                               </td>
@@ -64,8 +62,7 @@
                               </td>
                               <td _ngcontent-fcb-c11="" class="wrappable">
                                 <small _ngcontent-fcb-c11="">
-                                  04-05-2023
-                                  <!-- {{ stockin.recivedDate }} -->
+                                  {{item.receivedDate}}
                                 </small>
                               </td>
                             </tr>
@@ -82,12 +79,11 @@
             
             <tr _ngcontent-fcb-c11="">
               <td _ngcontent-fcb-c11="" class="wrappable">
-                <small  _ngcontent-fcb-c11="">Total Product</small>
+                <small  _ngcontent-fcb-c11="">Total Item</small>
               </td>
               <td _ngcontent-fcb-c11="" class="wrappable">
                 <small _ngcontent-fcb-c11="">
-                  1
-                  <!-- {{ stockin.totalProduct }} -->
+                  {{item.totalItem}}
                 </small>
               </td>
             </tr>
@@ -96,19 +92,8 @@
                 <small _ngcontent-fcb-c11="">Total Quantity</small>
               </td>
               <td _ngcontent-fcb-c11="" class="wrappable">
-                <small _ngcontent-fcb-c11="">5
-                  <!-- {{ stockin.totalQty }} -->
-                </small>
-              </td>
-            </tr>
-            <tr _ngcontent-fcb-c11="">
-              <td _ngcontent-fcb-c11="" class="wrappable">
-                <small _ngcontent-fcb-c11="">Total Price</small>
-              </td>
-              <td _ngcontent-fcb-c11="" class="wrappable">
                 <small _ngcontent-fcb-c11="">
-                  1400
-                  <!-- {{ stockin.totalPrice }} -->
+                  {{item.totalqty}}
                 </small>
               </td>
             </tr>
@@ -146,7 +131,7 @@
           <tr _ngcontent-eyi-c98="">
             <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
               <div _ngcontent-eyi-c98="" class="row">
-                <div _ngcontent-eyi-c98="" class="col-md-12">Product Id</div>
+                <div _ngcontent-eyi-c98="" class="col-md-12">S No.</div>
                 <div _ngcontent-eyi-c98="" class="col sm-6">
                   <i _ngcontent-eyi-c98=""></i>
                 </div>
@@ -170,52 +155,27 @@
                 </div>
               </div>
             </th>
-            <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
-              <div _ngcontent-eyi-c98="" class="row">
-                <div _ngcontent-eyi-c98="" class="col-md-12">Price</div>
-                <div _ngcontent-eyi-c98="" class="col sm-6">
-                  <i _ngcontent-eyi-c98=""></i>
-                </div>
-              </div>
-            </th>
-            <th _ngcontent-eyi-c98="" scope="col" class="ng-star-inserted">
-              <div _ngcontent-eyi-c98="" class="row">
-                <div _ngcontent-eyi-c98="" class="col-md-12">Total Price</div>
-                <div _ngcontent-eyi-c98="" class="col sm-6">
-                  <i _ngcontent-eyi-c98=""></i>
-                </div>
-              </div>
-            </th>
+           
           </tr>
         </thead>
         <tbody _ngcontent-hvr-c93>
-          <tr
+          <tr *ngFor="let items of itemList let i = index"
             _ngcontent-hvr-c93=""
             class="ng-star-inserted"
             
           >
             <td _ngcontent-hvr-c93="">
-              1
+            {{i+1}}
               <!-- {{ user.productId }} -->
             </td>
             <td _ngcontent-hvr-c93="">
-              Raspberry pi
-              <!-- {{ user.productName }} -->
+              
+              {{ items.productName }}
             </td>
             <td _ngcontent-hvr-c93="">
-              10
-              <!-- {{ user.productQty }} -->
+              {{items.totalQty}}
             </td>
-            <td _ngcontent-hvr-c93="">
-              <i class="fa-solid fa-indian-rupee-sign"></i>
-              140
-              <!-- {{ user.price }} -->
-            </td>
-            <td _ngcontent-hvr-c93="">
-              <i class="fa-solid fa-indian-rupee-sign"></i>
-              1400
-              <!-- {{ user.totalPrice }} -->
-            </td>
+           
           </tr>
         </tbody>
       </table>

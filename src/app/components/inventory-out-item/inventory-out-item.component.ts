@@ -11,14 +11,19 @@ export class InventoryOutItemComponent implements OnInit{
 
   constructor(private service:ServiceService,private route:ActivatedRoute){ }
   id:any;
+
   itemList:any
+  item:any;
   ngOnInit(): void {
 
    this.id= this.route.snapshot.params['id'];
    console.log(this.id);
-   this.service.getInventoryOutItem(this.id).subscribe((data:any)=>{
-    this.itemList=data;
+   this.service.getInventoryOutById(this.id).subscribe((data:any)=>{
+    this.itemList=data.inventoryOutItem;
+    this.item=data;
+
    })
+
    
     
   }

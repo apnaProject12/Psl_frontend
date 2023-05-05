@@ -7,6 +7,7 @@ import {
   MatSnackBarVerticalPosition,
   MatSnackBarRef,
 } from '@angular/material/snack-bar';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-list-item',
@@ -166,11 +167,22 @@ export class ListItemComponent {
   }
 
   value: any;
+  errorMessage:string="";
   deleteData1() {
     this.service.deleteData(this.id).subscribe((data: any) => {
-      this.value = data;
+      this.message = data.message;
       this.ngOnInit();
-      this.notification();
-    });
+
+  },(error: HttpErrorResponse) => {
+    if (error.status === 500) {
+      this.message = error.error.message;
+    } else {
+      this.errorMessage = 'An error occurred: ' + error.message;
+      console.log(this.errorMessage);
+
+    }
   }
+  
+  )
+}
 }

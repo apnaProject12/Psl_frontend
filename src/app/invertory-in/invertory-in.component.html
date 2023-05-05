@@ -70,9 +70,9 @@
                 >
                 <ng-select id="name" formControlName="recivedBy" required>
                   <ng-option
-                    value="{{ logisticsdata.receiver }}"
-                    *ngFor="let logisticsdata of Receiver"
-                    >{{ logisticsdata.receiver }}</ng-option
+                    value="{{ logisticsdata.from }}"
+                    *ngFor="let logisticsdata of logistics"
+                    >{{ logisticsdata.from }}</ng-option
                   >
                 </ng-select>
                 <div>
@@ -181,6 +181,14 @@
                     >Total Price required is Required</small
                   >
                 </div>
+                <div>
+                  <small
+                    class="input"
+                    style="color: red"
+                    *ngIf="TotalPrice.errors?.['min'] && (TotalPrice.touched || TotalPrice.dirty)"
+                    >Total price should be greater than 0
+                  </small>
+                </div>
               </div>
             </div>
 
@@ -192,7 +200,7 @@
             >
               <div class="rows" style="display: flex">
                 <div class="co">
-                  <div class="card-title">Add Item:-</div>
+                  <div class="card-title"><small class="req">*</small>Add Item:-</div>
                 </div>
 
                 <div

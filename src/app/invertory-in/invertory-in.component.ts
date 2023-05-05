@@ -15,6 +15,7 @@ import {
   MatSnackBarVerticalPosition,
   MatSnackBarRef,
 } from '@angular/material/snack-bar';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-invertory-in',
@@ -30,9 +31,10 @@ export class InvertoryInComponent {
   from = new FormControl('', [Validators.required]);
   recivedBy = new FormControl('', [Validators.required]);
   recivedDate = new FormControl('', [Validators.required]);
-  totalQty = new FormControl('', [Validators.required]);
+  totalQty = new FormControl('', [Validators.required , Validators.min(1)]);
   totalProduct = new FormControl('', [Validators.required, Validators.min(1)]);
   totalPrice = new FormControl('', [Validators.required, Validators.min(1)]);
+  errorMessage: string="";
 
   get From(): FormControl {
     return this.from as FormControl;
@@ -149,6 +151,7 @@ export class InvertoryInComponent {
     this.quantities().removeAt(i);
   }
   userData: any;
+  timer:any;
   onSubmit() {
     let Array = this.productForm.get('stockInventoryItems') as FormArray;
     let Arraylength = Array.controls.length;
@@ -161,25 +164,36 @@ export class InvertoryInComponent {
     this.userData = this.productForm.value;
     if (product == Arraylength) {
       this.stockService
-        .postAllData(this.productForm.value)
-        .subscribe((data: any) => {
-          this.userData = data;
-        });
-      if (this.userData != null) {
-        this.message = 'data inserted successfully';
-        this.notification();
-        this.value = 'reset';
-      } else {
-        this.message = 'something went wrong';
-        this.notification();
+        .postAllData(this.productForm.value).subscribe(
+          (response: any) => {
+            this.message = response.message;
+            this.router.navigate(['/dashboard/list-item'])
+          }
+          
+          ,
+          (error: HttpErrorResponse) => {
+            if (error.status === 400) {
+              this.message = error.error.message;
+            } else {
+              this.errorMessage = 'An error occurred: ' + error.message;
+              console.log(this.errorMessage);
+    
+            }
+          }
+        )
+        
+        
       }
-    } else if (product > Arraylength) {
-      this.message = 'Please add product !!';
-      this.notification();
-    } else {
-      this.message = 'please remove product !!';
-      this.notification();
-    }
+      else{
+        this.message="add product data";
+      }
+
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => {
+        this.notification();
+        
+      }, 500)
+
   }
 
   getAllStockes() {

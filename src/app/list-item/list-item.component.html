@@ -41,21 +41,19 @@
                   >
                     <label _ngcontent-eyi-c98="" for="designation">From</label>
 
-                    <select
-                      class="selectpicker form-control"
+                    <ng-select
+                      class="selectpicker "
                       data-live-search="true"
                       id="name"
                     >
-                      <option value="" selected disabled>
-                        --choose From--
-                      </option>
-                      <option
+                      
+                      <ng-option
                         value="{{ logisticsdata.from }}"
                         *ngFor="let logisticsdata of logistics"
                       >
                         {{ logisticsdata.from }}
-                      </option>
-                    </select>
+                      </ng-option>
+                    </ng-select>
                   </div>
                   <div
                     _ngcontent-eyi-c98=""
@@ -63,17 +61,15 @@
                   >
                     <label _ngcontent-eyi-c98="" for="">Recived By</label>
 
-                    <select id="name" class="form-control" required>
-                      <option selected value="" disabled>
-                        --choose Received By--
-                      </option>
-                      <option
-                        value="{{ logisticsdata.receiver }}"
-                        *ngFor="let logisticsdata of Receiver"
+                    <ng-select id="name" required>
+                     
+                      <ng-option
+                        value="{{ logisticsdata.from }}"
+                        *ngFor="let logisticsdata of logistics"
                       >
-                        {{ logisticsdata.receiver }}
-                      </option>
-                    </select>
+                      {{ logisticsdata.from }}
+                      </ng-option>
+                    </ng-select>
                   </div>
                   <div
                     _ngcontent-eyi-c98=""
@@ -343,24 +339,53 @@
                       </ng-template>
                     </td>
                     <td>
-                      <div _ngcontent-eyi-c98="" class="" style="display: flex">
-                        <button
-                          _ngcontent-eyi-c98=""
-                          type="button"
-                          class="btn btn-primary"
-                          (click)="delete(user.id)"
-                          data-bs-toggle="modal"
-                          data-bs-target="#exampleModal2"
-                          class="btn btn-outline-info btn-sm"
-                          tabindex="0"
-                          fdprocessedid="os78ce"
-                        >
-                          <i
+
+                      <div *ngIf="user.isApproved else elseBlock2">
+
+                        <div _ngcontent-eyi-c98="" class="" style="display: flex">
+                          <button
                             _ngcontent-eyi-c98=""
-                            class="fa-solid fa-trash"
-                          ></i>
-                        </button>
+                            type="button"
+                            class="btn btn-primary"
+                            class="btn btn-outline-info btn-sm"
+                            tabindex="0"
+                            fdprocessedid="os78ce"
+                            disabled
+                          >
+                            <i
+                              _ngcontent-eyi-c98=""
+                              class="fa-solid fa-trash"
+                            ></i>
+                          </button>
+                        </div>
                       </div>
+
+                      <ng-template #elseBlock2>
+
+                        <div _ngcontent-eyi-c98="" class="" style="display: flex">
+                          <button
+                            _ngcontent-eyi-c98=""
+                            type="button"
+                            class="btn btn-primary"
+                            (click)="delete(user.id)"
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModal2"
+                            class="btn btn-outline-info btn-sm"
+                            tabindex="0"
+                            fdprocessedid="os78ce"
+                          >
+                            <i
+                              _ngcontent-eyi-c98=""
+                              class="fa-solid fa-trash"
+                            ></i>
+                          </button>
+                        </div>
+
+                      </ng-template>
+
+                   
+
+
                     </td>
                   </tr>
                 </tbody>
