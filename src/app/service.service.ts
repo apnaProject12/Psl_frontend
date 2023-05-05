@@ -45,8 +45,8 @@ export class ServiceService {
   addInventoryOut(data:any){
     return this.router.post(`/StockInInventory/InventoryOut/addData`,data);
   }
-  getInventoryOutData(){
-    return this.router.get(`/StockInInventory/invertoryOut/findAll`)
+  getInventoryOutData(pageNo:any,pSize:any,field:any,sortDir:any){
+    return this.router.get(`/StockInInventory/invertoryOut/findAll?pageNo=${pageNo}&pageSize=${pSize}&field=${field}&sortDir=${sortDir}`)
   }
 
   // findById(id:any){
@@ -54,6 +54,9 @@ export class ServiceService {
   // }
 
   getInventoryFindById(id:any){
+    return this.router.get(`/StockInInventory/invertoryOut/findByFrom/${id}`);
+  }
+  getInventoryOutItem(id:any){
     return this.router.get(`/StockInInventory/invertoryOut/findByFrom/${id}`);
   }
   

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiceService } from 'src/app/service.service';
+import { ActivatedRoute } from '@angular/router';
+import { ServiceService ,} from 'src/app/service.service';
 
 @Component({
   selector: 'app-inventory-out-item',
@@ -8,9 +9,17 @@ import { ServiceService } from 'src/app/service.service';
 })
 export class InventoryOutItemComponent implements OnInit{
 
-  constructor(private service:ServiceService){ }
-
+  constructor(private service:ServiceService,private route:ActivatedRoute){ }
+  id:any;
+  itemList:any
   ngOnInit(): void {
+
+   this.id= this.route.snapshot.params['id'];
+   console.log(this.id);
+   this.service.getInventoryOutItem(this.id).subscribe((data:any)=>{
+    this.itemList=data;
+   })
+   
     
   }
 
