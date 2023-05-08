@@ -16,4 +16,9 @@ export class InvertoryComponent implements OnInit {
     })
   }
 
+  getData(){
+    console.log("Hii");
+    
+  }
+
 }
