@@ -34,8 +34,7 @@ import { InvertoryComponent } from './components/invertory/invertory.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { InvertoryOutFormComponent } from './components/invertory-out-form/invertory-out-form.component';
 import { InventoryOutItemComponent } from './components/inventory-out-item/inventory-out-item.component';
-
-
+import Chart from 'chart.js/auto';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,7 +74,9 @@ import { InventoryOutItemComponent } from './components/inventory-out-item/inven
     ReactiveFormsModule,
     ModalModule,
     MatSnackBarModule,
-    NgSelectModule
+    NgSelectModule,
+    
+
     
   ],
   providers: [],
