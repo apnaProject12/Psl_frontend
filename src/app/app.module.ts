@@ -19,12 +19,12 @@ import {MatRadioModule} from '@angular/material/radio';
 import { RegisterComponent } from './components/register/register.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { HeaderComponent } from './components/header/header.component';
-import { ListItemComponent } from './list-item/list-item.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { InvertoryInComponent } from './invertory-in/invertory-in.component';
-import { AboutComponent } from './about/about.component';
-import { HomeComponent } from './home/home.component';
-import{ HttpClientModule}from '@angular/common/http';
+import { ListItemComponent } from './components/list-item/list-item.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { InvertoryInComponent } from './components/invertory-in/invertory-in.component';
+import { AboutComponent } from './components/about/about.component';
+import { HomeComponent } from './components/home/home.component';
+import{ HTTP_INTERCEPTORS, HttpClientModule}from '@angular/common/http';
 import {MatTooltipModule} from '@angular/material/tooltip';
 // import { FormsModule }   from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -35,6 +35,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { InvertoryOutFormComponent } from './components/invertory-out-form/invertory-out-form.component';
 import { InventoryOutItemComponent } from './components/inventory-out-item/inventory-out-item.component';
 import Chart from 'chart.js/auto';
+import { AuthInterceptor } from './Intercepter/auth.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,7 +80,8 @@ import Chart from 'chart.js/auto';
 
     
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,
+    multi:true} ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

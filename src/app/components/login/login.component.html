@@ -26,6 +26,7 @@
               id="username"
               placeholder=" Email ID"
               name="username"
+              [(ngModel)]="login.username"
               autofocus="autofocus"
               maxlength="70"
               onkeypress="clearErrorBoxes()"
@@ -41,6 +42,7 @@
             <div class="input-group">
               <input
                 type="password"
+                [(ngModel)]="login.password"
                 id="password"
                 placeholder="Password"
                 maxlength="16"
@@ -69,7 +71,7 @@
           <div class="d-flex justify-content-between">
             <button
               class="btn btn-primary btn-block col-lg-3 enter-btn"
-              routerLink="/dashboard/home"
+              (click)="Dologin()"
               id="loginSubmit"
             >
               Login

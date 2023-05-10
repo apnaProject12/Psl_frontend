@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiceService } from 'src/app/service.service';
+import { ServiceService } from 'src/app/Services/Main Service/service.service';
 import {
   MatSnackBar,
   MatSnackBarHorizontalPosition,

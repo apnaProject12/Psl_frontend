@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ServiceService } from 'src/app/service.service';
+import { ServiceService } from 'src/app/Services/Main Service/service.service';
 import {
   MatSnackBar,
   MatSnackBarHorizontalPosition,
