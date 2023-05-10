@@ -63,6 +63,9 @@ export class ServiceService {
   getInventoryOutById(id:any){
     return this.router.get(`/StockInInventory/inventoryOut/findAlldata/${id}`);
   }
+  postproductData(data:any){
+    return this.router.post(`/StockInInventory/addInventory`,data);
+  }
   
   
 }

@@ -195,6 +195,17 @@ export class InvertoryInComponent {
       }, 500)
 
   }
+  getdata(val2:any){
+    console.log(`value 1 = ${this.box1data},value 2 =${val2}`);
+    
+  }
+  box1data:any;
+  Box1(data:any){
+    this.box1data=data;
+    console.log(this.box1data);
+    
+    
+  }
 
   getAllStockes() {
     // this.stockService.getAllLogistics().subscribe(data=>{

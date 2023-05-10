@@ -1,45 +1,46 @@
-.widget-container {
-    display: flex;
-    align-items: space-between;
-    }
-    .widget {
-    width: 325px;
-    height: 175px;
-    background-color: #fff;
-    color: #fff;
-    border-radius: 5px;
-    margin: 10px;
-    box-shadow: 5px 5px 5px #939393;
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    }
-    .widget.green {
-    background-color: rgb(4, 67, 66);
-    }
-    .widget.yellow {
-    background-color: rgb(237, 158, 32);
-    }
-    .widget.red {
-    background-color: rgb(126, 5, 5);
-    }
-    .widget.blue {
-    background-color: rgb(105, 32, 251);
-    }
-   
-   
-    .widget .icon {
-    width: 100px;
-    font-size: 60px;
+.icon{
+    margin-top: 63px;
+    height: 10vh;
+}
+.data{
+    margin-top: 33px;
+    height: 17vh;
+}
+.name{
+    /* background-color: aqua; */
+    height: 58px;
+    margin-top: 10px;
+}
+.nn{
+    font-size: 2.2rem;
     text-align: center;
-    }
-   
-    .widget .value {
+    /* margin-top: 1px; */
+    padding-top: 10px;
+    font-style: initial;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #ab9eadeb;
+    text-shadow: 3px 3px #2b212187;
+}
+.value{
+    /* background-color: antiquewhite; */
+    height: 55px;
+}
+.ppp{
+    font-size: 2.2rem;
     text-align: center;
-    width: 175px;
-    }
-    .widget .value .top {
-    font-size: 30px;
-    }
-   
-  
+    /* margin-top: 1px; */
+    padding-top: 19px;
+    font-style: initial;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #ab9eadeb;
+    text-shadow: 3px 3px #2b212187;
+}
+i{
+    margin-top: 10px;
+    font-size: 3.5rem;
+    margin-left: 23px;
+    color: antiquewhite;
+    text-shadow: 3px 3px #7e6f6f87;
+}

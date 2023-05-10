@@ -246,7 +246,8 @@
                 </td>
                 <td>
                   Total Product:
-                  <input
+                  <input #box3
+                  (keyup)="Box1(box3.value)"
                     type="number"
                     formControlName="productQty"
                     class="form-control"
@@ -254,10 +255,11 @@
                 </td>
                 <td>
                   Price Per Item:
-                  <input
+                  <input #box2
                     type="number"
                     formControlName="price"
                     class="form-control"
+                    (keyup)="getdata(box2.value)"
                   />
                 </td>
                 <td>
