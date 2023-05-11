@@ -31,9 +31,16 @@ export class LoginComponent implements OnInit {
   message:any;
   Dologin(){
     console.log(this.login);
+    this.service.logOut();
     if (this.login.password !="" && this.login.username !="") {
       this.service.dologin(this.login).subscribe((data:any)=>{
-        localStorage.setItem("token",data.message);
+        localStorage.setItem("token",data.token);
+        localStorage.setItem("role",data.role);
+        localStorage.setItem("name",data.user)
+        setTimeout(()=>{
+          this.router.navigate(['/dashboard/home']);
+        },500)
+        
         },(error: HttpErrorResponse) => {
           if (error.status === 400) {
             this.message = error.error.message;
@@ -44,7 +51,6 @@ export class LoginComponent implements OnInit {
         }
         )
 
-        this.router.navigate(['/dashboard/home']);
       }
       
     

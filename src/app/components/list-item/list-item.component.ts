@@ -60,7 +60,9 @@ export class ListItemComponent {
   }
 
   ngOnInit(): void {
-    if (localStorage.getItem('role') === 'admin') {
+    
+
+    if (localStorage.getItem('role') === 'ROLE_ADMIN') {
       this.role_Admin = true;
     } else {
       this.role_Admin = false;
