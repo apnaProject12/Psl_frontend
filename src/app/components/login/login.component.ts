@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     "password":""
   }
   ngOnInit(): void {
-    
+    //fgbhjfgh
   }
   message:any;
   Dologin(){
