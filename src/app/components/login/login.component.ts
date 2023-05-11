@@ -37,6 +37,8 @@ export class LoginComponent implements OnInit {
         localStorage.setItem("token",data.token);
         localStorage.setItem("role",data.role);
         localStorage.setItem("name",data.user)
+        console.log("this project was stock management system");
+        
         setTimeout(()=>{
           this.router.navigate(['/dashboard/home']);
         },500)

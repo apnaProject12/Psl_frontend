@@ -23,6 +23,9 @@ export class InvertoryOutComponent implements OnInit {
     this.inventoryOut=data.content;
     this.totalpage = data.totalPages;
         this.totalElement = data.totalElements;
+
+        console.log("Hii");
+        
   })
   }
 

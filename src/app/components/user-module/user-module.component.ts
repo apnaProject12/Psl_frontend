@@ -1,10 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-user-module',
   templateUrl: './user-module.component.html',
   styleUrls: ['./user-module.component.css']
 })
-export class UserModuleComponent {
+export class UserModuleComponent implements OnInit{
+ 
+  constructor(){ }
+
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+
+
+
 
 }
