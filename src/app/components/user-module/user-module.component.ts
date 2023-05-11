@@ -10,7 +10,7 @@ export class UserModuleComponent implements OnInit{
   constructor(){ }
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    throw new Error(' Method not implemented.');
   }
 
 

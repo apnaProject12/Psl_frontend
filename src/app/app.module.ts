@@ -36,6 +36,7 @@ import { InvertoryOutFormComponent } from './components/invertory-out-form/inver
 import { InventoryOutItemComponent } from './components/inventory-out-item/inventory-out-item.component';
 import Chart from 'chart.js/auto';
 import { AuthInterceptor } from './Intercepter/auth.interceptor';
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,6 +77,10 @@ import { AuthInterceptor } from './Intercepter/auth.interceptor';
     ModalModule,
     MatSnackBarModule,
     NgSelectModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground:true
+    })
     
 
     

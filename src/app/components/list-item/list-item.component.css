@@ -19,7 +19,7 @@
 .search{
     width: 14vw;
     height: 28px;
-    border-radius: 14px;
+    border-radius: 4px;
     border: 2px solid green;
 }
 [type=search] {

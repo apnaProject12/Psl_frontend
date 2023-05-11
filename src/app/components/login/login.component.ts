@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
         
         setTimeout(()=>{
           this.router.navigate(['/dashboard/home']);
-        },500)
+        },700)
         
         },(error: HttpErrorResponse) => {
           if (error.status === 400) {

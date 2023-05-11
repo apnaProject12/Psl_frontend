@@ -1,4 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { ServiceService } from 'src/app/Services/Main Service/service.service';
+import { LoginServiceService } from 'src/app/Services/login Service/login-service.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -7,6 +10,7 @@ import { Component, Input } from '@angular/core';
 })
 export class SidenavComponent {
   @Input() sideNavStatus:boolean=false;
+  constructor(private service:LoginServiceService,private router:Router){ }
 list=[
   {
   number: '1',
@@ -35,19 +39,17 @@ list=[
   number: '4',
   name:'Invertory',
   link:'Invertory',
-
   icon:'fa-solid fa-bank',
   tooltip:"Invertory"
   },
-  // {
-  // number: '54',
-  // name:'product-list',
-  // link:'product-list',
-
-  // icon:'fa-solid fa-list',
-  // tooltip:"product-list"
-  // },
-
+  
+  
 ]
+icon:string='fa fa-sign-out'
+logout(){
+  this.service.logOut();
+  this.router.navigate([""])
+
+}
 
 }

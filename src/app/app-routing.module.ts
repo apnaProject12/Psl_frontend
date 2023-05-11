@@ -21,6 +21,11 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
+    path: 'login',
+    component: LoginComponent,
+    pathMatch: 'full',
+  },
+  {
     path: 'sidenav',
     component: SidenavComponent,
     pathMatch: 'full',

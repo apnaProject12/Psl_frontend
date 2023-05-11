@@ -10,8 +10,9 @@ import { LoginServiceService } from 'src/app/Services/login Service/login-servic
 export class HeaderComponent implements OnInit{
 
   constructor(private router:Router,private service:LoginServiceService){}
-
+name:any;
   ngOnInit(): void {
+   this.name= localStorage.getItem("name");
     throw new Error('Method not implemented.');
   }
   @Output() sideNavToggled =new EventEmitter<boolean>
