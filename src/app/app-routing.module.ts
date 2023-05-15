@@ -13,6 +13,7 @@ import { InvertoryOutComponent } from './components/invertory-out/invertory-out.
 import { InvertoryComponent } from './components/invertory/invertory.component';
 import { InvertoryOutFormComponent } from './components/invertory-out-form/invertory-out-form.component';
 import { InventoryOutItemComponent } from './components/inventory-out-item/inventory-out-item.component';
+import { UserModuleComponent } from './components/user-module/user-module.component';
 
 const routes: Routes = [
   {
@@ -77,6 +78,10 @@ const routes: Routes = [
       {
         path:'inventory-out-item/:id',
         component:InventoryOutItemComponent
+      },
+      {
+        path:'user-module',
+        component:UserModuleComponent
       }
     ],
   },

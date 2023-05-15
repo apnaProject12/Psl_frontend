@@ -42,6 +42,13 @@ list=[
   icon:'fa-solid fa-bank',
   tooltip:"Invertory"
   },
+  {
+    number:'5',
+    name:'User Module',
+    link:'user-module',
+    icon:'fa-solid fa-users',
+    tooltip:"User Module"
+  }
   
   
 ]

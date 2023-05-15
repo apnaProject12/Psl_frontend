@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
         console.log("this project was stock management system");
         
         setTimeout(()=>{
-          this.router.navigate(['/dashboard/home']);
+          this.router.navigate(['/dashboard/list-item']);
         },700)
         
         },(error: HttpErrorResponse) => {
