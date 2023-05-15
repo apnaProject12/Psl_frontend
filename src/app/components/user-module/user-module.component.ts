@@ -33,11 +33,7 @@ export class UserModuleComponent implements OnInit{
   }
 
   signUp(){
-    
 
   }
-
-
-
 
 }
