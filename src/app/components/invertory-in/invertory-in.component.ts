@@ -123,9 +123,9 @@ export class InvertoryInComponent {
   newQuantity(): FormGroup {
     return this.fb.group({
       productName: '',
-      productQty: '',
-      price: '',
-      totalPrice: '',
+      productQty: Number,
+      price: Number,
+      totalPrice: Number,
     });
   }
   name2: string = 'nitish';
@@ -184,6 +184,9 @@ export class InvertoryInComponent {
         
         
       }
+      else if(product < Arraylength){
+        this.message="remove product data";
+      }
       else{
         this.message="add product data";
       }
@@ -196,8 +199,17 @@ export class InvertoryInComponent {
 
   }
   getdata(val2:any){
-    console.log(`value 1 = ${this.box1data},value 2 =${val2}`);
+    console.log(`valu 1 =${this.box1data} and val2 =${val2}`);
     
+   let value= this.productForm.get("stockInventoryItems") as FormArray;
+  let sss= value.controls.find(f=>f.get("price")?.value==val2 && f.get("productQty")?.value==this.box1data);
+  sss?.get("totalPrice")?.setValue(val2*this.box1data);
+  
+  //  console.log(value);
+   
+  //  console.log(value.get("productQty"));
+   
+    value.get("totalPrice")?.setValue(this.box1data*val2);
   }
   box1data:any;
   Box1(data:any){
