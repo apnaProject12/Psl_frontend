@@ -39,6 +39,188 @@
             </div>
           </div>
         </div>
+        <div class="card-body">
+          <div class="row">
+            <div _ngcontent-eyi-c98="" class="col-4">
+              <label _ngcontent-eyi-c98="" for="designation"
+                >Product Name :
+              </label>
+
+              <ng-select
+                class="selectpicker"
+                data-live-search="true"
+                id="name"
+                formControlName="from"
+              >
+                <ng-option 
+                  >ffgg
+                </ng-option>
+              </ng-select>
+            </div>
+            <div _ngcontent-eyi-c98="" class="col-4">
+              <label _ngcontent-eyi-c98="" for="designation"
+                >Product Quentity :
+              </label>
+              <input
+                _ngcontent-eyi-c98=""
+                type="number"
+                #box8
+                class="form-control ng-untouched ng-pristine ng-valid"
+                fdprocessedid="l9beoe"
+              />
+            </div>
+            <div _ngcontent-eyi-c98="" class="col-sm-12 col-md-6 col-lg-3 mt-4">
+              <button
+                _ngcontent-eyi-c98=""
+                class="btn btn-outline-info btn-sm"
+                tabindex="0"
+                fdprocessedid="os78ce"
+              >
+                <i _ngcontent-eyi-c98="" class="fa fa-search"></i>&nbsp;Search
+              </button>
+              &nbsp;
+              <button
+                _ngcontent-eyi-c98=""
+                type="reset"
+                class="btn btn-outline-info btn-sm"
+                tabindex="0"
+                fdprocessedid="ywyqy9"
+              >
+                <i _ngcontent-eyi-c98="" class="fa fa-refresh"></i>&nbsp;Reset
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div style="color: rgb(14, 14, 14)" class="table-responsive card">
+            <table _ngcontent-eyi-c98="" class="table styled-table table-bordered table-sm mb-0">
+              <thead
+                _ngcontent-eyi-c98=""
+                style="
+                  background-color: rgb(38, 186, 157);
+                  color: rgb(255, 255, 255);
+                  font-family: Arial;
+                "
+              >
+                <tr _ngcontent-eyi-c98="">
+                  <th
+                    _ngcontent-eyi-c98=""
+                    style="width: 106px"
+                    scope="col"
+                    class="ng-star-inserted"
+                  >
+                    <div _ngcontent-eyi-c98="" class="row">
+                      <div _ngcontent-eyi-c98="" class="col-md-12">
+                        ID:
+                      </div>
+                      <div _ngcontent-eyi-c98="" class="col sm-2">
+                        <i _ngcontent-eyi-c98=""></i>
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    _ngcontent-eyi-c98=""
+                    style="width: 106px"
+                    scope="col"
+                    class="ng-star-inserted"
+                  >
+                    <div _ngcontent-eyi-c98="" class="row">
+                      <div _ngcontent-eyi-c98="" class="col-md-12">
+                        Name :
+                      </div>
+                      <div _ngcontent-eyi-c98="" class="col sm-2">
+                        <i _ngcontent-eyi-c98=""></i>
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    _ngcontent-eyi-c98=""
+                    style="width: 106px"
+                    scope="col"
+                    class="ng-star-inserted"
+                  >
+                    <div _ngcontent-eyi-c98="" class="row">
+                      <div _ngcontent-eyi-c98="" class="col-md-12">
+                        Email :
+                      </div>
+                      <div _ngcontent-eyi-c98="" class="col sm-2">
+                        <i _ngcontent-eyi-c98=""></i>
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    _ngcontent-eyi-c98=""
+                    style="width: 106px"
+                    scope="col"
+                    class="ng-star-inserted"
+                  >
+                    <div _ngcontent-eyi-c98="" class="row">
+                      <div _ngcontent-eyi-c98="" class="col-md-12">
+                        Phone :
+                      </div>
+                      <div _ngcontent-eyi-c98="" class="col sm-2">
+                        <i _ngcontent-eyi-c98=""></i>
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    _ngcontent-eyi-c98=""
+                    style="width: 106px"
+                    scope="col"
+                    class="ng-star-inserted"
+                  >
+                    <div _ngcontent-eyi-c98="" class="row">
+                      <div _ngcontent-eyi-c98="" class="col-md-12">
+                        Role :
+                      </div>
+                      <div _ngcontent-eyi-c98="" class="col sm-2">
+                        <i _ngcontent-eyi-c98=""></i>
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    _ngcontent-eyi-c98=""
+                    style="width: 106px"
+                    scope="col"
+                    class="ng-star-inserted"
+                  >
+                    <div _ngcontent-eyi-c98="" class="row">
+                      <div _ngcontent-eyi-c98="" class="col-md-12">
+                        Action :
+                      </div>
+                      <div _ngcontent-eyi-c98="" class="col sm-2">
+                        <i _ngcontent-eyi-c98=""></i>
+                      </div>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody _ngcontent-hvr-c93>
+                <tr
+                  _ngcontent-hvr-c93=""
+                  class="ng-star-inserted"
+                  *ngFor="let user1 of userList; let i = index"
+                >
+                  <td _ngcontent-hvr-c93="">{{ user1.id }}</td>
+                  <td _ngcontent-hvr-c93="">{{ user1.name }}</td>
+                  <td _ngcontent-hvr-c93="">{{ user1.email }}</td>
+                  <td _ngcontent-hvr-c93="">{{ user1.phone }}</td>
+                  <td _ngcontent-hvr-c93="">{{ user1.role }}</td>
+                  <td _ngcontent-hvr-c93=""><button
+                    _ngcontent-eyi-c98=""
+                    class="btn btn-outline-danger btn-sm"
+                    tabindex="0"
+                    fdprocessedid="os78ce"
+                  >
+                    <i _ngcontent-eyi-c98="" class="fa-solid fa-key"></i>&nbsp;Forgate Password
+                  </button>
+                </td>
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -50,8 +50,8 @@ export class InvertoryComponent implements OnInit {
       
     
    this.product.productName=value;
-    this.service.postproductData(this.product).subscribe((data:any)=>{
-this.message=data.message;
+      this.service.postproductData(this.product).subscribe((data:any)=>{
+      this.message=data.message;
     })
   }
   else{
