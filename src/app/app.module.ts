@@ -37,6 +37,7 @@ import { InventoryOutItemComponent } from './components/inventory-out-item/inven
 import Chart from 'chart.js/auto';
 import { AuthInterceptor } from './Intercepter/auth.interceptor';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
+import { UserModuleComponent } from './components/user-module/user-module.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +54,8 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
     InvertoryOutComponent,
     InvertoryComponent,
     InvertoryOutFormComponent,
-    InventoryOutItemComponent
+    InventoryOutItemComponent,
+    UserModuleComponent
   ],
   imports: [
     BrowserModule,
