@@ -198,25 +198,35 @@ export class InvertoryInComponent {
       }, 500)
 
   }
-  getdata(val2:any){
-    console.log(`valu 1 =${this.box1data} and val2 =${val2}`);
-    
-   let value= this.productForm.get("stockInventoryItems") as FormArray;
-  let sss= value.controls.find(f=>f.get("price")?.value==val2 && f.get("productQty")?.value==this.box1data);
-  sss?.get("totalPrice")?.setValue(val2*this.box1data);
-  
-  //  console.log(value);
-   
-  //  console.log(value.get("productQty"));
-   
-    value.get("totalPrice")?.setValue(this.box1data*val2);
+  val2:any;
+  getdata(data:any){
+this.val2=data;
+setTimeout(() => {
+  this.multipleProductvalue();
+}, 500);
+
   }
+
+  multipleProductvalue(){    
+   let value= this.productForm.get("stockInventoryItems") as FormArray;
+   let sss= value.controls.find(f=>f.get("price")?.value==this.val2 && f.get("productQty")?.value==this.box1data);
+   sss?.get("totalPrice")?.setValue(this.val2*this.box1data);   
+   if (this.box1data >0 && this.val2 >0) {
+     value.get("totalPrice")?.setValue(this.box1data*this.val2); 
+   } else {
+    console.log("not found");
+    
+    value.get("totalPrice")?.setValue(0); 
+    
+   }
+  }
+
   box1data:any;
-  Box1(data:any){
+  Box1(data:any){ 
     this.box1data=data;
-    console.log(this.box1data);
-    
-    
+    setTimeout(() => {
+      this.multipleProductvalue();
+    }, 500); 
   }
 
   getAllStockes() {
