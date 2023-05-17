@@ -12,15 +12,14 @@
     margin-top: 10px;
 }
 .nn{
-    font-size: 2.2rem;
+    font-size: 1.2rem;
     text-align: center;
-    /* margin-top: 1px; */
-    padding-top: 10px;
+    padding-top: 8px;
     font-style: initial;
     font-family: sans-serif;
     font-weight: 700;
-    color: #ab9eadeb;
-    text-shadow: 3px 3px #2b212187;
+    color: black;
+    /* text-shadow: rgb(133, 97, 97); */
 }
 .value{
     /* background-color: antiquewhite; */
@@ -29,13 +28,13 @@
 .ppp{
     font-size: 2.2rem;
     text-align: center;
-    /* margin-top: 1px; */
+    margin-top: 1px;
     padding-top: 19px;
     font-style: initial;
     font-family: sans-serif;
     font-weight: 700;
-    color: #ab9eadeb;
-    text-shadow: 3px 3px #2b212187;
+    color: #000000eb;
+    text-shadow: 3px 3px #f5ebeb87;
 }
 i{
     margin-top: 10px;

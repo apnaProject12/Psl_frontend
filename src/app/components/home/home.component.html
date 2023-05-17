@@ -1,100 +1,101 @@
 
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-            
-                <div class="card-deck w-100 mt-2 mx-1">
-                    
-                    <div class="card  bg-danger  shadow-lg bg-body rounded  " style="height: 175px; " > 
-                        <div class="row">
-                            <div class="col-4  icon  ml-3">
-                                <div ><i class="fa-solid fa-database  "></i></div>
-                            </div>
-                            <div class="col-6  data ml-3" >
-                                <div class="name">
-                                    <p class="nn">Nitish</p>
-                                </div>
-                                <div class="value">
-                                    <p class="ppp">1000</p>
-                                </div>
-                            </div>
-                        </div>
-                     
-                    </div>
-                    <div class="card bg-success   shadow-lg bg-body rounded  " style="height: 175px; " > 
-                        <div class="row">
-                            <div class="col-4  icon  ml-3">
-                                <div ><i class="fa-solid fa-person"></i></div>
-                            </div>
-                            <div class="col-6  data ml-3" >
-                                <div class="name">
-                                    <p class="nn">Rajiv</p>
-                                </div>
-                                <div class="value">
-                                    <p class="ppp">5000</p>
-                                </div>
-                            </div>
-                        </div>
-                     
-                    </div>
-                    <div class="card  bg-primary  shadow-lg bg-body rounded  " style="height: 175px; " > 
-                        <div class="row">
-                            <div class="col-4  icon  ml-3">
-                                <div ><i class="fa-solid fa-cart-shopping"></i></div>
-                            </div>
-                            <div class="col-6  data ml-3" >
-                                <div class="name">
-                                    <p class="nn">Manav</p>
-                                </div>
-                                <div class="value">
-                                    <p class="ppp">3000</p>
-                                </div>
-                            </div>
-                        </div>
-                     
-                    </div>
-                    <div class="card  bg-warning  shadow-lg bg-body rounded  " style="height: 175px; " > 
-                        <div class="row">
-                            <div class="col-4  icon  ml-3">
-                                <div ><i class="fa-solid fa-om"></i></div>
-                            </div>
-                            <div class="col-6  data ml-3" >
-                                <div class="name">
-                                    <p class="nn">Ram</p>
-                                </div>
-                                <div class="value">
-                                    <p class="ppp">1500</p>
-                                </div>
-                            </div>
-                        </div>
-                     
-                    </div>
-                    
-                    
-            
-
+  <div class="row">
+    <div class="col-12">
+      <div class="card-deck w-100 mt-2 mx-1">
+        <div
+          class="card bg-danger shadow-lg bg-body rounded"
+          style="height: 175px"
+        >
+          <div class="row bb">
+            <div class="col-4 icon ml-3">
+              <div><i class="fa-solid fa-database"></i></div>
             </div>
-          <div class="card-body mt-3">
-                <div class="row">
-                    <div class="col-5 ml-3 shadow-lg bg-body rounded" style="height: 350px;">
-                        <canvas id="pieChart" ></canvas>
-                    </div>
-                    <div class="col-6 ml-5 shadow-lg bg-body rounded" style="height: 350px;">
-                        <div class="chart-container">
-                            <canvas  id="MyChart" >{{ chart }}</canvas>
-                      </div>
-                    </div>
-                    
-                </div>
+            <div class="col-6 data ml-3">
+              <div class="name">
+                <p class="nn">Total Inventory In</p>
+              </div>
+              <div class="value">
+                <p class="ppp">1000</p>
+              </div>
+            </div>
           </div>
-               
-
-
         </div>
+        <div
+          class="card bg-success shadow-lg bg-body rounded"
+          style="height: 175px"
+        >
+          <div class="row">
+            <div class="col-4 icon ml-3">
+              <div><i class="fa-solid fa-person"></i></div>
+            </div>
+            <div class="col-6 data ml-3">
+              <div class="name">
+                <p class="nn">Total Inventory Out</p>
+              </div>
+              <div class="value">
+                <p class="ppp">5000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="card bg-primary shadow-lg bg-body rounded"
+          style="height: 175px"
+        >
+          <div class="row">
+            <div class="col-4 icon ml-3">
+              <div><i class="fa-solid fa-cart-shopping"></i></div>
+            </div>
+            <div class="col-6 data ml-3">
+              <div class="name">
+                <p class="nn">Total User</p>
+              </div>
+              <div class="value">
+                <p class="ppp">3000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="card bg-warning shadow-lg bg-body rounded"
+          style="height: 175px"
+        >
+          <div class="row">
+            <div class="col-4 icon ml-3">
+              <div><i class="fas fa-industry"></i></div>
+            </div>
+            <div class="col-6 data ml-3">
+              <div class="name">
+                <p class="nn">Total Suppliers </p>
+              </div>
+              <div class="value">
+                <p class="ppp">1500</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-body mt-3">
+        <div class="row">
+          <div
+            class="col-5 ml-3 shadow-lg bg-body rounded"
+            style="height: 350px"
+          >
+            <canvas id="pieChart"></canvas>
+          </div>
+          <div
+            class="col-6 ml-5 shadow-lg bg-body rounded"
+            style="height: 350px"
+          >
+            <div class="chart-container">
+              <canvas id="MyChart">{{ chart }}</canvas>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
+  </div>
 </div>
-
-
-

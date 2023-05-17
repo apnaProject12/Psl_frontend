@@ -48,6 +48,13 @@ list=[
     link:'user-module',
     icon:'fa-solid fa-users',
     tooltip:"User Module"
+  },
+  {
+    number:'6',
+    name:'Supplier Details',
+    link:'supplierdertails',
+    icon:'fas fa-industry',
+    tooltip:'Supplier Details'
   }
   
   
