@@ -34,6 +34,10 @@ export class InvertoryInComponent {
   totalQty = new FormControl('', [Validators.required , Validators.min(1)]);
   totalProduct = new FormControl('', [Validators.required, Validators.min(1)]);
   totalPrice = new FormControl('', [Validators.required, Validators.min(1)]);
+  supplier=new FormControl('',[Validators.required]);
+  supplymedium=new FormControl('',[Validators.required]);
+  orderdate=new FormControl('',[Validators.required]);
+  orderBy=new FormControl('',[Validators.required]);
   errorMessage: string="";
 
   get From(): FormControl {
@@ -54,6 +58,18 @@ export class InvertoryInComponent {
   get TotalPrice(): FormControl {
     return this.totalPrice as FormControl;
   }
+  get Supplier(): FormControl {
+    return this.supplier as FormControl;
+  }
+  get Supplymedium(): FormControl {
+    return this.supplymedium as FormControl;
+  }
+  get Orderdate(): FormControl {
+    return this.orderdate as FormControl;
+  }
+  get OrderBy(): FormControl {
+    return this.orderBy as FormControl;
+  }
 
   constructor(
     private fb: FormBuilder,
@@ -70,6 +86,10 @@ export class InvertoryInComponent {
       totalQty: this.totalQty,
       totalProduct: this.totalProduct,
       totalPrice: this.totalPrice,
+      supplier:this.supplier,
+   supplyMedium:this.supplymedium,
+   orderdate:this.orderdate,
+   orderBy:this.orderBy,
       isApproved: false,
       stockInventoryItems: this.fb.array([]),
     });
@@ -83,17 +103,32 @@ export class InvertoryInComponent {
   durationInSeconds = 5;
 
   notification() {
+  
     this.snackBar.open(this.message, 'close', {
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,
       duration: this.durationInSeconds * 1000,
     });
   }
+  data1={
+    receiver:""
+  }
+  reciverName(){
+
+
+this.stockService.addreceiverPesonName(this.data1).subscribe((val:any)=>{
+  this.message=val;
+})
+this.data1.receiver=""
+window.location.reload();
+
+
+
+
+  }
   ngOnInit(): void {
-    // this.addQuantity();
-    this.stockService.logisticsdata().subscribe((data1: any) => {
-      this.logistics = data1;
-    });
+    this.productForm.get("from")?.setValue(localStorage.getItem("name"));
+  
     this.stockService.receiverfindAll().subscribe((data: any) => {
       this.Receiver = data;
     });
@@ -154,20 +189,44 @@ export class InvertoryInComponent {
   timer:any;
   onSubmit() {
     let Array = this.productForm.get('stockInventoryItems') as FormArray;
-    let Arraylength = Array.controls.length;
-    console.log(` Array length :${Arraylength}`);
-    let product = this.productForm.value.totalProduct;
-    console.log(` product :${product}`);
 
-    this.value = 'submit';
-    console.log(this.productForm.value);
-    this.userData = this.productForm.value;
+    let Arraylength = Array.controls.length;
+
+    let product = this.productForm.value.totalProduct;
+
     if (product == Arraylength) {
-      this.stockService
+      
+      let totalPrice=0;
+      let totalItem=0;
+      for(let item of this.productForm.value.stockInventoryItems) {
+        console.log(item.totalPrice);
+        totalPrice=totalPrice+item.totalPrice;
+        totalItem=totalItem+item.productQty;
+      }
+      console.log(`total price = ${totalPrice} and total item = ${totalItem}`);
+      
+      
+      this.userData = this.productForm.value;
+  
+  if (totalPrice !=this.productForm.value.totalPrice) {
+    this.message="total price should not be different";
+    this.notification();
+  }
+  else if (totalItem!=this.productForm.value.totalQty) {
+    this.message="total item should not be different";
+    this.notification()
+  } else {
+    console.log("else work properly");
+    
+
+    this.stockService
         .postAllData(this.productForm.value).subscribe(
           (response: any) => {
             this.message = response.message;
-            this.router.navigate(['/dashboard/list-item'])
+            setTimeout(() => {
+              this.notification();
+              this.router.navigate(['/dashboard/list-item'])
+            }, 500);
           }
           
           ,
@@ -179,25 +238,30 @@ export class InvertoryInComponent {
               console.log(this.errorMessage);
     
             }
+            setTimeout(() => {
+              this.notification();
+            }, 500);
           }
         )
+
+  
+  
+    }
         
         
       }
       else if(product < Arraylength){
         this.message="remove product data";
+          this.notification();
+  
       }
       else{
-        this.message="add product data";
-      }
-
-      clearTimeout(this.timer);
-      this.timer = setTimeout(() => {
-        this.notification();
-        
-      }, 500)
-
+  
+  this.notification();
+    
   }
+  
+}
   val2:any;
   getdata(data:any){
 this.val2=data;

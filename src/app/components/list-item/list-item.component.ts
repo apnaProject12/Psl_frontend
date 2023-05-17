@@ -8,6 +8,7 @@ import {
   MatSnackBarRef,
 } from '@angular/material/snack-bar';
 import { HttpErrorResponse } from '@angular/common/http';
+import { UserService } from 'src/app/Services/user/user.service';
 
 @Component({
   selector: 'app-list-item',
@@ -18,7 +19,8 @@ export class ListItemComponent {
   constructor(
     private service: ServiceService,
     private router: Router,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private userService:UserService
   ) {}
   pageSize: number = 10;
   pageNumber: number = 0;
@@ -34,7 +36,7 @@ export class ListItemComponent {
   Receiver: any;
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
-  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
   durationInSeconds = 5;
   message: string = '';
   role_Admin = false;
@@ -55,10 +57,12 @@ export class ListItemComponent {
     this.service.approved(this.approval_id).subscribe((data: any) => {
       this.message = data.message;
     });
-    this.ngOnInit();
+   setTimeout(() => {
     this.notification();
+    this.ngOnInit();
+   }, 500);
   }
-
+  userList:any;
   ngOnInit(): void {
     
 
@@ -73,7 +77,16 @@ export class ListItemComponent {
     this.service.logisticsdata().subscribe((data1: any) => {
       this.logistics = data1;
     });
+
+
     this.getAllData();
+
+    this.userService.getUser().subscribe((data:any)=>{
+      this.userList=data;
+    })
+ this.service.receiverfindAll().subscribe((data: any) => {
+      this.Receiver = data;
+    });
   }
   getAllData() {
     this.service

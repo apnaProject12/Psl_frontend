@@ -31,7 +31,7 @@
                   class="fa fa-plus"
                   aria-hidden="true"
                 ></i
-                >&nbsp;Add Item Name
+                >&nbsp;Add Receiver Name
               </button>
             </div>
           </div>
@@ -43,7 +43,13 @@
             <div class="row">
               <div class="col">
                 <label for="name"><small class="req">*</small>From:</label>
-                <ng-select
+                <input type="text"
+                id="name"
+                formControlName="from"
+                class="form-control"
+                readonly
+                >
+                <!-- <ng-select
                   class="selectpicker"
                   data-live-search="true"
                   id="name"
@@ -54,7 +60,7 @@
                     *ngFor="let logisticsdata of logistics"
                     >{{ logisticsdata.from }}
                   </ng-option>
-                </ng-select>
+                </ng-select> -->
                 <div>
                   <small
                     class="input"
@@ -70,9 +76,9 @@
                 >
                 <ng-select id="name" formControlName="recivedBy" required>
                   <ng-option
-                    value="{{ logisticsdata.from }}"
-                    *ngFor="let logisticsdata of logistics"
-                    >{{ logisticsdata.from }}</ng-option
+                    value="{{ logisticsdata.receiver }}"
+                    *ngFor="let logisticsdata of Receiver"
+                    >{{ logisticsdata.receiver }}</ng-option
                   >
                 </ng-select>
                 <div>
@@ -192,6 +198,103 @@
                 </div>
               </div>
             </div>
+            <div class="row">
+              <div class="col">
+                <label for="name"
+                  ><small class="req">*</small>Supplier:</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  formControlName="supplier"
+                  class="form-control"
+                  required
+                />
+                <div>
+                  <small
+                    class="input"
+                    style="color: red"
+                    *ngIf="Supplier.errors?.['required'] && (Supplier.touched || Supplier.dirty)"
+                    >Supplier name is Required</small
+                  >
+                </div>
+              </div>
+              <div class="col">
+                <label for="name"
+                  ><small class="req">*</small>Supply Medium:</label
+                >
+                <ng-select id="name" formControlName="supplyMedium" required>
+                  <ng-option
+                    value="bus"
+                    >bus</ng-option
+                  >
+                  <ng-option
+                    value="train"
+                    >train</ng-option
+                  >
+                  <ng-option
+                    value="truck"
+                    >truck</ng-option
+                  >
+                  <ng-option
+                    value="car"
+                    >car</ng-option
+                  >
+                </ng-select>
+                <div>
+                  <small
+                    class="input"
+                    style="color: red"
+                    *ngIf="Supplymedium.errors?.['required'] && (Supplymedium.touched || Supplymedium.dirty)"
+                    >Supply medium  is Required</small
+                  >
+                </div>
+                
+              </div>
+              <div class="col">
+                <label for="name"
+                  ><small class="req">*</small>Order By :</label
+                >
+                <ng-select id="name" formControlName="orderBy" required>
+                  <ng-option
+                    value="{{ logisticsdata.receiver }}"
+                    *ngFor="let logisticsdata of Receiver"
+                    >{{ logisticsdata.receiver }}</ng-option
+                  >
+                </ng-select>
+                <div>
+                  <small
+                    class="input"
+                    style="color: red"
+                    *ngIf="OrderBy.errors?.['required'] && (OrderBy.touched || OrderBy.dirty)"
+                    >Order By required is Required</small
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <label for="name"
+                  ><small class="req">*</small>Order Date:</label
+                >
+                <input
+                  type="date"
+                  id="name"
+                  formControlName="orderdate"
+                  class="form-control"
+                  required
+                />
+                <div>
+                  <small
+                    class="input"
+                    style="color: red"
+                    *ngIf="Orderdate.errors?.['required'] && (Orderdate.touched || Orderdate.dirty)"
+                    >Order Date required is Required</small
+                  >
+                </div>
+              </div>
+              
+            </div>
 
             <br />
 
@@ -304,8 +407,7 @@
             <div style="display: flex">
               <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end">
                 <button
-                  type="{{ value }}"
-                  [disabled]="productForm.invalid"
+                [disabled]="productForm.invalid"
                   _ngcontent-sca-c12=""
                   _ngcontent-eyi-c98=""
                   tabindex="0"
@@ -366,54 +468,12 @@
               </div>
             </div>
           </form>
-          <br />
-          {{userData | json}}
         </div>
       </div>
     </div>
   </div>
 </div>
-<!-- modal start-->
-<!-- Modal -->
-<!-- <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end"><button type="button" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted" data-bs-dismiss="modal" ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa-solid fa-xmark" aria-hidden="true"></i>&nbsp;</button></div>
-      </div>
-      <div class="modal-body">
-       <div>
-        <input class="modal-input" type="text" placeholder="Entee Product Name">
-       </div>
-      </div>
-      <div class="modal-footer">
-        <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end"><button type="button" data-bs-dismiss="modal" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa fa-window-close" aria-hidden="true"></i>&nbsp;Close</button></div>
-        <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end"><button type="submit" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa  fa-save" aria-hidden="true"></i>&nbsp;Save</button></div>     
-      </div>
-    </div>
-  </div>
-</div>
 
-<div class="modal fade " id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end"><button type="button" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted" data-bs-dismiss="modal" ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa-solid fa-xmark" aria-hidden="true"></i>&nbsp;</button></div>
-      </div>
-      <div class="modal-body">
-       <div>
-        <input class="modal-input" type="text" placeholder="Entee Product Name">
-       </div>
-      </div>
-      <div class="modal-footer">
-        <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end"><button type="button" data-bs-dismiss="modal" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa fa-window-close" aria-hidden="true"></i>&nbsp;Close</button></div>
-        <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end"><button type="submit" _ngcontent-sca-c12="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="irqpcf" class="btn btn-outline-info btn-sm ng-star-inserted"  ><i _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="fa  fa-save" aria-hidden="true"></i>&nbsp;Save</button></div>     
-      </div>
-    </div>
-  </div>
-</div> -->
 
 <div
   class="modal fade"
@@ -425,7 +485,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h2 class="modal-title" id="exampleModalLabel">Add receiver person name :-</h2>
         <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end">
           <button
             type="button"
@@ -435,6 +495,7 @@
             fdprocessedid="irqpcf"
             class="btn btn-outline-info btn-sm ng-star-inserted"
             data-bs-dismiss="modal"
+            #receiver
           >
             <i
               _ngcontent-sca-c12=""
@@ -452,6 +513,7 @@
             class="modal-input"
             type="text"
             placeholder="Entee Product Name"
+           [(ngModel)]="data1.receiver"
           />
         </div>
       </div>
@@ -477,12 +539,15 @@
         </div>
         <div _ngcontent-sca-c12="" _ngcontent-eyi-c98="" class="text-end">
           <button
-            type="submit"
+            type="reset"
             _ngcontent-sca-c12=""
             _ngcontent-eyi-c98=""
             tabindex="0"
             fdprocessedid="irqpcf"
             class="btn btn-outline-info btn-sm ng-star-inserted"
+            data-bs-dismiss="modal"
+            (click)="reciverName()"
+
           >
             <i
               _ngcontent-sca-c12=""

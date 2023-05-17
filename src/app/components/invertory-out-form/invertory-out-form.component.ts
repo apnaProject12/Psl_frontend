@@ -87,13 +87,18 @@ export class InvertoryOutFormComponent {
   }
   pQty: any;
   productNamevalue(event: any) {
-    // console.log(event)
+    console.log(event)
     let myObjData = this.pList.find((f:any)=>f.productName==event);
     if(myObjData){
+      console.log("if condition work");
+      console.log(myObjData.productQty);
+      
+      
      let control= this.quantities.controls.find(f=>f.get('productName')?.value==event)
 
     //  control?control.get('totalQty')?.setValue(myObjData.totalQty):'';
-     control?control.get('totalProduct')?.setValue(myObjData.productQty):'';
+    //  control?control.get('totalProduct')?.setValue(myObjData.productQty);
+     control?.get('totalProduct')?.setValue(myObjData.productQty);
     }
 
   }

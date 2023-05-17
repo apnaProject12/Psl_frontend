@@ -48,10 +48,10 @@
                     >
                       
                       <ng-option
-                        value="{{ logisticsdata.from }}"
-                        *ngFor="let logisticsdata of logistics"
+                        value="{{ logisticsdata.name }}"
+                        *ngFor="let logisticsdata of userList"
                       >
-                        {{ logisticsdata.from }}
+                        {{ logisticsdata.name }}
                       </ng-option>
                     </ng-select>
                   </div>
@@ -64,10 +64,10 @@
                     <ng-select id="name" required>
                      
                       <ng-option
-                        value="{{ logisticsdata.from }}"
-                        *ngFor="let logisticsdata of logistics"
+                        value="{{ logisticsdata.receiver }}"
+                        *ngFor="let logisticsdata of Receiver"
                       >
-                      {{ logisticsdata.from }}
+                      {{ logisticsdata.receiver }}
                       </ng-option>
                     </ng-select>
                   </div>
@@ -230,6 +230,62 @@
                         </div>
                       </div>
                     </th>
+                    <th
+                      _ngcontent-eyi-c98=""
+                      scope="col"
+                      class="ng-star-inserted"
+                    >
+                      <div _ngcontent-eyi-c98="" class="row">
+                        <div _ngcontent-eyi-c98="" class="col-md-12">
+                         Supplier
+                        </div>
+                        <div _ngcontent-eyi-c98="" class="col sm-2">
+                          <i _ngcontent-eyi-c98=""></i>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      _ngcontent-eyi-c98=""
+                      scope="col"
+                      class="ng-star-inserted"
+                    >
+                      <div _ngcontent-eyi-c98="" class="row">
+                        <div _ngcontent-eyi-c98="" class="col-md-12">
+                          Supply medium
+                        </div>
+                        <div _ngcontent-eyi-c98="" class="col sm-2">
+                          <i _ngcontent-eyi-c98=""></i>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      _ngcontent-eyi-c98=""
+                      scope="col"
+                      class="ng-star-inserted"
+                    >
+                      <div _ngcontent-eyi-c98="" class="row">
+                        <div _ngcontent-eyi-c98="" class="col-md-12">
+                          order By
+                        </div>
+                        <div _ngcontent-eyi-c98="" class="col sm-2">
+                          <i _ngcontent-eyi-c98=""></i>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      _ngcontent-eyi-c98=""
+                      scope="col"
+                      class="ng-star-inserted"
+                    >
+                      <div _ngcontent-eyi-c98="" class="row">
+                        <div _ngcontent-eyi-c98="" class="col-md-12">
+                          order Date
+                        </div>
+                        <div _ngcontent-eyi-c98="" class="col sm-2">
+                          <i _ngcontent-eyi-c98=""></i>
+                        </div>
+                      </div>
+                    </th>
                     
                     <th
                       _ngcontent-eyi-c98=""
@@ -282,7 +338,11 @@
                     <td _ngcontent-hvr-c93="">
                       <i class="fa-solid fa-indian-rupee-sign"></i>
                       {{ user.totalPrice }}
-                    </td>                    
+                    </td> 
+                    <td _ngcontent-hvr-c93="">{{ user.supplier }}</td>
+                    <td _ngcontent-hvr-c93="">{{ user.supplyMedium }}</td>
+                    <td _ngcontent-hvr-c93="">{{ user.orderBy }}</td>
+                    <td _ngcontent-hvr-c93="">{{ user.orderdate }}</td>                   
                     <td _ngcontent-hvr-c93="">
                       <div *ngIf="user.isApproved; else elseBlock">
                         <button
@@ -357,6 +417,17 @@
                               class="fa-solid fa-trash"
                             ></i>
                           </button>
+                          <button style=" margin-left: 3px;"
+                            _ngcontent-eyi-c98=""
+                            type="button"
+                            class="btn btn-primary "
+                            class="btn btn-outline-info btn-sm"
+                            tabindex="0"
+                            fdprocessedid="os78ce"
+                            disabled
+                          >
+                          <i  _ngcontent-eyi-c98="" class="fa-solid fa-pen-to-square"></i>
+                          </button>
                         </div>
                       </div>
 
@@ -379,6 +450,17 @@
                               class="fa-solid fa-trash"
                             ></i>
                           </button>
+                          <button
+                          style=" margin-left: 3px;"
+                          _ngcontent-eyi-c98=""
+                          type="button"
+                          class="btn btn-primary ml-4"
+                          class="btn btn-outline-info btn-sm"
+                          tabindex="0"
+                          fdprocessedid="os78ce"
+                        >
+                        <i  _ngcontent-eyi-c98="" class="fa-solid fa-pen-to-square"></i>
+                        </button>
                         </div>
 
                       </ng-template>

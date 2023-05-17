@@ -20,7 +20,7 @@ export class ServiceService {
     return this.router.post(`/StockInInventory/add/inventory`,data);
   }
   findById(id:any){
-    return this.router.get(`/StockInInventory/${id}`);
+    return this.router.get(`/StockInInventory/getInventoryItemById/${id}`); 
   }
   product(){
     return this.router.get(`/StockInInventory/findAllInventory`)
@@ -47,6 +47,9 @@ export class ServiceService {
   }
   getInventoryOutData(pageNo:any,pSize:any,field:any,sortDir:any){
     return this.router.get(`/StockInInventory/invertoryOut/findAll?pageNo=${pageNo}&pageSize=${pSize}&field=${field}&sortDir=${sortDir}`)
+  }
+  addreceiverPesonName(data:any){
+   return this.router.post(`/StockInInventory/receiver/add`,data);
   }
 
   // findById(id:any){
